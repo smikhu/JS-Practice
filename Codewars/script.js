@@ -192,4 +192,29 @@ function summation(num) {
     return sum
 }
 
-console.log(summation(8))
+// console.log(summation(8))
+
+
+
+// It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy! You just need to write a script.
+
+// Return the average of the given array rounded DOWN to its nearest integer.
+
+// The array will never be empty.
+
+
+function getAverage(scoreArray) {
+    let count = scoreArray.length;
+    let sum = 0;
+    for (let i = 0; i < count; i++) {
+        sum = sum + scoreArray[i]
+    }
+
+    const avg = sum / count;
+    const roundedDown = Math.floor(avg)
+
+    return roundedDown;
+    
+}
+
+console.log(getAverage([5, 6, 7, 8, 25, 36, 55]))
