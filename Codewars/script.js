@@ -17,6 +17,13 @@ function even_or_odd2(number) {
 
 // console.log(even_or_odd2("999"))
 
+
+
+
+
+
+
+
 // Return the number (count) of vowels in the given string. We will consider a,e,i,o,u as vowels for this problem (but not y). The input string will only consists of lower case letters and/or spaces.
 
 function getCount(str) {
@@ -64,6 +71,12 @@ function getCount2(str) {
 // console.log(getCount2("Iraq"))
 
 
+
+
+
+
+
+
 // Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake. Can you help her?
 
 // function greet(name) {
@@ -91,6 +104,12 @@ function greet2(name) {
 // console.log(greet2("Johnny"))
 
 
+
+
+
+
+
+
 // Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
 
 function isDivisible(n, x, y) {
@@ -116,6 +135,12 @@ function isDivisible2(n, x, y) {
 // console.log(isDivisible2(12, 7, 5))
 
 
+
+
+
+
+
+
 // In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
 
 function makeNegative(num) {
@@ -128,19 +153,19 @@ function makeNegative(num) {
     }
 }
 
-console.log(makeNegative(21))
-console.log(makeNegative(-21))
-console.log(makeNegative(0))
-console.log(makeNegative("0"))
+// console.log(makeNegative(21))
+// console.log(makeNegative(-21))
+// console.log(makeNegative(0))
+// console.log(makeNegative("0"))
 
 function makeNegative2(num) {
     return (num < 0 || num === 0 || num === "0") ? num : -num;
 }
 
-console.log(makeNegative2(32))
-console.log(makeNegative2(-32))
-console.log(makeNegative2(0))
-console.log(makeNegative2("0"))
+// console.log(makeNegative2(32))
+// console.log(makeNegative2(-32))
+// console.log(makeNegative2(0))
+// console.log(makeNegative2("0"))
 
 
 
@@ -149,5 +174,22 @@ function makeNegative3(num) {
     return -Math.abs(num)
 }
 
-console.log(makeNegative3(43))
-console.log(makeNegative3(-43))
+// console.log(makeNegative3(43))
+// console.log(makeNegative3(-43))
+
+
+
+
+// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+function summation(num) {
+    let sum = 0;
+    for(let i = 1; i <= num; i++) {
+        // sum = sum + i;
+        sum+= i;
+        console.log(sum)
+    }
+    return sum
+}
+
+console.log(summation(8))
