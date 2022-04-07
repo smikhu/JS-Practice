@@ -432,15 +432,36 @@ function stringToArray(string) {
 // Remove the spaces from the string, then return the resultant string.
 
 
-function noSpace(x) {
-    let splitting = x.split(" ")
+function noSpace(str) {
+    let splitting = str.split(" ")
     let result = splitting.join("")
     return result;
 }
 
-console.log(noSpace("Steven Mikhu"))
-console.log(noSpace("I love arrays they are my favorite"))
+// console.log(noSpace("Steven Mikhu"))
+// console.log(noSpace("I love arrays they are my favorite"))
 
 
 
-// 
+// Given an array of integers, return a new array with each value doubled.
+
+
+function maps(str) {
+    let doubled = str.map(number => number * 2)
+    return doubled
+}
+
+console.log(maps([1, 2, 3]))
+console.log(maps([3, 6, 9]))
+
+
+function maps2(str) {
+    let result = str.map((arrItem) => {
+        return arrItem * 2
+    })
+    return result
+}
+
+console.log(maps2([1, 2, 3]))
+console.log(maps2([3, 6, 9]))
+console.log(maps2([4, 8, 12]))
