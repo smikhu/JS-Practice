@@ -255,11 +255,11 @@ function rockPaperScissors(player1, player2) {
     }
 }
 
-console.log(rockPaperScissors("scissors", "paper"))
-console.log(rockPaperScissors("scissors", "rock"))
-console.log(rockPaperScissors("paper", "paper"))
-console.log(rockPaperScissors("rock", "paper"))
-console.log(rockPaperScissors("scissors", "scissors"))
+// console.log(rockPaperScissors("scissors", "paper"))
+// console.log(rockPaperScissors("scissors", "rock"))
+// console.log(rockPaperScissors("paper", "paper"))
+// console.log(rockPaperScissors("rock", "paper"))
+// console.log(rockPaperScissors("scissors", "scissors"))
 
 function rps(player1, player2) {
     if (player1 == player2) {
@@ -278,11 +278,39 @@ function rps(player1, player2) {
 }
 
 
-console.log(rps("scissors", "paper"))
-console.log(rps("scissors", "rock"))
-console.log(rps("paper", "paper"))
-console.log(rps("rock", "paper"))
-console.log(rps("scissors", "scissors"))
-console.log(rps("paper", "rock"))
-console.log(rps("paper", "scissors"))
+// console.log(rps("scissors", "paper"))
+// console.log(rps("scissors", "rock"))
+// console.log(rps("paper", "paper"))
+// console.log(rps("rock", "paper"))
+// console.log(rps("scissors", "scissors"))
+// console.log(rps("paper", "rock"))
+// console.log(rps("paper", "scissors"))
 
+
+
+
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str) {
+    return str.substring(1, str.length - 1)
+}
+
+console.log(removeChar("Steven"))
+
+function removeChar2(str) {
+    return str.slice(1, -1) 
+}
+
+console.log(removeChar2("Steven"))
+
+function removeChar3(str) {
+    str1 = str.split("");
+    console.log(str1)
+    str1.shift();
+    console.log(str1)
+    str1.pop()
+    console.log(str1)
+    return str1.join('')
+}
+
+console.log(removeChar3("Steven"))
