@@ -421,5 +421,26 @@ function stringToArray(string) {
     return string.split(" ")
 }
 
-console.log(stringToArray("Steven Mikhu"))
-console.log(stringToArray("I love arrays they are my favorite"))
+// console.log(stringToArray("Steven Mikhu"))
+// console.log(stringToArray("I love arrays they are my favorite"))
+
+
+
+
+
+
+// Remove the spaces from the string, then return the resultant string.
+
+
+function noSpace(x) {
+    let splitting = x.split(" ")
+    let result = splitting.join("")
+    return result;
+}
+
+console.log(noSpace("Steven Mikhu"))
+console.log(noSpace("I love arrays they are my favorite"))
+
+
+
+// 
