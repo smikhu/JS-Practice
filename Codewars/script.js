@@ -514,15 +514,32 @@ function arrayPlusArray(arr1, arr2) {
     let sum = 0;
 
     for (let i = 0; i < arr1.length; i++) {
-        let arr1Value = arr1[i];
-        let arr2Value = arr2[i];
+        let sumOfTwo = arr1[i] + arr2[i] 
+        // let arr1Value = arr1[i];
+        // let arr2Value = arr2[i];
 
-        let addedValue = arr1Value + arr2Value
+        // let addedValue = arr1Value + arr2Value
 
-        sum = sum + addedValue
+        sum = sum + sumOfTwo
     }
     return sum
 }
 
-console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
-console.log(arrayPlusArray([3, 6, 9], [12, 15, 18]))
+// console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
+// console.log(arrayPlusArray([3, 6, 9], [12, 15, 18]))
+
+
+
+
+
+// The first century spans from the year 1 up to and including the year 100. The second - from the year 101 up to and including the year 200.
+
+// Given a year, return the century it is in.
+
+function century(year) {
+    return Math.ceil(year/100)
+}
+
+console.log(century(1900))
+console.log(century(1901))
+console.log(century(89))
