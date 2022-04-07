@@ -402,11 +402,24 @@ function repeatStr(count, str) {
     return starterString
 }
 
-console.log(repeatStr(5, "hello"))
+// console.log(repeatStr(5, "hello"))
 
 
 function repeatStr2(n, s) {
     return s.repeat(n);
 }
 
-console.log(repeatStr2(20, "steven"))
+// console.log(repeatStr2(20, "steven"))
+
+
+
+
+
+// Write a function to split a string and convert it into an array of words.
+
+function stringToArray(string) {
+    return string.split(" ")
+}
+
+console.log(stringToArray("Steven Mikhu"))
+console.log(stringToArray("I love arrays they are my favorite"))
