@@ -101,16 +101,53 @@ function isDivisible(n, x, y) {
     }
 }
 
-console.log(isDivisible(3, 1, 3))
-console.log(isDivisible(12, 2, 6))
-console.log(isDivisible(100, 5, 3))
-console.log(isDivisible(12, 7, 5))
+// console.log(isDivisible(3, 1, 3))
+// console.log(isDivisible(12, 2, 6))
+// console.log(isDivisible(100, 5, 3))
+// console.log(isDivisible(12, 7, 5))
 
 function isDivisible2(n, x, y) {
     return (n % x === 0 && n % y === 0) ? true : false;
 }
 
-console.log(isDivisible2(3, 1, 3))
-console.log(isDivisible2(12, 2, 6))
-console.log(isDivisible2(100, 5, 3))
-console.log(isDivisible2(12, 7, 5))
+// console.log(isDivisible2(3, 1, 3))
+// console.log(isDivisible2(12, 2, 6))
+// console.log(isDivisible2(100, 5, 3))
+// console.log(isDivisible2(12, 7, 5))
+
+
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+function makeNegative(num) {
+    if (num < 0) {
+        return num
+    } else if (num === 0 || num === "0") {
+        return 0
+    } else {
+        return num * -1
+    }
+}
+
+console.log(makeNegative(21))
+console.log(makeNegative(-21))
+console.log(makeNegative(0))
+console.log(makeNegative("0"))
+
+function makeNegative2(num) {
+    return (num < 0 || num === 0 || num === "0") ? num : -num;
+}
+
+console.log(makeNegative2(32))
+console.log(makeNegative2(-32))
+console.log(makeNegative2(0))
+console.log(makeNegative2("0"))
+
+
+
+
+function makeNegative3(num) {
+    return -Math.abs(num)
+}
+
+console.log(makeNegative3(43))
+console.log(makeNegative3(-43))
