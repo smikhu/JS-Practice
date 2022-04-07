@@ -482,23 +482,47 @@ function hero(bullets, dragons) {
     }
 }
 
-console.log(hero(12, 6))
-console.log(hero(11, 6))
+// console.log(hero(12, 6))
+// console.log(hero(11, 6))
 
 
 function hero2(bullets, dragons) {
     return bullets / dragons >= 2;
 }
 
-console.log(hero2(12, 6))
-console.log(hero2(11, 6))
-console.log(hero2(3, 2))
+// console.log(hero2(12, 6))
+// console.log(hero2(11, 6))
+// console.log(hero2(3, 2))
 
 
 function hero3(bullets, dragons) {
     return bullets / dragons >= 2 ? true : false
 }
 
-console.log(hero3(12, 6))
-console.log(hero3(11, 6))
-console.log(hero3(10, 4))
+// console.log(hero3(12, 6))
+// console.log(hero3(11, 6))
+// console.log(hero3(10, 4))
+
+
+
+
+// I'm new to coding and now I want to get teh sum of two arrays... actually the sum of all their elements. I'll appreciate your help.
+
+// Each array includes only integer numbers. Output is a number too.
+
+function arrayPlusArray(arr1, arr2) {
+    let sum = 0;
+
+    for (let i = 0; i < arr1.length; i++) {
+        let arr1Value = arr1[i];
+        let arr2Value = arr2[i];
+
+        let addedValue = arr1Value + arr2Value
+
+        sum = sum + addedValue
+    }
+    return sum
+}
+
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
+console.log(arrayPlusArray([3, 6, 9], [12, 15, 18]))
