@@ -451,8 +451,8 @@ function maps(str) {
     return doubled
 }
 
-console.log(maps([1, 2, 3]))
-console.log(maps([3, 6, 9]))
+// console.log(maps([1, 2, 3]))
+// console.log(maps([3, 6, 9]))
 
 
 function maps2(str) {
@@ -462,6 +462,43 @@ function maps2(str) {
     return result
 }
 
-console.log(maps2([1, 2, 3]))
-console.log(maps2([3, 6, 9]))
-console.log(maps2([4, 8, 12]))
+// console.log(maps2([1, 2, 3]))
+// console.log(maps2([3, 6, 9]))
+// console.log(maps2([4, 8, 12]))
+
+
+
+
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! Each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive? 
+
+// Return True if yes, False otherwise.
+
+
+function hero(bullets, dragons) {
+    if (bullets / dragons >= 2) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(hero(12, 6))
+console.log(hero(11, 6))
+
+
+function hero2(bullets, dragons) {
+    return bullets / dragons >= 2;
+}
+
+console.log(hero2(12, 6))
+console.log(hero2(11, 6))
+console.log(hero2(3, 2))
+
+
+function hero3(bullets, dragons) {
+    return bullets / dragons >= 2 ? true : false
+}
+
+console.log(hero3(12, 6))
+console.log(hero3(11, 6))
+console.log(hero3(10, 4))
