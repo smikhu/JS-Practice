@@ -217,4 +217,72 @@ function getAverage(scoreArray) {
     
 }
 
-console.log(getAverage([5, 6, 7, 8, 25, 36, 55]))
+// console.log(getAverage([5, 6, 7, 8, 25, 36, 55]))
+
+
+// Rock, Paper, Scissors. Let's play! You have to return which player won! In case of a draw return "Draw!".
+
+function rockPaperScissors(player1, player2) {
+    if (player1 === "rock") {
+        if (player2 === "rock") {
+            return "Draw!"
+        } else if (player2 === "paper") {
+            return "Player 2 wins!"
+        } else if (player2 === "scissors") {
+            return "Player 1 wins!"
+        }
+    }   
+
+    if (player1 === "paper") {
+        if (player2 === "paper") {
+            return "Draw!"
+        } else if (player2 === "scissors") {
+            return "Player 2 wins!"
+        } else if (player2 === "rock") {
+            return "Player 1 wins!"
+        }
+        
+    }
+
+    if (player1 === "scissors") {
+        if (player2 === "scissors") {
+            return "Draw!"
+        } else if (player2 === "paper") {
+            return "Player 1 wins!"
+        } else if (player2 === "rock") {
+            return "Player 2 wins!"
+        } 
+    }
+}
+
+console.log(rockPaperScissors("scissors", "paper"))
+console.log(rockPaperScissors("scissors", "rock"))
+console.log(rockPaperScissors("paper", "paper"))
+console.log(rockPaperScissors("rock", "paper"))
+console.log(rockPaperScissors("scissors", "scissors"))
+
+function rps(player1, player2) {
+    if (player1 == player2) {
+        return "Draw!"
+    }
+
+    if (player1 == "rock" && player2 == "scissors") {
+        return "Player 1 wins!"
+    } else if (player1 == "paper" && player2 == "rock") {
+        return "Player 1 wins!"
+    } else if (player1 == "scissors" && player2 == "paper") {
+        return "Player 1 wins!"
+    } else {
+        return "Player 2 wins!"
+    }
+}
+
+
+console.log(rps("scissors", "paper"))
+console.log(rps("scissors", "rock"))
+console.log(rps("paper", "paper"))
+console.log(rps("rock", "paper"))
+console.log(rps("scissors", "scissors"))
+console.log(rps("paper", "rock"))
+console.log(rps("paper", "scissors"))
+
