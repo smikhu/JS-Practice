@@ -295,13 +295,13 @@ function removeChar(str) {
     return str.substring(1, str.length - 1)
 }
 
-console.log(removeChar("Steven"))
+// console.log(removeChar("Steven"))
 
 function removeChar2(str) {
     return str.slice(1, -1) 
 }
 
-console.log(removeChar2("Steven"))
+// console.log(removeChar2("Steven"))
 
 function removeChar3(str) {
     str1 = str.split("");
@@ -313,4 +313,22 @@ function removeChar3(str) {
     return str1.join('')
 }
 
-console.log(removeChar3("Steven"))
+// console.log(removeChar3("Steven"))
+
+
+
+
+// You get an array of numbers, return the sum of all of the positive ones.
+
+function positiveSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            sum = sum + arr[i]
+        }
+    }
+    return sum
+}
+
+console.log(positiveSum([1, -4, 7, 12]))
+console.log(positiveSum([1, -4, 7, 12]))
