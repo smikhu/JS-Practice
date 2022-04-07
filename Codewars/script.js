@@ -388,3 +388,25 @@ function basicOp3(op, v1, v2) {
 // console.log(basicOp3("-", 15, 18))
 // console.log(basicOp3("*", 5, 5))
 // console.log(basicOp3("/", 49, 7))
+
+
+
+// Write a function called repeatStr which repeats the given string str exactly count times.
+
+function repeatStr(count, str) {
+    let starterString = ''
+
+    for (let i = 0; i < count; i++) {
+        starterString = starterString + str
+    }
+    return starterString
+}
+
+console.log(repeatStr(5, "hello"))
+
+
+function repeatStr2(n, s) {
+    return s.repeat(n);
+}
+
+console.log(repeatStr2(20, "steven"))
