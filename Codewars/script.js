@@ -543,3 +543,23 @@ function century(year) {
 console.log(century(1900))
 console.log(century(1901))
 console.log(century(89))
+
+
+function century2(year) {
+    if (year < 100) {
+        return 1
+    }
+
+
+const firstTwoDigits = year.toString().substr(0, 2);
+
+if (year % 100 === 0) {
+    return Number(firstTwoDigits);
+} else {
+    return Number(firstTwoDigits) + 1;
+}
+}
+
+console.log(century2(1900))
+console.log(century2(1901))
+console.log(century2(89))
