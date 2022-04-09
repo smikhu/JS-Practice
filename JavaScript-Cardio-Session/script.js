@@ -64,7 +64,7 @@ function isPalindrome(str) {
     let joining = reverse.join('')
     console.log(joining)
 
-    if (joining === str) { 
+    if (joining == str) { 
         return "is a palindrome!"
     } else {
         return "not a palindrome!"
@@ -73,3 +73,25 @@ function isPalindrome(str) {
 }
 
 console.log(isPalindrome('racecar'))
+
+
+function isPalindrome2(str) {
+    let revString = str.split('').reverse().join('')
+    return revString === str;
+}
+
+console.log(isPalindrome2('doodle'))
+
+
+
+
+// CHALLENGE 3: REVERSE AN INTEGER
+// Return an integer in reverse
+// ex. reverseInt(521) === 125
+
+function reverseInt(int) {
+    const revString = int.toString().split('').reverse().join('')
+    return parseInt(revString) * Math.sign(int)
+}   
+
+console.log(reverseInt('-9876'))
