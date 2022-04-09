@@ -95,3 +95,35 @@ function reverseInt(int) {
 }   
 
 console.log(reverseInt('-9876'))
+
+
+
+// CHALLENGE 4: CAPITALIZE LETTERS
+// Return a string with the first letter of every word capitalzed
+// ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
+
+function capitalizeLetters(str) {
+    let splitting = str.split(' ')
+    console.log(splitting)
+    for (let i = 0; i < splitting.length; i++) {
+        splitting[i] = splitting[i][0].toUpperCase() + splitting[i].substr(1)
+        
+    }
+    return splitting.join(' ')
+}
+
+console.log(capitalizeLetters('i love javascript'))
+
+
+function capitalizeLetters2(str) {
+    let strArr = str.toLowerCase().split(' ')
+    console.log(strArr)
+
+    for (let i = 0; i < strArr.length; i++) {
+        strArr[i] = strArr[i].substring(0, 1).toUpperCase() + strArr[i].substring(1)
+    }
+
+    return strArr.join(' ')
+}
+
+console.log(capitalizeLetters2('i lOvE jAvAsCrIpT'))
