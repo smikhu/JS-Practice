@@ -49,7 +49,7 @@ function reverseString4(str) {
     return revString
 }
 
-console.log(reverseString4('hello'))
+// console.log(reverseString4('hello'))
 
 // CHALLENGE 2: VALIDATE A PALINDROME
 // Return true if palindrome and flase if not
@@ -72,7 +72,7 @@ function isPalindrome(str) {
 
 }
 
-console.log(isPalindrome('racecar'))
+// console.log(isPalindrome('racecar'))
 
 
 function isPalindrome2(str) {
@@ -80,7 +80,7 @@ function isPalindrome2(str) {
     return revString === str;
 }
 
-console.log(isPalindrome2('doodle'))
+// console.log(isPalindrome2('doodle'))
 
 
 
@@ -94,7 +94,7 @@ function reverseInt(int) {
     return parseInt(revString) * Math.sign(int)
 }   
 
-console.log(reverseInt('-9876'))
+// console.log(reverseInt('-9876'))
 
 
 
@@ -112,7 +112,7 @@ function capitalizeLetters(str) {
     return splitting.join(' ')
 }
 
-console.log(capitalizeLetters('i love javascript'))
+// console.log(capitalizeLetters('i love javascript'))
 
 
 function capitalizeLetters2(str) {
@@ -126,4 +126,58 @@ function capitalizeLetters2(str) {
     return strArr.join(' ')
 }
 
-console.log(capitalizeLetters2('i lOvE jAvAsCrIpT'))
+// console.log(capitalizeLetters2('i lOvE jAvAsCrIpT'))
+
+
+function capitalizeLetters3(str) {
+    return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.substr(1))
+    .join(' ')
+}
+
+// console.log(capitalizeLetters3('i loVe javAscRipt'))
+
+
+
+
+function capitalizeLetters4(str) {
+    return str.replace(/\b[a-z]/gi, char => char.toUpperCase());
+}
+
+// console.log(capitalizeLetters('i love javascript'))
+
+
+
+// CHALLENGE 5: MAX CHARACTER
+// Return the character that is most common in a string
+// ex. maxCharacter('javascript') == 'a'
+
+function maxCharacter(str) {
+    let charMap = {};
+    let maxNum = 0;
+    let maxChar = '';
+
+    str.split('').forEach(function(char) {
+        if(charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1
+        }
+    })
+
+    for(let char in charMap) {
+        if(charMap[char] > maxNum) {
+            maxNum = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
+}
+
+console.log(maxCharacter('javascript'))
+
+
+
