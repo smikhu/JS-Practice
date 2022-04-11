@@ -63,3 +63,54 @@ function sumAllPrimes(num) {
 
 console.log(sumAllPrimes(10))
 console.log(sumAllPrimes(25))
+
+
+
+
+// CHALLENGE 3: SEEK & DESTROY
+// Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
+// ex. seekAndDestroy([2, 3, 4, 5, 6, 'hello'], 2, 6) == [3, 4, 'hello']
+
+function seekAndDestroy(arr) {
+    // arguments, indexOf, filter
+    const args = Array.from(arguments);
+
+    function filterArr(arr) {
+        // Return true if NOT in array
+        return args.indexOf(arr) === -1;
+    }
+
+    return arr.filter(filterArr);
+}
+
+console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6, 'hello'));
+
+
+
+
+function seekAndDestroy2(arr, ...rest) {
+    // ...rest, filter & includes
+    return arr.filter( val => !rest.includes(val));
+}
+
+
+console.log(seekAndDestroy2([2, 3, 4, 6, 6, 'hello'], 2, 6, 'hello'));
+
+
+
+// CHALLENGE 4: SORT BY HEIGHT
+// Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+// ex.
+// a = [-1, 150, 190, 170, -1, -1, 160, 180]
+// sortByHeight(a) == [-1, 150, 160, 170, -1, -1, 180, 190]
+
+function sortByHeight(a) {
+    const arr1 = [];
+    const arr2 = [];
+
+    
+}
+
+
+const a = [-1, 150, 160, 170, -1, -1, 180, 190]
+console.log(sortByHeight(a))
