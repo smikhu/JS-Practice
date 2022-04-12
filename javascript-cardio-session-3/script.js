@@ -12,8 +12,8 @@ function addAll() {
     return total
 }
 
-console.log(addAll(2, 5, 6, 7))
-console.log(addAll(2, 5, 6, 7, 5))
+// console.log(addAll(2, 5, 6, 7))
+// console.log(addAll(2, 5, 6, 7, 5))
 
 
 
@@ -25,16 +25,16 @@ function addAll2(...numbers) {
     return total
 }
 
-console.log(addAll2(2, 5, 6, 7))
-console.log(addAll2(2, 5, 6, 7, 8))
+// console.log(addAll2(2, 5, 6, 7))
+// console.log(addAll2(2, 5, 6, 7, 8))
 
 
 function addAll3(...numbers) {
     return numbers.reduce((acc, cur) => acc + cur)
 }
 
-console.log(addAll3(2, 5, 6, 7))
-console.log(addAll3(2, 5, 6, 7, 7))
+// console.log(addAll3(2, 5, 6, 7))
+// console.log(addAll3(2, 5, 6, 7, 7))
 
 
 // CHALLENGE 2: SUM ALL PRIMES
@@ -61,8 +61,8 @@ function sumAllPrimes(num) {
     return total;
 }
 
-console.log(sumAllPrimes(10))
-console.log(sumAllPrimes(25))
+// console.log(sumAllPrimes(10))
+// console.log(sumAllPrimes(25))
 
 
 
@@ -107,10 +107,24 @@ console.log(seekAndDestroy2([2, 3, 4, 6, 6, 'hello'], 2, 6, 'hello'));
 function sortByHeight(a) {
     const arr1 = [];
     const arr2 = [];
-
     
+    a.forEach((val, i) => {
+        if(val === -1) {
+            arr1.push(i);
+        } else {
+            arr2.push(val);
+        }
+    });
+    // console.log(arr1, arr2)
+
+    const sortArr = arr2.sort((a, b) => a - b)
+
+    // console.log(sortArr)
+
+    arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1))
+
+    return sortArr;
+
 }
 
-
-const a = [-1, 150, 160, 170, -1, -1, 180, 190]
-console.log(sortByHeight(a))
+console.log(sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]))
