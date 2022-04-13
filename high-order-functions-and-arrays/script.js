@@ -187,6 +187,8 @@ let agesTimesTwo = ages.map(age => age * 2)
 
 // sort
 
+
+// sort companies by start year
 let sortedCompanies = companies.sort(function(c1, c2) {
     if (c1.start > c2.start) {
         return 1;
@@ -201,3 +203,11 @@ console.log(sortedCompanies)
 let sortedCompanies2 = companies.sort((c1, c2) => c1.start > c2.start ? 1 : -1)
 
 console.log(sortedCompanies2)
+
+
+
+// sort ages in order
+
+let sortAges = ages.sort((a, b) => a - b)
+
+console.log(sortAges)
