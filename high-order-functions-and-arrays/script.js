@@ -74,3 +74,17 @@ let canDrink3 = ages.filter(age => age >= 21 ? true : false)
 
 // console.log(canDrink3)
 
+
+// Filter retail companies
+
+let retail = companies.filter(function(company) {
+    if (company.category === "Retail") {
+        return true
+    }
+})
+
+// console.log(retail)
+
+let retailCompanies = companies.filter(company => company.category === "Retail")
+
+// console.log(retailCompanies)
