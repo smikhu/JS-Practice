@@ -88,3 +88,19 @@ let retail = companies.filter(function(company) {
 let retailCompanies = companies.filter(company => company.category === "Retail")
 
 // console.log(retailCompanies)
+
+
+// Filter all companies that started in the 80's
+
+let companiesYear = companies.filter(function(company) {
+    if (company.start >= 1980 && company.start <= 1989) {
+        return true;
+    }
+})
+
+console.log(companiesYear)
+
+
+let companiesYear2 = companies.filter(company => company.start >= 1980 && company.start <= 1989)
+
+console.log(companiesYear2)
