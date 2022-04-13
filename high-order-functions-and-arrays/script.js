@@ -12,23 +12,65 @@ const companies= [
   
   const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+
+
+
+
+
+
 //    for(let i = 0; i < companies.length; i++) {
 //     console.log(companies[i])
 //    }
 
 
-//    forEach
+// forEach
 
 companies.forEach(function(company) {
-    console.log(company)
+    // console.log(company)
 })
 
 companies.forEach(function(company, index, companies) {
-    console.log(company.category)
-    console.log(index)
-    console.log(companies)
+    // console.log(company.category)
+    // console.log(index)
+    // console.log(companies)
 })
 
 companies.forEach(company => {
-    console.log(company)
+    // console.log(company)
 })
+
+
+
+
+
+
+// filter
+
+// GET 21 AND OLDER
+
+let canDrink = [];
+
+for (let i = 0; i < ages.length; i++) {
+    if (ages[i] >= 21) {
+        canDrink.push(ages[i])
+    }
+}
+
+// console.log(canDrink)
+
+
+let canDrink2 = ages.filter(function(age) {
+    if (age >= 21) {
+        return true;
+    } else {
+        return false;
+    }
+})
+
+// console.log(canDrink2)
+
+
+let canDrink3 = ages.filter(age => age >= 21 ? true : false)
+
+// console.log(canDrink3)
+
