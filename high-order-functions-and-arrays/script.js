@@ -114,9 +114,39 @@ let lastingCompanies = companies.filter(function(company) {
     }
 })
 
-console.log(lastingCompanies)
+// console.log(lastingCompanies)
 
 
 let lastingCompanies2 = companies.filter(company => company.end - company.start >= 10)
 
-console.log(lastingCompanies2)
+// console.log(lastingCompanies2)
+
+
+
+
+
+// map
+
+// Create array of company names
+
+let companyNames = companies.map(function(company) {
+    return company.name;
+})
+
+console.log(companyNames)
+
+
+
+
+let companyNames2 = companies.map(company => company.name)
+
+console.log(companyNames2)
+
+
+
+
+
+let testMap = companies.map(company => `${company.name} [${company.start} - ${company.end}]`
+)
+
+console.log(testMap)
