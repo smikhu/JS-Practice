@@ -133,14 +133,14 @@ let companyNames = companies.map(function(company) {
     return company.name;
 })
 
-console.log(companyNames)
+// console.log(companyNames)
 
 
 
 
 let companyNames2 = companies.map(company => company.name)
 
-console.log(companyNames2)
+// console.log(companyNames2)
 
 
 
@@ -149,7 +149,7 @@ console.log(companyNames2)
 let testMap = companies.map(company => `${company.name} [${company.start} - ${company.end}]`
 )
 
-console.log(testMap)
+// console.log(testMap)
 
 
 
@@ -157,7 +157,7 @@ console.log(testMap)
 
 let agesSquare = ages.map(age => Math.sqrt(age))
 
-console.log(agesSquare)
+// console.log(agesSquare)
 
 
 
@@ -167,7 +167,7 @@ let agesSquare2 = ages
 .map(age => Math.sqrt(age))
 .map(age => age * 2)
 
-console.log(agesSquare2)
+// console.log(agesSquare2)
 
 
 
@@ -175,7 +175,7 @@ console.log(agesSquare2)
 
 let agesTimesTwo = ages.map(age => age * 2)
 
-console.log(agesTimesTwo)
+// console.log(agesTimesTwo)
 
 
 
@@ -187,3 +187,17 @@ console.log(agesTimesTwo)
 
 // sort
 
+let sortedCompanies = companies.sort(function(c1, c2) {
+    if (c1.start > c2.start) {
+        return 1;
+    } else {
+        return -1;
+    }
+})
+
+console.log(sortedCompanies)
+
+
+let sortedCompanies2 = companies.sort((c1, c2) => c1.start > c2.start ? 1 : -1)
+
+console.log(sortedCompanies2)
