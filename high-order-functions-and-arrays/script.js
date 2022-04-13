@@ -98,9 +98,25 @@ let companiesYear = companies.filter(function(company) {
     }
 })
 
-console.log(companiesYear)
+// console.log(companiesYear)
 
 
 let companiesYear2 = companies.filter(company => company.start >= 1980 && company.start <= 1989)
 
-console.log(companiesYear2)
+// console.log(companiesYear2)
+
+
+// Filter companies that lasted at least 10 years
+
+let lastingCompanies = companies.filter(function(company) {
+    if (company.end - company.start >= 10) {
+        return true;
+    }
+})
+
+console.log(lastingCompanies)
+
+
+let lastingCompanies2 = companies.filter(company => company.end - company.start >= 10)
+
+console.log(lastingCompanies2)
