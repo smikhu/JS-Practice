@@ -239,3 +239,20 @@ let ageSum2 = ages.reduce(function (total, age) {
 let ageSum3 = ages.reduce((total, age) => total + age, 0)
 
 // console.log(ageSum3)
+
+
+
+
+
+// Get total years for all companies
+
+let totalYears = companies.reduce(function(total, company) {
+    return total + (company.end - company.start)
+}, 0)
+
+console.log(totalYears)
+
+
+let totalYears2 = companies.reduce((total, company) => total + (company.end - company.start), 0)
+
+console.log(totalYears2)
