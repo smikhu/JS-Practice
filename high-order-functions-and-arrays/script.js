@@ -150,3 +150,40 @@ let testMap = companies.map(company => `${company.name} [${company.start} - ${co
 )
 
 console.log(testMap)
+
+
+
+// square root of ages
+
+let agesSquare = ages.map(age => Math.sqrt(age))
+
+console.log(agesSquare)
+
+
+
+
+
+let agesSquare2 = ages
+.map(age => Math.sqrt(age))
+.map(age => age * 2)
+
+console.log(agesSquare2)
+
+
+
+
+
+let agesTimesTwo = ages.map(age => age * 2)
+
+console.log(agesTimesTwo)
+
+
+
+
+
+
+
+
+
+// sort
+
