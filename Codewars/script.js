@@ -540,9 +540,9 @@ function century(year) {
     return Math.ceil(year/100)
 }
 
-console.log(century(1900))
-console.log(century(1901))
-console.log(century(89))
+// console.log(century(1900))
+// console.log(century(1901))
+// console.log(century(89))
 
 
 function century2(year) {
@@ -560,9 +560,9 @@ if (year % 100 === 0) {
 }
 }
 
-console.log(century2(1900))
-console.log(century2(1901))
-console.log(century2(89))
+// console.log(century2(1900))
+// console.log(century2(1901))
+// console.log(century2(89))
 
 
 
@@ -595,7 +595,7 @@ var humanYearsCatYearsDogYears = function(humanYears) {
 
 }
 
-console.log(humanYearsCatYearsDogYears(3))
+// console.log(humanYearsCatYearsDogYears(3))
 
 
 
@@ -605,8 +605,8 @@ var humanYearsCatYearsDogYears2 = function(humanYears) {
     return [humanYears, (humanYears - 2) * 4 + 24, (humanYears - 2) * 5 + 24]
 }
 
-console.log(humanYearsCatYearsDogYears2(3))
-console.log(humanYearsCatYearsDogYears2(5))
+// console.log(humanYearsCatYearsDogYears2(3))
+// console.log(humanYearsCatYearsDogYears2(5))
 
 
 
@@ -645,4 +645,26 @@ function points(gamesArray) {
     return totalPoints
 }
 
-console.log(points(["3:1", "1:1", "0:3", "3:0", "3:1"]))
+// console.log(points(["3:1", "1:1", "0:3", "3:0", "3:1"]))
+
+
+
+
+
+// Write a JS program to check two numbers and return true if one of the numbers is 100 or if the sum of the two numbers is 100.
+
+function sumOfTwo(num1, num2) {
+    if(num1 === 100 || num2 === 100 || num1 + num2 === 100) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(sumOfTwo(38, 62))
+console.log(sumOfTwo(38, 100))
+console.log(sumOfTwo(100, 50))
+console.log(sumOfTwo(0, 0))
+
+
+
