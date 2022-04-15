@@ -743,3 +743,22 @@ console.log(formatDate())
 
 
 
+
+
+// Write a JS program to create a new string adding "New!" in front of a given string. If the given string begins with "New!" already then return the original string.
+
+
+function addNew(str) {
+    let word = "New!"
+    if(str.includes("New!")) {
+        return str 
+    } else {
+        return word + " " + str
+    }
+}
+
+console.log(addNew("hello"))
+console.log(addNew("goodbye"))
+console.log(addNew("New! hello"))
+console.log(addNew("New! New! hello New!"))
+console.log(addNew("New! New! New! hello"))
