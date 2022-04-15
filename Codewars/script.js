@@ -681,3 +681,36 @@ function fileName(file) {
 console.log(fileName('kante.png'))
 console.log(fileName('pulisic.jpeg'))
 console.log(fileName('kovacic.html'))
+
+
+
+const fileName2 = (str) => str.slice (str.lastIndexOf('.'))
+
+console.log(fileName2('kante.png'))
+console.log(fileName2('pulisic.jpeg'))
+console.log(fileName2('kovacic.html'))
+
+
+
+function fileName3(str) {
+    return str.slice(str.lastIndexOf('.'))
+}
+
+console.log(fileName3('kovacic.gif.jpeg'))
+
+
+
+
+
+// Write a JS program to replace every character in a given string with the character following it in the alphabet.
+
+
+function moveCharsForward(str) {
+    let splitting = str.split('')
+    console.log(splitting)
+    let char = splitting.map(char => String.fromCharCode(char.charCodeAt(0) + 1))
+    console.log(char)
+    return char.join('')
+}
+
+console.log(moveCharsForward('hello'))
