@@ -668,3 +668,16 @@ console.log(sumOfTwo(0, 0))
 
 
 
+
+
+// Write a JS program to get the extension of a filename.
+
+function fileName(file) {
+    let splitting = file.split('.')
+    console.log(splitting)
+    return splitting[1]
+}
+
+console.log(fileName('kante.png'))
+console.log(fileName('pulisic.jpeg'))
+console.log(fileName('kovacic.html'))
