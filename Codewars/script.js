@@ -714,3 +714,32 @@ function moveCharsForward(str) {
 }
 
 console.log(moveCharsForward('hello'))
+
+
+
+
+
+// Write a JS program to get the current date. Expected Output : mm-dd-yyyy
+
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+let fullDate = `${month}-${day}-${year}`
+
+console.log(fullDate)
+
+
+
+const formatDate = (date = new Date()) => {
+    const days = date.getDate();
+    const months = date.getMonth() + 1;
+    const years = date.getFullYear();
+    return `${days}/${months}/${years}`
+}
+
+console.log(formatDate())
+
+
+
