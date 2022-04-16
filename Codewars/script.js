@@ -835,3 +835,30 @@ function nearestNum2(num1, num2) {
 
 console.log(nearestNum2(50, 49))
 console.log(nearestNum2(38, 49))
+
+
+
+
+// Write a JS program to check if a given string contains 2 to 4 occurences of a specified character.
+
+function countChars(str, char) {
+    return str.split('').filter(ch => ch === char).length;
+}
+
+console.log(countChars('ooh!', 'o'))
+console.log(countChars('oh!', 'o'))
+console.log(countChars('oooh!', 'o'))
+console.log(countChars('ooooh!', 'o'))
+console.log(countChars('oooooh!', 'o'))
+
+
+function contains2To4(str, char) {
+    return countChars(str, char) >= 2 && countChars(str, char) <= 4;
+}
+
+
+console.log(contains2To4('ooh!', 'o'))
+console.log(contains2To4('oh!', 'o'))
+console.log(contains2To4('oooh!', 'o'))
+console.log(contains2To4('ooooh!', 'o'))
+console.log(contains2To4('oooooh!', 'o'))
