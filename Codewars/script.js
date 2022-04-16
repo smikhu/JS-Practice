@@ -661,10 +661,10 @@ function sumOfTwo(num1, num2) {
     }
 }
 
-console.log(sumOfTwo(38, 62))
-console.log(sumOfTwo(38, 100))
-console.log(sumOfTwo(100, 50))
-console.log(sumOfTwo(0, 0))
+// console.log(sumOfTwo(38, 62))
+// console.log(sumOfTwo(38, 100))
+// console.log(sumOfTwo(100, 50))
+// console.log(sumOfTwo(0, 0))
 
 
 
@@ -678,17 +678,17 @@ function fileName(file) {
     return splitting[1]
 }
 
-console.log(fileName('kante.png'))
-console.log(fileName('pulisic.jpeg'))
-console.log(fileName('kovacic.html'))
+// console.log(fileName('kante.png'))
+// console.log(fileName('pulisic.jpeg'))
+// console.log(fileName('kovacic.html'))
 
 
 
 const fileName2 = (str) => str.slice (str.lastIndexOf('.'))
 
-console.log(fileName2('kante.png'))
-console.log(fileName2('pulisic.jpeg'))
-console.log(fileName2('kovacic.html'))
+// console.log(fileName2('kante.png'))
+// console.log(fileName2('pulisic.jpeg'))
+// console.log(fileName2('kovacic.html'))
 
 
 
@@ -696,7 +696,7 @@ function fileName3(str) {
     return str.slice(str.lastIndexOf('.'))
 }
 
-console.log(fileName3('kovacic.gif.jpeg'))
+// console.log(fileName3('kovacic.gif.jpeg'))
 
 
 
@@ -713,7 +713,7 @@ function moveCharsForward(str) {
     return char.join('')
 }
 
-console.log(moveCharsForward('hello'))
+// console.log(moveCharsForward('hello'))
 
 
 
@@ -728,7 +728,7 @@ let year = date.getFullYear();
 
 let fullDate = `${month}-${day}-${year}`
 
-console.log(fullDate)
+// console.log(fullDate)
 
 
 
@@ -739,7 +739,7 @@ const formatDate = (date = new Date()) => {
     return `${days}/${months}/${years}`
 }
 
-console.log(formatDate())
+// console.log(formatDate())
 
 
 
@@ -757,8 +757,31 @@ function addNew(str) {
     }
 }
 
-console.log(addNew("hello"))
-console.log(addNew("goodbye"))
-console.log(addNew("New! hello"))
-console.log(addNew("New! New! hello New!"))
-console.log(addNew("New! New! New! hello"))
+// console.log(addNew("hello"))
+// console.log(addNew("goodbye"))
+// console.log(addNew("New! hello"))
+// console.log(addNew("New! New! hello New!"))
+// console.log(addNew("New! New! New! hello"))
+
+
+
+
+// Write a JS program to create a new string from a given string taking the first 3 characters and the last 3 characters of a string and adding them together. The string length must be 3 or more, if not, the original string is returned.
+
+
+function newString(str) {
+    if(str.length <= 3) {
+        return str
+    } else {
+        return str.slice(0, 3) + str.slice(-3)
+    }
+}
+
+console.log(newString("dog"))
+console.log(newString("alligator"))
+console.log(newString("crocodile"))
+console.log(newString("zomhahahabie"))
+
+
+
+
