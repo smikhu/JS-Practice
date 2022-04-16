@@ -886,3 +886,17 @@ console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6']))
 console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7']))
 console.log(evenNumbersInArr(['2', '4', '6', '8', '10', '12', '14']))
 console.log(evenNumbersInArr(['1', '3', '5', '7', '9', '11', '13']))
+
+
+
+function evenNumbersInArr2(arr) {
+    return arr.filter(num => num % 2 === 0).length;
+}
+
+
+console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7', '8']))
+console.log(evenNumbersInArr2(['1', '2', '3', '4']))
+console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6']))
+console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7']))
+console.log(evenNumbersInArr2(['2', '4', '6', '8', '10', '12', '14']))
+console.log(evenNumbersInArr2(['1', '3', '5', '7', '9', '11', '13']))
