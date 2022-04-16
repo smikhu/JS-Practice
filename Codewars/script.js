@@ -794,3 +794,20 @@ function firstHalf(str) {
 
 console.log(firstHalf("zombie"))
 console.log(firstHalf("catapult"))
+
+
+
+
+// Write a JS program to concatenate two strings except their first character. 
+
+
+function addTwoStrings(str1, str2) {
+    let slice1 = str1.slice(1)
+    let slice2 = str2.slice(1)
+    return slice1 + slice2
+}
+
+console.log(addTwoStrings("alligator", "crocodile"))
+
+
+
