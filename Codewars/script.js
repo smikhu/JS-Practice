@@ -825,3 +825,13 @@ function nearestNum(num1, num2) {
 }
 
 console.log(nearestNum(7, 21))
+console.log(nearestNum(35, 21))
+
+
+
+function nearestNum2(num1, num2) {
+    return (100 - num1) < (100 - num2) ? num1 : num2;;
+}
+
+console.log(nearestNum2(50, 49))
+console.log(nearestNum2(38, 49))
