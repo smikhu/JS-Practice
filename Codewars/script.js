@@ -811,3 +811,17 @@ console.log(addTwoStrings("alligator", "crocodile"))
 
 
 
+// Given two values, write a JS program to find out which one is nearest to 100.
+
+function nearestNum(num1, num2) {
+    let a = 100 - num1
+    let b = 100 - num2
+
+    if(a < b) {
+        return num1
+    } else {
+        return num2
+    }
+}
+
+console.log(nearestNum(7, 21))
