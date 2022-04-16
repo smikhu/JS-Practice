@@ -777,10 +777,10 @@ function newString(str) {
     }
 }
 
-console.log(newString("dog"))
-console.log(newString("alligator"))
-console.log(newString("crocodile"))
-console.log(newString("zomhahahabie"))
+// console.log(newString("dog"))
+// console.log(newString("alligator"))
+// console.log(newString("crocodile"))
+// console.log(newString("zomhahahabie"))
 
 
 
@@ -792,8 +792,8 @@ function firstHalf(str) {
     return str.slice(0, str.length / 2)
 }
 
-console.log(firstHalf("zombie"))
-console.log(firstHalf("catapult"))
+// console.log(firstHalf("zombie"))
+// console.log(firstHalf("catapult"))
 
 
 
@@ -807,7 +807,7 @@ function addTwoStrings(str1, str2) {
     return slice1 + slice2
 }
 
-console.log(addTwoStrings("alligator", "crocodile"))
+// console.log(addTwoStrings("alligator", "crocodile"))
 
 
 
@@ -824,8 +824,8 @@ function nearestNum(num1, num2) {
     }
 }
 
-console.log(nearestNum(7, 21))
-console.log(nearestNum(35, 21))
+// console.log(nearestNum(7, 21))
+// console.log(nearestNum(35, 21))
 
 
 
@@ -833,8 +833,8 @@ function nearestNum2(num1, num2) {
     return (100 - num1) < (100 - num2) ? num1 : num2;;
 }
 
-console.log(nearestNum2(50, 49))
-console.log(nearestNum2(38, 49))
+// console.log(nearestNum2(50, 49))
+// console.log(nearestNum2(38, 49))
 
 
 
@@ -845,11 +845,11 @@ function countChars(str, char) {
     return str.split('').filter(ch => ch === char).length;
 }
 
-console.log(countChars('ooh!', 'o'))
-console.log(countChars('oh!', 'o'))
-console.log(countChars('oooh!', 'o'))
-console.log(countChars('ooooh!', 'o'))
-console.log(countChars('oooooh!', 'o'))
+// console.log(countChars('ooh!', 'o'))
+// console.log(countChars('oh!', 'o'))
+// console.log(countChars('oooh!', 'o'))
+// console.log(countChars('ooooh!', 'o'))
+// console.log(countChars('oooooh!', 'o'))
 
 
 function contains2To4(str, char) {
@@ -857,8 +857,32 @@ function contains2To4(str, char) {
 }
 
 
-console.log(contains2To4('ooh!', 'o'))
-console.log(contains2To4('oh!', 'o'))
-console.log(contains2To4('oooh!', 'o'))
-console.log(contains2To4('ooooh!', 'o'))
-console.log(contains2To4('oooooh!', 'o'))
+// console.log(contains2To4('ooh!', 'o'))
+// console.log(contains2To4('oh!', 'o'))
+// console.log(contains2To4('oooh!', 'o'))
+// console.log(contains2To4('ooooh!', 'o'))
+// console.log(contains2To4('oooooh!', 'o'))
+
+
+
+
+// Write a JS program to find the number of even digits in an array of integers.
+
+
+
+function evenNumbersInArr(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] % 2 === 0) {
+            sum++
+        }
+    }
+    return sum
+}
+
+console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7', '8']))
+console.log(evenNumbersInArr(['1', '2', '3', '4']))
+console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6']))
+console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7']))
+console.log(evenNumbersInArr(['2', '4', '6', '8', '10', '12', '14']))
+console.log(evenNumbersInArr(['1', '3', '5', '7', '9', '11', '13']))
