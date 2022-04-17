@@ -922,3 +922,23 @@ console.log(findEvenNums(10))
 console.log(evenNumbersInArr(findEvenNums(10)))
 console.log(evenNumbersInArr(findEvenNums(16)))
 console.log(evenNumbersInArr(findEvenNums(100)))
+
+
+
+
+
+
+
+// Write a JS program to check whether a given array of integers is sorted in ascending order.
+
+
+function ascendingOrd(arr) {
+    for(let i = 0; i < arr.length; i += 1) {
+        if(arr[i+1] < arr[i]) return false;
+    }
+    return true;
+}
+
+console.log(ascendingOrd([1, 2, 3, 4, 5, 6]))
+console.log(ascendingOrd([1, 2, 5, 4, 3, 6]))
+console.log(ascendingOrd([1, 2, 3, 4, 6, 6]))
