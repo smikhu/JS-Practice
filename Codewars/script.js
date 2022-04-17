@@ -1185,3 +1185,12 @@ const getUniqueChars = (str) =>
 )
 
 console.log(getUniqueChars('aaabbbccc'))
+
+
+
+
+const getUniqueChars2 = (str) =>
+        [... new Set(str.split(''))];
+
+console.log(getUniqueChars2('aaabbbccc'))
+console.log(getUniqueChars2('aaabbbccceeeddddcccaaabb'))
