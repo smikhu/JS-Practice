@@ -1006,3 +1006,20 @@ console.log(compareTwoObj(objA, objB))
 console.log(compareTwoObj(objA, objC))
 console.log(compareTwoObj(objC, objB))
 console.log(compareTwoObj(objB, objA))
+
+
+
+
+// Write a JS program to convert a comma-separated values (CSV) string to a 2D array. A new line indicates a new row in the array. 
+// Exmaple: abc, def, ghi        jkl, mno, pqr       stu, vwx, yza
+
+
+function parseCSV(csvStr) {
+    return csvStr.split('\n').map(row => row.split(','))
+}
+
+const str = `abc,def,ghi 
+jkl,mno,pqr 
+stu,vwx,yza`
+
+console.log(parseCSV(str))
