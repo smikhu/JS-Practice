@@ -955,3 +955,16 @@ function largestEven2(arr) {
 console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]))
 console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 4, 34, 16, 2, 1, 24]))
 console.log(largestEven2([1, 2, 3, 4, 5, 6, 1001, 1002, 1003, 10, 11, 13, 15, 16]))
+
+
+
+
+// Write a JS program to replace the first digit in a string (should contains at least 1 digit) with $ character.
+
+
+function replaceFirstDig(str) {
+    return str.replace(/h/gi, '$')
+}
+
+console.log(replaceFirstDig('Hello'))
+
