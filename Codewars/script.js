@@ -880,12 +880,12 @@ function evenNumbersInArr(arr) {
     return sum
 }
 
-console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7', '8']))
-console.log(evenNumbersInArr(['1', '2', '3', '4']))
-console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6']))
-console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7']))
-console.log(evenNumbersInArr(['2', '4', '6', '8', '10', '12', '14']))
-console.log(evenNumbersInArr(['1', '3', '5', '7', '9', '11', '13']))
+// console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7', '8']))
+// console.log(evenNumbersInArr(['1', '2', '3', '4']))
+// console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6']))
+// console.log(evenNumbersInArr(['1', '2', '3', '4', '5', '6', '7']))
+// console.log(evenNumbersInArr(['2', '4', '6', '8', '10', '12', '14']))
+// console.log(evenNumbersInArr(['1', '3', '5', '7', '9', '11', '13']))
 
 
 
@@ -894,9 +894,31 @@ function evenNumbersInArr2(arr) {
 }
 
 
-console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7', '8']))
-console.log(evenNumbersInArr2(['1', '2', '3', '4']))
-console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6']))
-console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7']))
-console.log(evenNumbersInArr2(['2', '4', '6', '8', '10', '12', '14']))
-console.log(evenNumbersInArr2(['1', '3', '5', '7', '9', '11', '13']))
+// console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7', '8']))
+// console.log(evenNumbersInArr2(['1', '2', '3', '4']))
+// console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6']))
+// console.log(evenNumbersInArr2(['1', '2', '3', '4', '5', '6', '7']))
+// console.log(evenNumbersInArr2(['2', '4', '6', '8', '10', '12', '14']))
+// console.log(evenNumbersInArr2(['1', '3', '5', '7', '9', '11', '13']))
+
+
+
+
+
+// Write a JS program to find the number of even values up to a given number
+
+
+function findEvenNums(num) {
+    const returnArr = [];
+    for(let i = 1; i <= num; i += 1) {
+        returnArr.push(i);
+    }
+    return returnArr;
+}
+
+
+console.log(findEvenNums(5))
+console.log(findEvenNums(10))
+console.log(evenNumbersInArr(findEvenNums(10)))
+console.log(evenNumbersInArr(findEvenNums(16)))
+console.log(evenNumbersInArr(findEvenNums(100)))
