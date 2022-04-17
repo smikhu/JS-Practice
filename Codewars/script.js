@@ -980,10 +980,29 @@ function leapYear(num) {
     return num % 4 === 0;
 }
 
-console.log(leapYear(2014))
-console.log(leapYear(2015))
-console.log(leapYear(2016))
-console.log(leapYear(2017))
-console.log(leapYear(2018))
-console.log(leapYear(2019))
-console.log(leapYear(2020))
+// console.log(leapYear(2014))
+// console.log(leapYear(2015))
+// console.log(leapYear(2016))
+// console.log(leapYear(2017))
+// console.log(leapYear(2018))
+// console.log(leapYear(2019))
+// console.log(leapYear(2020))
+
+
+
+
+// Write a JS program to compare two objects to determine if the first one contains the same properties as the second one (which may also have additional properties)
+
+const objA = { a: 1, b: 1, c: 1 }
+const objB = { a: 1, b: 1, c: 1 }
+const objC = { a: 1, b: 1, d: 1 }
+
+function compareTwoObj(a, b) {
+    return Object.keys(a).every(key => b[key])
+}
+
+
+console.log(compareTwoObj(objA, objB))
+console.log(compareTwoObj(objA, objC))
+console.log(compareTwoObj(objC, objB))
+console.log(compareTwoObj(objB, objA))
