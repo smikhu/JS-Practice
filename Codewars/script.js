@@ -1085,10 +1085,24 @@ function abcString(str) {
 
 
 console.log(abcString('webmaster'))
+console.log(abcString('javascript'))
+console.log(abcString('zombie'))
 
 
 
 
 
 
-// 
+// Write a JS function that accepts a string as a parameter and counts the number of vowels within the string.
+
+
+function countLetters(str, letters = ['a', 'e', 'i', 'o', 'u']) {
+    return str.split('').filter(s => letters.indexOf(s) > -1).length
+}
+
+
+
+console.log(countLetters('webmaster'))
+console.log(countLetters('javascript'))
+console.log(countLetters('zombie'))
+console.log(countLetters('hello'))
