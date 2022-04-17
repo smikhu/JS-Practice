@@ -1002,10 +1002,10 @@ function compareTwoObj(a, b) {
 }
 
 
-console.log(compareTwoObj(objA, objB))
-console.log(compareTwoObj(objA, objC))
-console.log(compareTwoObj(objC, objB))
-console.log(compareTwoObj(objB, objA))
+// console.log(compareTwoObj(objA, objB))
+// console.log(compareTwoObj(objA, objC))
+// console.log(compareTwoObj(objC, objB))
+// console.log(compareTwoObj(objB, objA))
 
 
 
@@ -1022,7 +1022,7 @@ const str = `abc,def,ghi
 jkl,mno,pqr 
 stu,vwx,yza`
 
-console.log(parseCSV(str))
+// console.log(parseCSV(str))
 
 
 
@@ -1035,16 +1035,16 @@ function getRandomHexNumber() {
     return Math.floor(Math.random() * 16).toString(16)
 }
 
-console.log(getRandomHexNumber())
-console.log(getRandomHexNumber())
-console.log(getRandomHexNumber())
+// console.log(getRandomHexNumber())
+// console.log(getRandomHexNumber())
+// console.log(getRandomHexNumber())
 
 
 function getRandomHexColor() {
     return '#' + Array.from({length: 6}).map(getRandomHexNumber).join('')
 }
 
-console.log(getRandomHexColor())
+// console.log(getRandomHexColor())
 
 
 
@@ -1053,8 +1053,8 @@ console.log(getRandomHexColor())
 // Write a JS function that returns true if the provided predicate function returns true for all elements in a collection, false otherwise.
 
 
-console.log([1,2,3,4,5].every(x => x > 0))
-console.log([1,2,3,4,5].every(x => x > 3))
+// console.log([1,2,3,4,5].every(x => x > 0))
+// console.log([1,2,3,4,5].every(x => x > 3))
 
 
 
@@ -1068,5 +1068,27 @@ function isEveryElem(arr, fn) {
 }
 
 
-console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0))
-console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 3))
+// console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0))
+// console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 3))
+
+
+
+
+
+// Write a JS function that returns a passed string with letters in alphabetical order.
+// Exmaple string: 'webmaster' Expected Output: 'abeemrstw'
+
+
+function abcString(str) {
+    return str.split('').sort().join('');
+}
+
+
+console.log(abcString('webmaster'))
+
+
+
+
+
+
+// 
