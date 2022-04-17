@@ -917,11 +917,11 @@ function findEvenNums(num) {
 }
 
 
-console.log(findEvenNums(5))
-console.log(findEvenNums(10))
-console.log(evenNumbersInArr(findEvenNums(10)))
-console.log(evenNumbersInArr(findEvenNums(16)))
-console.log(evenNumbersInArr(findEvenNums(100)))
+// console.log(findEvenNums(5))
+// console.log(findEvenNums(10))
+// console.log(evenNumbersInArr(findEvenNums(10)))
+// console.log(evenNumbersInArr(findEvenNums(16)))
+// console.log(evenNumbersInArr(findEvenNums(100)))
 
 
 
@@ -939,9 +939,9 @@ function ascendingOrd(arr) {
     return true;
 }
 
-console.log(ascendingOrd([1, 2, 3, 4, 5, 6]))
-console.log(ascendingOrd([1, 2, 5, 4, 3, 6]))
-console.log(ascendingOrd([1, 2, 3, 4, 6, 6]))
+// console.log(ascendingOrd([1, 2, 3, 4, 5, 6]))
+// console.log(ascendingOrd([1, 2, 5, 4, 3, 6]))
+// console.log(ascendingOrd([1, 2, 3, 4, 6, 6]))
 
 
 
@@ -952,9 +952,9 @@ function largestEven2(arr) {
     return Math.max(...arr.filter(num => num % 2 === 0));
 }
 
-console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]))
-console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 4, 34, 16, 2, 1, 24]))
-console.log(largestEven2([1, 2, 3, 4, 5, 6, 1001, 1002, 1003, 10, 11, 13, 15, 16]))
+// console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]))
+// console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 4, 34, 16, 2, 1, 24]))
+// console.log(largestEven2([1, 2, 3, 4, 5, 6, 1001, 1002, 1003, 10, 11, 13, 15, 16]))
 
 
 
@@ -966,5 +966,24 @@ function replaceFirstDig(str) {
     return str.replace(/h/gi, '$')
 }
 
-console.log(replaceFirstDig('Hello'))
+// console.log(replaceFirstDig('Hello'))
 
+
+
+
+
+
+
+// Given a year, report if it is a leap year.
+
+function leapYear(num) {
+    return num % 4 === 0;
+}
+
+console.log(leapYear(2014))
+console.log(leapYear(2015))
+console.log(leapYear(2016))
+console.log(leapYear(2017))
+console.log(leapYear(2018))
+console.log(leapYear(2019))
+console.log(leapYear(2020))
