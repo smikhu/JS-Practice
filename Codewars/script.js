@@ -1152,3 +1152,36 @@ function countCoins2(amount, coins=[25, 10, 5, 2, 1]) {
 
 console.log(countCoins2(46))
 console.log(countCoins2(83))
+
+
+
+
+function countCoins3(money){
+    let coins = [25, 10, 5, 2, 1];
+    let result = [];
+
+    for (let i=0; i<coins.length; i++) {
+        while(money>=coins[i]){
+            result.push(coins[i]);
+            money = money-coins[i];
+        }
+    }
+    return result
+}
+
+console.log(countCoins3(45))
+console.log(countCoins3(83))
+
+
+
+
+
+// Write a JS function to extract unique characters from a string.
+
+const getUniqueChars = (str) =>
+    str.split('').filter(
+        (item, index, arr) => 
+            arr.slice(index + 1).indexOf(item) === -1
+)
+
+console.log(getUniqueChars('aaabbbccc'))
