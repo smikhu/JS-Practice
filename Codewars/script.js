@@ -1129,3 +1129,26 @@ function countCoins(money, coins = [25, 10, 5, 2, 1]) {
 console.log(countCoins(46))
 console.log(countCoins(83))
 
+
+
+
+function countCoins2(amount, coins=[25, 10, 5, 2, 1]) {
+    let totalCoins = [];
+    let j = 0;
+
+    while(amount > 0) {
+        if(amount >= coins[j]) {
+            amount -= coins[j];
+            totalCoins.push(coins[j])
+        }
+
+        if(amount < coins[j]) {
+            j++
+        }
+    }
+    return totalCoins
+}
+
+
+console.log(countCoins2(46))
+console.log(countCoins2(83))
