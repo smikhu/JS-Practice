@@ -942,3 +942,16 @@ function ascendingOrd(arr) {
 console.log(ascendingOrd([1, 2, 3, 4, 5, 6]))
 console.log(ascendingOrd([1, 2, 5, 4, 3, 6]))
 console.log(ascendingOrd([1, 2, 3, 4, 6, 6]))
+
+
+
+// Write a JS program to get the largest even number from an array of integers.
+
+
+function largestEven2(arr) {
+    return Math.max(...arr.filter(num => num % 2 === 0));
+}
+
+console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]))
+console.log(largestEven2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 4, 34, 16, 2, 1, 24]))
+console.log(largestEven2([1, 2, 3, 4, 5, 6, 1001, 1002, 1003, 10, 11, 13, 15, 16]))
