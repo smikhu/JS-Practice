@@ -1023,3 +1023,25 @@ jkl,mno,pqr
 stu,vwx,yza`
 
 console.log(parseCSV(str))
+
+
+
+
+
+
+// Write a JS program to generate a random hexadecimal color code.
+
+function getRandomHexNumber() {
+    return Math.floor(Math.random() * 16).toString(16)
+}
+
+console.log(getRandomHexNumber())
+console.log(getRandomHexNumber())
+console.log(getRandomHexNumber())
+
+
+function getRandomHexColor() {
+    return '#' + Array.from({length: 6}).map(getRandomHexNumber).join('')
+}
+
+console.log(getRandomHexColor())
