@@ -1106,3 +1106,26 @@ console.log(countLetters('webmaster'))
 console.log(countLetters('javascript'))
 console.log(countLetters('zombie'))
 console.log(countLetters('hello'))
+
+
+
+
+// Write a JS function to convert an amount to coins. Exmaple input: 46 and possible coins 25, 10, 5, 2, 1  Output: 25, 10, 10, 1
+
+
+function countCoins(money, coins = [25, 10, 5, 2, 1]) {
+    const totalCoins = [];
+    for (let i = 0; i < coins.length; i += 1) {
+        const thisCoinNum = Math.floor(money / coins[i]);
+        for (let y = 0; y < thisCoinNum; y += 1) {
+            totalCoins.push(coins[i])
+        }
+        money -= coins[i] * thisCoinNum;
+    }
+    return totalCoins
+}
+
+
+console.log(countCoins(46))
+console.log(countCoins(83))
+
