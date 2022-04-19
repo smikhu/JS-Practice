@@ -68,3 +68,22 @@ console.log(twoSum2([2, 7, 11, 15], 9))
 console.log(twoSum2([2, 7, 11, 15], 22))
 console.log(twoSum2([2, 7, 11, 15], 26))
 console.log(twoSum2([2, 7, 11, 15], 17))
+
+
+
+const twoSum3 = function(nums, target) {
+    let map = {};
+    for(let i = 0; i < nums.length; i++) {
+        if(map[nums[i]] === undefined) {
+            map[target-nums[i]] = i;
+        } else {
+            return [map[nums[i]], i]
+        }
+    }
+}
+
+
+console.log(twoSum3([2, 7, 11, 15], 9))
+console.log(twoSum3([2, 7, 11, 15], 22))
+console.log(twoSum3([2, 7, 11, 15], 26))
+console.log(twoSum3([2, 7, 11, 15], 17))
