@@ -99,11 +99,27 @@ function duplicate(nums) {
     let map = {};
     for(let i = 0; i < nums.length; i++) {
         if(map[nums[i]] === undefined) {
-            map[nums[i]] = false
+            map[nums[i]] = 'haha'
         } else {
             return true;
         }
     }
+    return false;
 }
 
-console.log(duplicate([1, 2, 3, 4, 5, 6, 7, 8, 7]))
+console.log(duplicate([1, 2, 3, 4, 5, 6, 7, 8, 20, 21, 22, 23, 1]))
+
+
+
+
+
+function duplicate2(nums) {
+    nums.sort((a, b) => {return b-a});
+    for(let i = 0; i < nums.length; i++) {
+        if(i > 0 && nums[i-1] === nums[i]) return true
+    }
+    return false;
+}
+
+
+console.log(duplicate2([1, 2, 3, 4, 5, 6, 7, 8, 20, 21, 22, 23]))
