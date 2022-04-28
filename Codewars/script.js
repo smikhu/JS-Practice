@@ -1084,9 +1084,9 @@ function abcString(str) {
 }
 
 
-console.log(abcString('webmaster'))
-console.log(abcString('javascript'))
-console.log(abcString('zombie'))
+// console.log(abcString('webmaster'))
+// console.log(abcString('javascript'))
+// console.log(abcString('zombie'))
 
 
 
@@ -1102,10 +1102,10 @@ function countLetters(str, letters = ['a', 'e', 'i', 'o', 'u']) {
 
 
 
-console.log(countLetters('webmaster'))
-console.log(countLetters('javascript'))
-console.log(countLetters('zombie'))
-console.log(countLetters('hello'))
+// console.log(countLetters('webmaster'))
+// console.log(countLetters('javascript'))
+// console.log(countLetters('zombie'))
+// console.log(countLetters('hello'))
 
 
 
@@ -1126,8 +1126,8 @@ function countCoins(money, coins = [25, 10, 5, 2, 1]) {
 }
 
 
-console.log(countCoins(46))
-console.log(countCoins(83))
+// console.log(countCoins(46))
+// console.log(countCoins(83))
 
 
 
@@ -1150,8 +1150,8 @@ function countCoins2(amount, coins=[25, 10, 5, 2, 1]) {
 }
 
 
-console.log(countCoins2(46))
-console.log(countCoins2(83))
+// console.log(countCoins2(46))
+// console.log(countCoins2(83))
 
 
 
@@ -1169,8 +1169,8 @@ function countCoins3(money){
     return result
 }
 
-console.log(countCoins3(45))
-console.log(countCoins3(83))
+// console.log(countCoins3(45))
+// console.log(countCoins3(83))
 
 
 
@@ -1184,7 +1184,7 @@ const getUniqueChars = (str) =>
             arr.slice(index + 1).indexOf(item) === -1
 )
 
-console.log(getUniqueChars('aaabbbccc'))
+// console.log(getUniqueChars('aaabbbccc'))
 
 
 
@@ -1192,8 +1192,8 @@ console.log(getUniqueChars('aaabbbccc'))
 const getUniqueChars2 = (str) =>
         [... new Set(str.split(''))];
 
-console.log(getUniqueChars2('aaabbbccc'))
-console.log(getUniqueChars2('aaabbbccceeeddddcccaaabb'))
+// console.log(getUniqueChars2('aaabbbccc'))
+// console.log(getUniqueChars2('aaabbbccceeeddddcccaaabb'))
 
 
 
@@ -1209,4 +1209,14 @@ const getNonRepeatedChars = (str) =>
                 arr.filter(arrItem => arrItem === item).length === 1  
         );
 
-console.log(getNonRepeatedChars('abacddbec'))
+// console.log(getNonRepeatedChars('abacddbec'))
+
+
+
+//  Write a JS function that returns the values of an array that are not odd. All values in the array will be integers. Return the good values in the order they are given.
+
+function noOdds(values) {
+    return values.filter(val => val % 2 === 0);
+}
+
+console.log(noOdds([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
