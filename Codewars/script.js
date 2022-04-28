@@ -1220,3 +1220,19 @@ function noOdds(values) {
 }
 
 console.log(noOdds([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+
+
+function noOdds2(values) {
+    const arr = [];
+    for(let i = 0; i < values.length; i++) {
+        if( values[i] % 2 === 0) {
+            arr.push(values[i])
+        }
+    }
+    return arr
+}
+
+console.log(noOdds2([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+console.log(noOdds2([0, 1, 2, 3, 5, 6, 7, 8, 9, 10]))
+console.log(noOdds2([0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 231, 531, 221, 444]))
