@@ -29,7 +29,7 @@ document.body.appendChild(link);
   A sentence can be assumed to be a string of text terminated with a period (.)
 */
 
-
+paragraph.innerHTML = paragraph.innerHTML.split(/\.[^\.|<]/).join('.</p><p>') + '</p>';
 
 /* 
   Exercise 04
