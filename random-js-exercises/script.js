@@ -38,6 +38,10 @@ paragraph.innerHTML = paragraph.innerHTML.split(/\.[^\.|<]/).join('.</p><p>') + 
   You can assume that all words are separated by one singular whitespace.
 */
 
+const wordCount = paragraph.innerText.split(' ').length;
+const wordCountElem = document.createElement('div');
+wordCountElem.innerText = `${wordCount} words`;
+document.body.insertBefore(wordCountElem, paragraph)
 
 /*
   Exercise 05
