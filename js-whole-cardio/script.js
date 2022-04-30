@@ -28,3 +28,29 @@ console.log(twoNum2(100, 37))
 console.log(twoNum2(63, 100))
 console.log(twoNum2(63, 3))
 console.log(twoNum2(23, 56))
+
+
+
+// Write a JS program to get the extension of a filename.
+
+const getFileExtension = (str) => {
+    return str.split('.')[1]
+}
+
+console.log(getFileExtension('index.html'))
+console.log(getFileExtension('styles.css'))
+console.log(getFileExtension('script.js'))
+
+
+const getFileExtension2 = (str) => {
+    return str.slice(str.lastIndexOf('.'))
+}
+
+console.log(getFileExtension2('index.html'))
+console.log(getFileExtension2('styles.css'))
+console.log(getFileExtension2('script.js'))
+console.log(getFileExtension2('webpack.config.jpeg'))
+
+
+
+// 
