@@ -95,7 +95,7 @@ console.log(addNew('New! Old! Offers'))
 
 
 const addNew2 = (str) => 
-    str.indexOf('New') === 0 ? str : `New ${str}`;
+    str.indexOf('New!') === 0 ? str : `New! ${str}`;
 
 
 console.log(addNew2('New! Offers'))
