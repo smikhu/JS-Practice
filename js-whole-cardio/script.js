@@ -74,3 +74,20 @@ const formatDate = (date = new Date()) => {
 }
 
 console.log(formatDate())
+
+
+
+// Write a JS program to create a new string adding "New!" in front of a given string. If the given string begins with "New!" already then return the original string.
+
+const addNew = (str) => {
+    if(str.indexOf('New!') === 0) {
+        return str
+    } else {
+        return `New! ${str}`
+    }
+}
+
+console.log(addNew('New! Offers'))
+console.log(addNew('Offers'))
+console.log(addNew('Old! Offers'))
+console.log(addNew('New! Old! Offers'))
