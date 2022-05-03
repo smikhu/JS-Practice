@@ -91,3 +91,14 @@ console.log(addNew('New! Offers'))
 console.log(addNew('Offers'))
 console.log(addNew('Old! Offers'))
 console.log(addNew('New! Old! Offers'))
+
+
+
+const addNew2 = (str) => 
+    str.indexOf('New') === 0 ? str : `New ${str}`;
+
+
+console.log(addNew2('New! Offers'))
+console.log(addNew2('Offers'))
+console.log(addNew2('Old! Offers'))
+console.log(addNew2('New! Old! Offers'))
