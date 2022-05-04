@@ -104,6 +104,12 @@ const addNew2 = (str) =>
 // console.log(addNew2('New! Old! Offers'))
 
 
+
+
+
+// REVERSING A STRING
+
+
 function reverseString(str) {
     return str.split('').reverse().join('')
 }
@@ -194,3 +200,35 @@ function reverseString7(str) {
 
 console.log(reverseString7('hello'))
 console.log(reverseString7('crocodile'))
+
+
+
+
+function reverseString8(str) {
+    return str.split('').reduce((revString, char) => char + revString
+    , '');
+}
+
+
+console.log(reverseString8('hello'))
+console.log(reverseString8('crocodile'))
+
+
+
+
+
+// IS PALINDROME
+
+
+function isPalindrome(str) {
+    let newStr = str.split('').reverse().join('')
+    if(newStr === str) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(isPalindrome('racecar'))
+console.log(isPalindrome('crocodile'))
+console.log(isPalindrome('eye'))
