@@ -232,3 +232,35 @@ function isPalindrome(str) {
 console.log(isPalindrome('racecar'))
 console.log(isPalindrome('crocodile'))
 console.log(isPalindrome('eye'))
+
+
+
+
+function isPalindrome2(str) {
+    let newStr = str.split('').reverse().join('')
+
+    return newStr === str;
+}
+
+
+
+console.log(isPalindrome2('racecar'))
+console.log(isPalindrome2('crocodile'))
+console.log(isPalindrome2('eye'))
+
+
+
+
+
+// REVERSE AN INTEGER
+
+function reverseInt(int) {
+    const revString = int.toString().split('').reverse().join('')
+    
+    return parseInt(revString) * Math.sign(int);
+}
+
+
+console.log(reverseInt(521))
+console.log(reverseInt(12345))
+console.log(reverseInt(-12345))
