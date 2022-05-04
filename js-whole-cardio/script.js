@@ -169,3 +169,28 @@ function reverseString5(str) {
 
 console.log(reverseString5('hello'))
 console.log(reverseString5('crocodile'))
+
+
+
+
+function reverseString6(str) {
+    let revString = '';
+    str.split('').forEach(char => revString = char + revString);
+    return revString
+}
+
+console.log(reverseString6('hello'))
+console.log(reverseString6('crocodile'))
+
+
+
+
+function reverseString7(str) {
+    return str.split('').reduce(function (revString, char) {
+        return char + revString
+    }, '')
+}
+
+
+console.log(reverseString7('hello'))
+console.log(reverseString7('crocodile'))
