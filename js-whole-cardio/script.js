@@ -129,6 +129,7 @@ console.log(reverseString2('crocodile'))
 
 
 
+
 function reverseString3(str) {
     let revString = '';
     for(let i = 0; i <= str.length - 1; i++) {
@@ -140,3 +141,17 @@ function reverseString3(str) {
 
 console.log(reverseString3('hello'))
 console.log(reverseString3('crocodile'))
+
+
+
+
+function reverseString4(str) {
+    let revString = '';
+    for(let char of str) {
+        revString = char + revString
+    }
+    return revString
+}
+
+console.log(reverseString4('hello'))
+console.log(reverseString4('crocodile'))
