@@ -155,3 +155,17 @@ function reverseString4(str) {
 
 console.log(reverseString4('hello'))
 console.log(reverseString4('crocodile'))
+
+
+
+
+function reverseString5(str) {
+    let revString = '';
+    str.split('').forEach(function (char) {
+        revString = char + revString;
+    })
+    return revString
+}
+
+console.log(reverseString5('hello'))
+console.log(reverseString5('crocodile'))
