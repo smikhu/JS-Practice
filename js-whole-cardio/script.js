@@ -10,24 +10,24 @@ const twoNum = (num1, num2) => {
     }
 }
 
-console.log(twoNum(50, 50))
-console.log(twoNum(100, 50))
-console.log(twoNum(50, 100))
-console.log(twoNum(42, 32))
-console.log(twoNum(10, 1))
-console.log(twoNum(70, 30))
-console.log(twoNum(65, 33))
+// console.log(twoNum(50, 50))
+// console.log(twoNum(100, 50))
+// console.log(twoNum(50, 100))
+// console.log(twoNum(42, 32))
+// console.log(twoNum(10, 1))
+// console.log(twoNum(70, 30))
+// console.log(twoNum(65, 33))
 
 
 const twoNum2 = (num1, num2) => {
     return (num1 + num2 === 100 || num1 == 100 || num2 === 100 ? true : false)
 }
 
-console.log(twoNum2(63, 37))
-console.log(twoNum2(100, 37))
-console.log(twoNum2(63, 100))
-console.log(twoNum2(63, 3))
-console.log(twoNum2(23, 56))
+// console.log(twoNum2(63, 37))
+// console.log(twoNum2(100, 37))
+// console.log(twoNum2(63, 100))
+// console.log(twoNum2(63, 3))
+// console.log(twoNum2(23, 56))
 
 
 
@@ -37,19 +37,19 @@ const getFileExtension = (str) => {
     return str.split('.')[1]
 }
 
-console.log(getFileExtension('index.html'))
-console.log(getFileExtension('styles.css'))
-console.log(getFileExtension('script.js'))
+// console.log(getFileExtension('index.html'))
+// console.log(getFileExtension('styles.css'))
+// console.log(getFileExtension('script.js'))
 
 
 const getFileExtension2 = (str) => {
     return str.slice(str.lastIndexOf('.'))
 }
 
-console.log(getFileExtension2('index.html'))
-console.log(getFileExtension2('styles.css'))
-console.log(getFileExtension2('script.js'))
-console.log(getFileExtension2('webpack.config.jpeg'))
+// console.log(getFileExtension2('index.html'))
+// console.log(getFileExtension2('styles.css'))
+// console.log(getFileExtension2('script.js'))
+// console.log(getFileExtension2('webpack.config.jpeg'))
 
 
 
@@ -61,7 +61,7 @@ const moveCharsForward = (str) =>
     .map(char => String.fromCharCode(char.charCodeAt(0) + 1))
     .join('');
 
-console.log(moveCharsForward('abcde'))
+// console.log(moveCharsForward('abcde'))
 
 
 // Write a JS program to get the current date. expected output - mm-dd-yyyy
@@ -73,7 +73,7 @@ const formatDate = (date = new Date()) => {
     return `${days}/${months}/${years}`
 }
 
-console.log(formatDate())
+// console.log(formatDate())
 
 
 
@@ -87,10 +87,10 @@ const addNew = (str) => {
     }
 }
 
-console.log(addNew('New! Offers'))
-console.log(addNew('Offers'))
-console.log(addNew('Old! Offers'))
-console.log(addNew('New! Old! Offers'))
+// console.log(addNew('New! Offers'))
+// console.log(addNew('Offers'))
+// console.log(addNew('Old! Offers'))
+// console.log(addNew('New! Old! Offers'))
 
 
 
@@ -98,7 +98,15 @@ const addNew2 = (str) =>
     str.indexOf('New!') === 0 ? str : `New! ${str}`;
 
 
-console.log(addNew2('New! Offers'))
-console.log(addNew2('Offers'))
-console.log(addNew2('Old! Offers'))
-console.log(addNew2('New! Old! Offers'))
+// console.log(addNew2('New! Offers'))
+// console.log(addNew2('Offers'))
+// console.log(addNew2('Old! Offers'))
+// console.log(addNew2('New! Old! Offers'))
+
+
+function reverseString(str) {
+    return str.split('').reverse().join('')
+}
+
+
+console.log(reverseString('hello'))
