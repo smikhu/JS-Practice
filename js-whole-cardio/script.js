@@ -283,3 +283,21 @@ function capitalizeLetters(str) {
 }
 
 console.log(capitalizeLetters('i love javascript'))
+console.log(capitalizeLetters('i love javaSCRipt'))
+
+
+
+
+function capitalizeLetters2(str) {
+    return str
+    .toLowerCase()
+    .split(' ')
+    .map(function(word) {
+        return word[0].toUpperCase() + word.substr(1);
+    })
+    .join(' ')
+}   
+
+
+console.log(capitalizeLetters2('i love javascript'))
+console.log(capitalizeLetters2('i love javaSCRipt'))
