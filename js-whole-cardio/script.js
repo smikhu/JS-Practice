@@ -264,3 +264,22 @@ function reverseInt(int) {
 console.log(reverseInt(521))
 console.log(reverseInt(12345))
 console.log(reverseInt(-12345))
+
+
+
+
+
+// CAPITALIZING LETTERS
+
+
+function capitalizeLetters(str) {
+    const strArr = str.toLowerCase().split(' ');
+
+    for(let i = 0; i < strArr.length; i++) {
+        strArr[i] = strArr[i].substring(0, 1).toUpperCase() + strArr[i].substring(1)
+    }
+
+    return strArr.join(' ')
+}
+
+console.log(capitalizeLetters('i love javascript'))
