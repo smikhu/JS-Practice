@@ -367,7 +367,7 @@ function fizzBuzz() {
     }
 }
 
-console.log(fizzBuzz())
+// console.log(fizzBuzz())
 
 
 
@@ -405,6 +405,34 @@ console.log(longestWord('Helloo there, my name is Brad'))
 // ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
 // ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
 
+function chunkArray(arr, len) {
+    const chunkedArr = [];
+    let i = 0;
+
+    while(i < arr.length) {
+        chunkedArr.push(arr.slice(i, i + len));
+
+        i += len
+    }
+
+    return chunkedArr;
+}
+
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 3))
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2))
+
+
+
+
+function chunkArray2(arr, len) {
+
+}
+
+
+
+console.log(chunkArray2([1, 2, 3, 4, 5, 6, 7], 3))
+console.log(chunkArray2([1, 2, 3, 4, 5, 6, 7], 2))
 
 
 // CHALLENGE 3: FLATTEN ARRAY
