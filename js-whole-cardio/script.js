@@ -301,3 +301,15 @@ function capitalizeLetters2(str) {
 
 console.log(capitalizeLetters2('i love javascript'))
 console.log(capitalizeLetters2('i love javaSCRipt'))
+
+
+
+function capitalizeLetters3(str) {
+    return str.replace(/\b[a-z]/gi, function(char) {
+        return char.toUpperCase();
+    })
+}
+
+
+console.log(capitalizeLetters3('i love javascript'))
+console.log(capitalizeLetters3('i love javaSCRipt'))
