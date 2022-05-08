@@ -472,6 +472,17 @@ console.log(flattenArray2([[1, 2], [3, 4], [5, 6], [7]]))
 
 
 
+
+
+function flattenArray3(arrays) {
+    return [].concat(...arrays)
+}
+
+
+console.log(flattenArray3([[1, 2], [3, 4], [5, 6], [7]]))
+
+
+
 // CHALLENGE 4: ANAGRAM
 // Return true if anagram and false if not
 // ex. 'elbow' === 'below'
