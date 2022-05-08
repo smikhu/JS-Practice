@@ -452,6 +452,14 @@ console.log(chunkArray2([1, 2, 3, 4, 5, 6, 7], 2))
 // Take an array of arrays and flatten to a single array
 // ex. [[1, 2], [3, 4], [5, 6], [7]] = [1, 2, 3, 4, 5, 6, 7]
 
+function flattenArray(arrays) {
+    return arrays.reduce(function(a, b) {
+        return a.concat(b)
+    })
+}
+
+console.log(flattenArray([[1, 2], [3, 4], [5, 6], [7]]))
+
 
 
 // CHALLENGE 4: ANAGRAM
