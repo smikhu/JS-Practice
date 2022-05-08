@@ -563,3 +563,11 @@ function addAll2(...numbers) {
 }
 
 console.log(addAll2(2, 5, 6, 7, 5))
+
+
+
+function addAll3(...numbers) {
+    return numbers.reduce((acc, cur) => acc + cur)
+}
+
+console.log(addAll3(2, 5, 6, 7, 5, 10))
