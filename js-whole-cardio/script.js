@@ -534,3 +534,20 @@ function letterChanges(str) {
 console.log(letterChanges('Hello there'))
 console.log(letterChanges('Helloz therez'))
  
+
+
+
+// CHALLENGE 1 : ADD ALL NUMBERS
+
+function addAll() {
+    var args = Array.prototype.slice.call(arguments);
+    var total = 0;
+
+    for(i = 0; i < args.length; i++) {
+        total += args[i]
+    }
+    return total
+}
+
+
+console.log(addAll(2, 5, 6, 7))
