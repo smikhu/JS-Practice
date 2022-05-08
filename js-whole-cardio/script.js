@@ -551,3 +551,15 @@ function addAll() {
 
 
 console.log(addAll(2, 5, 6, 7))
+
+
+
+function addAll2(...numbers) {
+    let total = 0;
+    numbers.forEach(function(num) {
+        total += num
+    })
+    return total
+}
+
+console.log(addAll2(2, 5, 6, 7, 5))
