@@ -571,3 +571,34 @@ function addAll3(...numbers) {
 }
 
 console.log(addAll3(2, 5, 6, 7, 5, 10))
+
+
+
+
+
+// CHALLENGE 2 : SUM ALL PRIMES
+
+
+function sumAllPrimes(num) {
+    let total = 0;
+    
+    function checkForPrime(i) {
+        for (let j = 2; j < i; j++) {
+            if(i % j === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+
+
+    for (let i = 2; i <= num; i++) {
+        if(checkForPrime(i)) {
+            total += i;
+        }
+    }
+    return total;
+}
+
+console.log(sumAllPrimes(10))
