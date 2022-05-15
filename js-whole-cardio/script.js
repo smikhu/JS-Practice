@@ -622,3 +622,14 @@ function seekAndDestroy(arr) {
 
 console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6))
 console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6, 'hello'))
+
+
+
+
+function seekAndDestroy2(arr, ...rest) {
+    return arr.filter(val => !rest.includes(val))
+}
+
+
+console.log(seekAndDestroy2([2, 3, 4, 6, 6, 'hello'], 2, 6))
+console.log(seekAndDestroy2([2, 3, 4, 6, 6, 'hello'], 2, 6, 'hello'))
