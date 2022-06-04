@@ -835,3 +835,19 @@ function chunkArray11(arr, len) {
 
 // console.log(chunkArray11([1, 2, 3, 4, 5, 6, 7], 3))
 // console.log(chunkArray11([1, 2, 3, 4, 5, 6, 7], 2))
+
+
+
+
+// CHALLENGE 3: FLATTEN ARRAY
+// Take an array of arrays and flatten to a single array
+// ex. [[1, 2], [3, 4], [5, 6], [7]] = [1, 2, 3, 4, 5, 6, 7]
+
+
+function flattenArray10(arrays) {
+    return arrays.reduce(function(a, b) {
+        return a.concat(b)
+    })
+}
+
+console.log(flattenArray10([[1, 2], [3, 4], [5, 6], [7]]))
