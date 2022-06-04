@@ -809,3 +809,29 @@ function chunkArray10(arr, len) {
 
 // console.log(chunkArray10([1, 2, 3, 4, 5, 6, 7], 3))
 // console.log(chunkArray10([1, 2, 3, 4, 5, 6, 7], 2))
+
+
+
+
+
+function chunkArray11(arr, len) {
+    // init chunked arr
+    const chunkedArr = [];
+
+    // loop through arr
+    arr.forEach(function(val) {
+        // get last element
+        const last = chunkedArr[chunkedArr.length - 1]
+        
+        // check if last and if last length is equal to the chunk length
+        if (!last || last.length === len) {
+            chunkedArr.push([val])
+        } else {
+            last.push([val])
+        }
+    })
+    return chunkedArr
+}
+
+// console.log(chunkArray11([1, 2, 3, 4, 5, 6, 7], 3))
+// console.log(chunkArray11([1, 2, 3, 4, 5, 6, 7], 2))
