@@ -851,3 +851,11 @@ function flattenArray10(arrays) {
 }
 
 console.log(flattenArray10([[1, 2], [3, 4], [5, 6], [7]]))
+
+
+
+function flattenArray11(arrays) {
+    return [].concat.apply([], arrays)
+}
+
+console.log(flattenArray11([[1, 2], [3, 4], [5, 6], [7]]))
