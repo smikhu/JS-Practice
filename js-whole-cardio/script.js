@@ -877,5 +877,20 @@ function solution(str) {
     return str.split('').reverse().join('').toLowerCase();
   }
   
-  console.log(solution('Hello'))
+console.log(solution('Hello'))
   
+
+
+
+
+
+
+function even_or_odd(number) {
+    if(number % 2 === 0) {
+      return "Even"
+    } else {
+      return "Odd"
+    }
+  }
+  
+  console.log(even_or_odd(26))
