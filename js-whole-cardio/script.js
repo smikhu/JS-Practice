@@ -868,3 +868,14 @@ function flattenArray12(arrays) {
 }
 
 console.log(flattenArray12([[1, 2], [3, 4], [5, 6], [7]]))
+
+
+
+
+
+function solution(str) {
+    return str.split('').reverse().join('').toLowerCase();
+  }
+  
+  console.log(solution('Hello'))
+  
