@@ -893,4 +893,29 @@ function even_or_odd(number) {
     }
   }
   
-  console.log(even_or_odd(26))
+console.log(even_or_odd(26))
+
+
+
+
+
+
+
+function countSheeps(arrayOfSheep) {
+    let numberOfSheep = 0;
+    for (let i = 0; i < arrayOfSheep.length; i++) {
+      if (arrayOfSheep[i] === true) {
+        numberOfSheep += 1
+      }
+    }
+    return `There are ${numberOfSheep} sheeps in total`
+  }
+  
+  var array1 = [true,  true,  true,  false,
+    true,  true,  true,  true ,
+    true,  false, true,  false,
+    true,  false, false, true ,
+    true,  true,  true,  true ,
+    false, false, true,  true ];
+  
+console.log(countSheeps(array1))
