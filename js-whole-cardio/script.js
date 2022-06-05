@@ -919,3 +919,37 @@ function countSheeps(arrayOfSheep) {
     false, false, true,  true ];
   
 console.log(countSheeps(array1))
+
+
+
+
+
+
+
+
+
+function getCount(str) {
+    var vowelsCount = 0;
+    const splitting = str.split('')
+    console.log(splitting)
+      for(let i = 0; i < splitting.length; i++) {
+        switch(splitting[i]) {
+          case "a":
+          case "A":
+          case "e":
+          case "E":
+          case "i":
+          case "I":
+          case "o":
+          case "O":
+          case "u":
+          case "U":
+            vowelsCount++;
+            break;
+        }
+      }
+    
+    return vowelsCount;
+  }
+  
+  // console.log(getCount("abracadabra"))
