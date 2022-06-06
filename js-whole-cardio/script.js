@@ -1022,3 +1022,24 @@ function isDivisible(n, x, y) {
   
   // console.log(findSmallestInt([34, 15, 88, 2]))
   // console.log(findSmallestInt([34, -345, -1, 100]))
+
+
+
+
+
+  var summation = function (num) {
+    let sum = 0;
+    for (let i = 1; i <= num; i++) {
+      sum = sum + i
+      // console.log(i)
+      // console.log(sum)
+    }
+    return sum
+  }
+  
+  // function summation(num) {
+  //   return num * (num + 1) / 2
+    
+  // }
+  
+  // console.log(summation(8))
