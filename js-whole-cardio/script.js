@@ -989,3 +989,20 @@ function isDivisible(n, x, y) {
   // console.log(isDivisible(12,3,4))
   // console.log(isDivisible(8,3,4))
   // console.log(isDivisible(48,3,4))
+
+
+
+
+  function makeNegative(num) {
+    if(num <= 0) {
+      return num * 1
+    } else {
+      return num * -1
+    }
+  }
+  
+  // console.log(makeNegative(1))
+  // console.log(makeNegative(-5))
+  // console.log(makeNegative(0))
+  // console.log(makeNegative(0.12))
+  
