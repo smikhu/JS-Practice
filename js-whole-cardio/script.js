@@ -1006,3 +1006,19 @@ function isDivisible(n, x, y) {
   // console.log(makeNegative(0))
   // console.log(makeNegative(0.12))
   
+
+
+
+
+
+
+  function findSmallestInt(args) {
+    const order = args.sort((a, b) => a - b)
+    return order[0]
+    
+    // return Math.min(...args)
+  }
+  
+  
+  // console.log(findSmallestInt([34, 15, 88, 2]))
+  // console.log(findSmallestInt([34, -345, -1, 100]))
