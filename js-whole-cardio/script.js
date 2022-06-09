@@ -1079,3 +1079,17 @@ function isDivisible(n, x, y) {
   };
   
   // console.log(rps("paper", "scissors"))
+
+
+
+
+  function removeChar(str){
+    let splitting = str.split('')
+    splitting.pop()
+    splitting.shift()
+    return splitting.join('')
+   };
+  
+   
+  // console.log(removeChar("Steven")) 
+  
