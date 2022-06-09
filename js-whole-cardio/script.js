@@ -1043,3 +1043,21 @@ function isDivisible(n, x, y) {
   // }
   
   // console.log(summation(8))
+
+
+
+
+  function getAverage2(marks) {
+    let total = 0;
+    for(let i = 0; i < marks.length; i++) {
+      total = total + marks[i]
+    }
+  
+    return Math.floor(total / marks.length);
+  }
+  
+  
+  // console.log(getAverage2([2, 2, 2, 2]))
+  // console.log(getAverage2([1, 2, 3, 4, 5]))
+  // console.log(getAverage2([1, 1, 1, 1, 1, 1, 1, 2]))
+  
