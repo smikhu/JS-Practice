@@ -1061,3 +1061,21 @@ function isDivisible(n, x, y) {
   // console.log(getAverage2([1, 2, 3, 4, 5]))
   // console.log(getAverage2([1, 1, 1, 1, 1, 1, 1, 2]))
   
+
+
+
+  const rps = (p1, p2) => {
+    if(p1 === p2) {
+      return "Draw!"
+    } else if (p1 === "rock" && p2 === "scissors") {
+      return "Player 1 wins!"
+    } else if (p1 === "scissors" && p2 === "paper") {
+      return "Player 1 wins!"
+    } else if (p1 === "paper" && p2 === "rock") {
+      return "Player 1 wins!"
+    } else {
+      return "Player 2 wins!"
+    }
+  };
+  
+  // console.log(rps("paper", "scissors"))
