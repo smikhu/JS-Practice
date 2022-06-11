@@ -1131,3 +1131,19 @@ function isDivisible(n, x, y) {
   // console.log(basicOp('-', 15, 18))
   // console.log(basicOp('*', 5, 5))
   // console.log(basicOp('/', 49, 7))
+
+
+
+
+
+  function repeatStr (n, s) {
+    let starterString = ''
+    for(let i = 0; i < n; i++) {
+      starterString = starterString + s
+    }
+    return starterString
+  }
+  
+  
+  console.log(repeatStr(6, 'I'))
+  console.log(repeatStr(5, 'Hello'))
