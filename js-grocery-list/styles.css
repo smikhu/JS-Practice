@@ -48,6 +48,10 @@ body {
     font-size: 2rem;
 }
 
+#pencil {
+    cursor: pointer;
+}
+
 @media(max-width:480px) {
     .groceries h1 {
         font-size: 2rem;
