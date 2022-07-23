@@ -1268,7 +1268,7 @@ console.log(orders.filter(order => order.customerId === '234' && !order.delivere
 
 
 // 2) Create a new property on each order with the total price of items ordered.
-
+console.log(orders.map(order => ({...order, orderTotal: order.items.reduce((acc, item) => acc + item.price, 0)})))
 
 // 3) Have all the orders been delivered?
 
