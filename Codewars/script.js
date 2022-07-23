@@ -1271,7 +1271,7 @@ console.log(orders.filter(order => order.customerId === '234' && !order.delivere
 console.log(orders.map(order => ({...order, orderTotal: order.items.reduce((acc, item) => acc + item.price, 0)})))
 
 // 3) Have all the orders been delivered?
-
+console.log(orders.every(order => order.delivered))
 
 // 4) Has the customer with ID '123' made any orders?
 
