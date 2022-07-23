@@ -1277,3 +1277,4 @@ console.log(orders.every(order => order.delivered))
 console.log(orders.some(order => order.customerId === '123'))
 
 // 5) Have any products with an id of 123 been sold?
+console.log(orders.reduce((acc, order) => acc + order.items.reduce((acc, item) => acc + (item.productId === '123'), 0), 0))
