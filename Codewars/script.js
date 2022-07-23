@@ -1274,6 +1274,6 @@ console.log(orders.map(order => ({...order, orderTotal: order.items.reduce((acc,
 console.log(orders.every(order => order.delivered))
 
 // 4) Has the customer with ID '123' made any orders?
-
+console.log(orders.some(order => order.customerId === '123'))
 
 // 5) Have any products with an id of 123 been sold?
