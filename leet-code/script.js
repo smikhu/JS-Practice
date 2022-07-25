@@ -128,33 +128,45 @@ function duplicate2(nums) {
 
 
 
-// You are given an array prices where prices[i] is the price of a given stock on the ith day.
-
-// You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-
-// Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
- 
+// Given a 2D grid map of "1's"(land) and "0's"(water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
 // Example 1:
+// Input: 
+// 11110
+// 11010
+// 11000
+// 00000
 
-// Input: prices = [7,1,5,3,6,4]
-// Output: 5
-// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-// Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+// Output: 1
+
 // Example 2:
+// Input: 
+// 11000
+// 11000
+// 00100
+// 00011
 
-// Input: prices = [7,6,4,3,1]
-// Output: 0
-// Explanation: In this case, no transactions are done and the max profit = 0.
- 
+// Output: 3
 
-// Constraints:
+const numIslands = (grid) => {
+    let countIslands = 0;
+    for (let rowIndex in grid) {
+        for (let colIndex in grid[rowIndex]) {
+            if (grid[rowIndex][colIndex] === '1') {
+                countIslands++;
 
-// 1 <= prices.length <= 105
-// 0 <= prices[i] <= 104
+            }
+        }
+    }
+    return countIslands;
+};
 
+const teraform = (rowIn, colIn, grid) => {
+    if (grid[rowIn] === undefined || grid[rowIn][colIn] === undefined || grid[rowIn][colIn] === '0') return;
+    grid[rowIn][colIn] = '0'
 
- function maxProfit(prices) {
-     
- }
+    teraform(rowIn+1, colIn, grid);
+    teraform(rowIn-1, colIn, grid);
+    teraform(rowIn, colIn+1, grid);
+    teraform(rowIn, colIn-1, grid);
+}
