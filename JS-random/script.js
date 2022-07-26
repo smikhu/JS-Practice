@@ -108,15 +108,47 @@ const companyNames2 = companies.map(company => `${company.name} lasted from ${co
 
 const squareRoot = ages.map(age => Math.sqrt(age));
 
-console.log(squareRoot)
+// console.log(squareRoot)
 
 const agesTimesTwo = ages.map(age => age * 2);
 
-console.log(agesTimesTwo)
+// console.log(agesTimesTwo)
 
 const ageMap = ages.map(age => Math.sqrt(age)).map(age => age * 2);
 
-console.log(ageMap)
+// console.log(ageMap)
+
+
+
+
+
 
 // sort
+const sortedCompanies = companies.sort(function(c1, c2) {
+    if(c1.start > c2.start) {
+        return 1;
+    } else {
+        return -1;
+    }
+})
+
+// console.log(sortedCompanies)
+
+
+const sortedCompanies2 = companies.sort((c1, c2) => (c1.start > c2.start ? 1 : -1));
+
+// console.log(sortedCompanies2)
+
+const sortAges = ages.sort(function(a1, a2) {
+    return a1 - a2;
+})
+
+console.log(sortAges)
+
+
+const sortAges2 = ages.sort((a, b) => a - b);
+
+console.log(sortAges2)
+
+
 // reduce
