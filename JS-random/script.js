@@ -204,12 +204,12 @@ const characters = [
 
 const sortByMass = characters.sort((a, b) => a.mass - b.mass);
 
-console.log(sortByMass)
+// console.log(sortByMass)
 
 
 const sortByHeight = characters.sort((a, b) => a.height - b.height);
 
-console.log(sortByHeight);
+// console.log(sortByHeight);
 
 
 const sortByName = characters.sort((a, b) => {
@@ -220,7 +220,7 @@ const sortByName = characters.sort((a, b) => {
     }
 })
 
-console.log(sortByName)
+// console.log(sortByName)
 
 
 const sortByGender = characters.sort((a, b) => {
@@ -231,7 +231,7 @@ const sortByGender = characters.sort((a, b) => {
     }
 })
 
-console.log(sortByGender)
+// console.log(sortByGender)
 
 
 
@@ -239,7 +239,7 @@ let list = ['Steven', 'Sarah', 'Alex', 'David', 'Rudi', 'Imaldo', 'Stavri', 'Ste
 
 list.sort();
 
-console.log(list)
+// console.log(list)
 
 
 
@@ -263,9 +263,78 @@ function compare(a, b) {
 
 vals.sort(compare)
 
-console.log(vals)
+// console.log(vals)
 
 
 const finalResults = vals.sort((a, b) => a.z - b.z);
 
-console.log(finalResults);
+// console.log(finalResults);
+
+
+const numbers = [2, 5, 100, 4];
+
+const sortedNumbers = numbers.sort((a, b) => {
+    return a - b
+})
+
+// console.log(sortedNumbers)
+
+
+const items = [
+    { name: 'Bike', price: 100},
+    { name: 'TV', price: 200},
+    { name: 'Album', price: 10},
+    { name: 'Book', price: 5},
+    { name: 'Phone', price: 500},
+    { name: 'Computer', price: 1000},
+    { name: 'Keyboard', price: 25},
+];
+
+
+const lessThan100 = items.filter(item => item.price <= 100);
+
+console.log(lessThan100)
+
+
+const everyItemName = items.map(item => item.name);
+
+console.log(everyItemName)
+
+const foundItem = items.find(item => item.name === 'Computer');
+
+console.log(foundItem)
+
+items.forEach(item => console.log(item.name));
+
+const hasInexpensiveItems = items.some(item => item.price > 1250);
+
+console.log(hasInexpensiveItems)
+
+const hasInexpensiveItems2 = items.every(item => item.price <= 1000);
+
+console.log(hasInexpensiveItems2)
+
+
+
+
+
+let sum = 0;
+
+for(let i = 0; i < items.length; i++) {
+    sum += items[i].price
+}
+
+console.log(sum)
+
+
+const totalSum = items.reduce((currentTotal, item) => {
+    return currentTotal + item.price
+}, 0)
+
+console.log(totalSum)
+
+const numberedItems = [1, 2, 3, 4, 5];
+
+const includesTwo = numberedItems.includes(2);
+
+console.log(includesTwo);
