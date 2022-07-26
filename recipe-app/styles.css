@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mobile-container {
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 0 10px 2px #3333331a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+header input {
+  background-color: #aaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+header button {
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.fav-container {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(233, 199, 255);
+}
+
+.fav-meals {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  overflow: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fav-meals li {
+  margin: 5px;
+  width: 75px;
+}
+
+.fav-meals li img {
+  border: 2px solid #ffffff;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px gray;
+}
+
+.fav-meals li span {
+  font-size: 0.9rem;
+}
+
+.meal {
+  margin: 10px;
+  box-shadow: 0 0 10px 2px gray;
+  border-radius: 3px;
+}
+
+.meal-header {
+}
+
+.meal-header img {
+}
+
+.meal-body {
+}
