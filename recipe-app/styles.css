@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   background: #bdc3c7;
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50, #bdc3c7);
@@ -38,6 +39,7 @@ header input {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 3px;
+  font-family: inherit;
 }
 
 header button {
@@ -49,7 +51,7 @@ header button {
 }
 
 .fav-container {
-  padding: 1rem;
+  padding: 0.25rem 1rem;
   text-align: center;
   background-color: rgb(233, 199, 255);
 }
@@ -78,20 +80,54 @@ header button {
 }
 
 .fav-meals li span {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .meal {
-  margin: 10px;
+  margin: 1.5rem;
   box-shadow: 0 0 10px 2px gray;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 .meal-header {
+  position: relative;
+}
+
+.meal-header .random {
+  position: absolute;
+  top: 1rem;
+  background-color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .meal-header img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.meal-body h4 {
+  margin: 0;
+}
+
+.meal-body .fav-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.meal-body .fav-btn.active {
+  color: rebeccapurple;
 }
