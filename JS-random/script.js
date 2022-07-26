@@ -18,10 +18,77 @@ for (let i = 0; i < companies.length; i++) {
 }
 
 companies.forEach(function (company, index, companies) {
-//   console.log(company);
+  //   console.log(company);
 });
 
+
+
+
+
+
+
 // filter
+const twentyOneOrOlder = [];
+for (let i = 0; i < ages.length; i++) {
+  if (ages[i] >= 21) {
+    twentyOneOrOlder.push(ages[i]);
+  }
+}
+
+// console.log(twentyOneOrOlder)
+
+const twentyOneOrOlder2 = ages.filter(function (age, index, ages) {
+  if (age >= 21) {
+    return true;
+  }
+});
+
+// console.log(twentyOneOrOlder2);
+
+
+const twentyOneOrOlder3 = ages.filter(age => age >= 21);
+
+// console.log(twentyOneOrOlder3)
+
+
+const retailCompanies = companies.filter(function(company, index, companies) {
+    if(company.category === 'Retail') {
+        return true;
+    }
+})
+
+// console.log(retailCompanies)
+
+
+const retailCompanies2 = companies.filter(company => company.category === 'Retail');
+
+// console.log(retailCompanies2)
+
+
+const eightiesCompanies = companies.filter(function(company) {
+    if(company.start >= '1980' && company.start <= '1989') {
+        return true;
+    }
+})
+
+console.log(eightiesCompanies)
+
+const eightiesCompanies2 = companies.filter(company => company.start >= '1980' && company.start <= '1989');
+
+console.log(eightiesCompanies2)
+
+
+const lastedTenYears = companies.filter(function(company) {
+    if(company.end - company.start >= 10) {
+        return true;
+    }
+})
+
+console.log(lastedTenYears)
+
+const lastedTenYears2 = companies.filter(company => (company.end - company.start >= 10));
+
+console.log(lastedTenYears2)
 
 // map
 // sort
