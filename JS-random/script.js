@@ -232,3 +232,40 @@ const sortByGender = characters.sort((a, b) => {
 })
 
 console.log(sortByGender)
+
+
+
+let list = ['Steven', 'Sarah', 'Alex', 'David', 'Rudi', 'Imaldo', 'Stavri', 'Stevel', 'amanda']
+
+list.sort();
+
+console.log(list)
+
+
+
+let vals = [{
+    x: 2,
+    y: 10,
+    z: 25
+}, {
+    x: 5,
+    y: 6,
+    z: 16
+}, {
+    x: 7,
+    y: 7,
+    z: 21
+}];
+
+function compare(a, b) {
+    return a.z - b.z
+}
+
+vals.sort(compare)
+
+console.log(vals)
+
+
+const finalResults = vals.sort((a, b) => a.z - b.z);
+
+console.log(finalResults);
