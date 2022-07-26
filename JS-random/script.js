@@ -156,9 +156,40 @@ const sortAges2 = ages.sort((a, b) => a - b);
 
 // reduce
 
+let ageSum = 0;
+
+for(let i = 0; i < ages.length; i++) {
+    ageSum += ages[i]
+};
+
+// console.log(ageSum)
 
 
+const ageSumTotal = ages.reduce((currentTotal, age) => {
+    return currentTotal + age
+}, 0);
 
+// console.log(ageSumTotal)
+
+const ageSumTotal2 = ages.reduce((total, age) => total + age, 0);
+
+// console.log(ageSumTotal2)
+
+
+const companiesTotal = companies.reduce((total, company) => company.end - company.start + total, 0);
+
+// console.log(companiesTotal)
+
+
+// Combine Methods
+
+const combined = ages
+    .map(age => age * 2)
+    .filter(age => age >= 40)
+    .sort((a, b) => a - b)
+    .reduce((total, age) => total + age, 0)
+
+console.log(combined)
 
 
 
