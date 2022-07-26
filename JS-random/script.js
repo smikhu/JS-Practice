@@ -71,11 +71,11 @@ const eightiesCompanies = companies.filter(function(company) {
     }
 })
 
-console.log(eightiesCompanies)
+// console.log(eightiesCompanies)
 
 const eightiesCompanies2 = companies.filter(company => company.start >= '1980' && company.start <= '1989');
 
-console.log(eightiesCompanies2)
+// console.log(eightiesCompanies2)
 
 
 const lastedTenYears = companies.filter(function(company) {
@@ -84,12 +84,39 @@ const lastedTenYears = companies.filter(function(company) {
     }
 })
 
-console.log(lastedTenYears)
+// console.log(lastedTenYears)
 
 const lastedTenYears2 = companies.filter(company => (company.end - company.start >= 10));
 
-console.log(lastedTenYears2)
+// console.log(lastedTenYears2)
+
+
+
+
+
 
 // map
+const companyNames = companies.map(function(company) {
+    return `${company.name} lasted from ${company.start} to ${company.end}`;
+})
+
+// console.log(companyNames)
+
+const companyNames2 = companies.map(company => `${company.name} lasted from ${company.start} to ${company.end}`)
+
+// console.log(companyNames2)
+
+const squareRoot = ages.map(age => Math.sqrt(age));
+
+console.log(squareRoot)
+
+const agesTimesTwo = ages.map(age => age * 2);
+
+console.log(agesTimesTwo)
+
+const ageMap = ages.map(age => Math.sqrt(age)).map(age => age * 2);
+
+console.log(ageMap)
+
 // sort
 // reduce
