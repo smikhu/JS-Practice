@@ -404,4 +404,39 @@ let day = 'Friday'
             break;    
     }
 
-// console.log(day)
+
+
+
+
+
+
+function solution(str) {
+    // let split = str.split('')
+    // console.log(split)
+    // let reverse = split.reverse()
+    // console.log(reverse)
+    // let complete = reverse.join('')
+    // return complete
+
+    return str.split('').reverse().join('')
+}
+
+console.log(solution('world'))
+
+const solution2 = (str) => str.split('').reverse().join('');
+
+console.log(solution2('elephant'))
+
+
+const solution3 = (str) => {
+    const splitting = [...str];
+    const reversing = splitting.reverse();
+    const final = reversing.join('');
+    return final
+}
+
+console.log(solution3('giraffe'))
+
+const solution4 = str => [...str].reverse().join('');
+
+console.log(solution4('monkey'))
