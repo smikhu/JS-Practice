@@ -455,3 +455,28 @@ console.log(evenOrOdd(6))
 const evenOrOdd2 = num => num % 2 === 0 ? 'Even' : 'Odd'
 
 console.log(evenOrOdd2(7))
+
+
+
+
+
+
+
+const arrayOfSheep = (sheeps) => {
+    let countedSheep = 0;
+
+    sheeps.filter((sheep) => {
+        if(sheep === true) {
+            countedSheep++
+        }
+    })
+    return countedSheep;
+}
+
+
+console.log(arrayOfSheep([true,  true,  true,  false,
+    true,  true,  true,  true ,
+    true,  false, true,  false,
+    true,  false, false, true ,
+    true,  true,  true,  true ,
+    false, false, true,  true ]))
