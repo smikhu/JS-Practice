@@ -379,30 +379,30 @@ const includesTwo = numberedItems.includes(2);
 // Fri - 9AM
 // Sat - Sun - 8AM
 
-let day = 'Friday'
-    switch(day) {
-        case 'Sunday':
-            console.log("Wake up, it's 8 AM!")
-            break;
-        case 'Monday':
-            console.log("Wake up, it's 7 AM!")
-            break;
-        case 'Tuesday':
-            console.log("Wake up, it's 4 AM!")
-            break;
-        case 'Wednesday':
-            console.log("Wake up, it's 4 AM!")
-            break;
-        case 'Thursday':
-            console.log("Wake up, it's 4 AM!")
-            break;
-        case 'Friday':
-            console.log("Wake up, it's 9 AM!")
-            break;
-        case 'Saturday':
-            console.log("Wake up, it's 8 AM!")
-            break;    
-    }
+// let day = 'Friday'
+//     switch(day) {
+//         case 'Sunday':
+//             console.log("Wake up, it's 8 AM!")
+//             break;
+//         case 'Monday':
+//             console.log("Wake up, it's 7 AM!")
+//             break;
+//         case 'Tuesday':
+//             console.log("Wake up, it's 4 AM!")
+//             break;
+//         case 'Wednesday':
+//             console.log("Wake up, it's 4 AM!")
+//             break;
+//         case 'Thursday':
+//             console.log("Wake up, it's 4 AM!")
+//             break;
+//         case 'Friday':
+//             console.log("Wake up, it's 9 AM!")
+//             break;
+//         case 'Saturday':
+//             console.log("Wake up, it's 8 AM!")
+//             break;    
+//     }
 
 
 
@@ -421,11 +421,11 @@ function solution(str) {
     return str.split('').reverse().join('')
 }
 
-console.log(solution('world'))
+// console.log(solution('world'))
 
 const solution2 = (str) => str.split('').reverse().join('');
 
-console.log(solution2('elephant'))
+// console.log(solution2('elephant'))
 
 
 const solution3 = (str) => {
@@ -435,8 +435,23 @@ const solution3 = (str) => {
     return final
 }
 
-console.log(solution3('giraffe'))
+// console.log(solution3('giraffe'))
 
 const solution4 = str => [...str].reverse().join('');
 
-console.log(solution4('monkey'))
+// console.log(solution4('monkey'))
+
+
+const evenOrOdd = (num) => {
+    if(num % 2 === 0) {
+        return "Even"
+    } else {
+        return "Odd"
+    }
+}
+
+console.log(evenOrOdd(6))
+
+const evenOrOdd2 = num => num % 2 === 0 ? 'Even' : 'Odd'
+
+console.log(evenOrOdd2(7))
