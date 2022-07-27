@@ -480,3 +480,82 @@ console.log(arrayOfSheep([true,  true,  true,  false,
     true,  false, false, true ,
     true,  true,  true,  true ,
     false, false, true,  true ]))
+
+
+
+
+const getCount = (str) => {
+    let count = 0;
+
+    let split = str.split('')
+    // console.log(split)
+
+    for(let i = 0; i < split.length; i++) {
+        if (split[i] === 'a') {
+            count++
+        } else if (split[i] === 'e') {
+            count++
+        } else if (split[i] === 'i') {
+            count++
+        } else if (split[i] === 'o') {
+            count++
+        } else if (split[i] === 'u') {
+            count++
+        }
+    }
+    return count
+}
+
+
+
+console.log(getCount('elephants are beautiful'))
+
+
+const getCount2 = (str) => {
+    let vowelsCount = 0;
+
+    let split = str.split('')
+    // console.log(split)
+
+    for(let i = 0; i < split.length; i++) {
+        switch(split[i]) {
+            case 'a':
+            case 'A':
+            case 'e':
+            case 'E':
+            case 'i':
+            case 'I':
+            case 'o':
+            case 'O':
+            case 'u':
+            case 'U':
+                vowelsCount++
+        }
+    }
+    return vowelsCount
+}
+
+console.log(getCount2('elephants are beautiful CREATURES'))
+
+
+const getCount3 = (str) => {
+    let vowelsCount = 0;
+
+    let split = str.toLowerCase().split('')
+    split.filter(function(letter) {
+        if (letter === 'a') {
+            vowelsCount++
+        } else if (letter === 'e') {
+            vowelsCount++
+        } else if (letter === 'i') {
+            vowelsCount++
+        } else if (letter === 'o') {
+            vowelsCount++
+        } else if (letter === 'u') {
+            vowelsCount++
+        }
+    })
+    return vowelsCount
+}
+
+console.log(getCount3('elephants are beautiful CREATURES'))
