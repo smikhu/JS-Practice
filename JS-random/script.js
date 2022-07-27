@@ -189,7 +189,7 @@ const combined = ages
     .sort((a, b) => a - b)
     .reduce((total, age) => total + age, 0)
 
-console.log(combined)
+// console.log(combined)
 
 
 
@@ -324,26 +324,26 @@ const items = [
 
 const lessThan100 = items.filter(item => item.price <= 100);
 
-console.log(lessThan100)
+// console.log(lessThan100)
 
 
 const everyItemName = items.map(item => item.name);
 
-console.log(everyItemName)
+// console.log(everyItemName)
 
 const foundItem = items.find(item => item.name === 'Computer');
 
-console.log(foundItem)
+// console.log(foundItem)
 
-items.forEach(item => console.log(item.name));
+// items.forEach(item => console.log(item.name));
 
 const hasInexpensiveItems = items.some(item => item.price > 1250);
 
-console.log(hasInexpensiveItems)
+// console.log(hasInexpensiveItems)
 
 const hasInexpensiveItems2 = items.every(item => item.price <= 1000);
 
-console.log(hasInexpensiveItems2)
+// console.log(hasInexpensiveItems2)
 
 
 
@@ -355,17 +355,53 @@ for(let i = 0; i < items.length; i++) {
     sum += items[i].price
 }
 
-console.log(sum)
+// console.log(sum)
 
 
 const totalSum = items.reduce((currentTotal, item) => {
     return currentTotal + item.price
 }, 0)
 
-console.log(totalSum)
+// console.log(totalSum)
 
 const numberedItems = [1, 2, 3, 4, 5];
 
 const includesTwo = numberedItems.includes(2);
 
-console.log(includesTwo);
+// console.log(includesTwo);
+
+
+
+
+
+// Mon - 7AM
+// Tue - Thurs - 4AM
+// Fri - 9AM
+// Sat - Sun - 8AM
+
+let day = 'Friday'
+    switch(day) {
+        case 'Sunday':
+            console.log("Wake up, it's 8 AM!")
+            break;
+        case 'Monday':
+            console.log("Wake up, it's 7 AM!")
+            break;
+        case 'Tuesday':
+            console.log("Wake up, it's 4 AM!")
+            break;
+        case 'Wednesday':
+            console.log("Wake up, it's 4 AM!")
+            break;
+        case 'Thursday':
+            console.log("Wake up, it's 4 AM!")
+            break;
+        case 'Friday':
+            console.log("Wake up, it's 9 AM!")
+            break;
+        case 'Saturday':
+            console.log("Wake up, it's 8 AM!")
+            break;    
+    }
+
+// console.log(day)
