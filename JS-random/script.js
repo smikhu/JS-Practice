@@ -863,3 +863,44 @@ const sortingRandomNumbers = randomNumbers.reduce((a, b) => {
 }, 0)
 
 // console.log(sortingRandomNumbers)
+
+
+
+
+const getAverage = (marks) => {
+    let sum = 0;
+    let count = marks.length
+
+    for(let i = 0; i < count; i++) {
+        sum = sum + marks[i]
+    }
+
+    let average = sum / count
+    return Math.floor(average)
+}
+
+console.log(getAverage([1,2,3,4,5,6,7,8,9,10]))
+
+
+
+
+const getAverage2 = (marks) => {
+    let total = 0;
+
+    for(let i = 0; i < marks.length; i++) {
+        total = total + marks[i]
+    }
+    
+    return Math.floor(total / marks.length)
+}
+
+console.log(getAverage2([1,2,3,4,5,6,7,8,9,10,20]))
+
+
+
+
+const getAverage3 = (marks) => {
+    return Math.floor(marks.reduce((a, b) => a + b) / marks.length);
+}
+
+console.log(getAverage3([2,4,6,8,10,12,14,16,18,20]))
