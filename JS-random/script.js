@@ -450,11 +450,11 @@ const evenOrOdd = (num) => {
     }
 }
 
-console.log(evenOrOdd(6))
+// console.log(evenOrOdd(6))
 
 const evenOrOdd2 = num => num % 2 === 0 ? 'Even' : 'Odd'
 
-console.log(evenOrOdd2(7))
+// console.log(evenOrOdd2(7))
 
 
 
@@ -474,12 +474,12 @@ const arrayOfSheep = (sheeps) => {
 }
 
 
-console.log(arrayOfSheep([true,  true,  true,  false,
-    true,  true,  true,  true ,
-    true,  false, true,  false,
-    true,  false, false, true ,
-    true,  true,  true,  true ,
-    false, false, true,  true ]))
+// console.log(arrayOfSheep([true,  true,  true,  false,
+//     true,  true,  true,  true ,
+//     true,  false, true,  false,
+//     true,  false, false, true ,
+//     true,  true,  true,  true ,
+//     false, false, true,  true ]))
 
 
 
@@ -508,7 +508,7 @@ const getCount = (str) => {
 
 
 
-console.log(getCount('elephants are beautiful'))
+// console.log(getCount('elephants are beautiful'))
 
 
 const getCount2 = (str) => {
@@ -535,7 +535,7 @@ const getCount2 = (str) => {
     return vowelsCount
 }
 
-console.log(getCount2('elephants are beautiful CREATURES'))
+// console.log(getCount2('elephants are beautiful CREATURES'))
 
 
 const getCount3 = (str) => {
@@ -558,4 +558,221 @@ const getCount3 = (str) => {
     return vowelsCount
 }
 
-console.log(getCount3('elephants are beautiful CREATURES'))
+// console.log(getCount3('elephants are beautiful CREATURES'))
+
+
+
+const getCount4 = (str) => {
+    let vowelCount = 0;
+    let arr = str.split('');
+    
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === 'a' || arr[i] === 'e' || arr[i] === 'i' || arr[i] === 'o' || arr[i] === 'u') {
+            vowelCount++
+        }
+    }
+    return vowelCount;
+}
+
+// console.log(getCount4('abracadabra elepehant'))
+
+
+
+
+const isDivisible = (n, x, y) => {
+    if (n % x === 0 && n % y === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// console.log(isDivisible(12, 3, 4))
+
+
+const isDivisible2 = (n, x, y) => {
+    return n % x === 0 && n % y === 0 ? true : false
+}
+
+// console.log(isDivisible2(50, 25, 5))
+
+
+const isDivisible3 = (n, ...dividers) => {
+    return dividers.every(divider => n % divider === 0);
+}
+
+// console.log(isDivisible3(12, 3, 4, 6, 2, 1))
+// console.log(isDivisible3(12, 3, 4, 6, 2, 1, 5))
+
+
+
+
+const swCharacters = [
+    {
+        name: 'Luke Skywalker',
+        height: 172,
+        mass: 77,
+        eye_color: 'blue',
+        gender: 'male',
+    },
+    {
+        name: 'Darth Vader',
+        height: 192,
+        mass: 136,
+        eye_color: 'yellow',
+        gender: 'male',
+    },
+    {
+        name: 'Leia Organa',
+        height: 150,
+        mass: 49,
+        eye_color: 'brown',
+        gender: 'female',
+    },
+    {
+        name: 'Anakin Skywalker',
+        height: 188,
+        mass: 84,
+        eye_color: 'blue',
+        gender: 'male',
+    },
+];
+
+
+//EVERY
+const allBlueEyes = swCharacters.every(character => character.eye_color === 'blue')
+
+// console.log(allBlueEyes);
+
+
+
+const massMoreThan40 = swCharacters.every(character => character.mass > 40);
+
+// console.log(massMoreThan40);
+
+
+const shorterThan200 = swCharacters.every(character => character.height <= 200);
+
+// console.log(shorterThan200)
+
+
+const allMale = swCharacters.every(character => character.gender === 'male');
+
+
+// console.log(allMale)
+
+//FILTER
+const greaterThan100 = swCharacters.filter(character => character.mass > 100);
+
+// console.log(greaterThan100);
+
+const lessThan200 = swCharacters.filter(character => character.height < 200);
+
+// console.log(lessThan200);
+
+
+const allMaleCharacters = swCharacters.filter(character => character.gender === 'male');
+
+// console.log(allMaleCharacters);
+
+const allFemaleCharacters = swCharacters.filter(character => character.gender === 'female');
+
+// console.log(allFemaleCharacters);
+
+
+//SORT
+const sortByNames = swCharacters.sort((a, b) => {
+    if(a.name > b.name) {
+        return 1
+    } else {
+        return -1
+    }
+})
+
+// console.log(sortByNames)
+
+
+const massSort = swCharacters.sort((a, b) => {
+    return a.mass - b.mass
+})
+
+// console.log(massSort)
+
+
+const heightSort = swCharacters.sort((a, b) => {
+    return a.height - b.height
+})
+
+// console.log(heightSort)
+
+
+const genderSort = swCharacters.sort((a, b) => {
+    if(a.gender === 'female') {
+        return -1
+    } else {
+        return 1
+    }
+})
+
+// console.log(genderSort)
+
+//SOME
+const someMaleCharacters = swCharacters.some(character => character.gender === 'male');
+
+// console.log(someMaleCharacters)
+
+
+const someBlueEyes = swCharacters.some(character => character.eye_color === 'blue');
+
+// console.log(someBlueEyes)
+
+
+const tallerThan200 = swCharacters.some(character => character.height > 200)
+
+// console.log(tallerThan200)
+
+
+const massLessThan50 = swCharacters.some(character => character.mass < 50)
+
+// console.log(massLessThan50)
+
+
+
+//REDUCE
+const totalMass = swCharacters.reduce((acc, cur) => {
+    return acc + cur.mass
+}, 0);
+
+// console.log(totalMass)
+
+
+const totalHeight = swCharacters.reduce((total, character) => {
+    return total + character.height
+}, 0)
+
+// console.log(totalHeight)
+
+
+
+const totalCharactersInCharacterName = swCharacters.reduce((acc, cur) => {
+    return acc + cur.name.length
+}, 0)
+
+// console.log(totalCharactersInCharacterName)
+
+
+
+
+const charactersByEyeColor = characters.reduce((acc, cur) => {
+    const color = cur.eye_color;
+    if(acc[color]) {
+        acc[color]++;
+    } else {
+        acc[color] = 1
+    }
+    return acc
+}, {})
+
+// console.log(charactersByEyeColor)
+
+
