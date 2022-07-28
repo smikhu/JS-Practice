@@ -983,18 +983,18 @@ const removeChar = (str) => {
     return str.slice(1, -1)
 }
 
-console.log(removeChar('Steven'))
-console.log(removeChar('elephant'))
-console.log(removeChar('Steven Mikhu'))
+// console.log(removeChar('Steven'))
+// console.log(removeChar('elephant'))
+// console.log(removeChar('Steven Mikhu'))
 
 
 const removeChar2 = (str) => {
     return str.substring(1, str.length - 1)
 }
 
-console.log(removeChar2('Steven'))
-console.log(removeChar2('elephant'))
-console.log(removeChar2('Steven Mikhu'))
+// console.log(removeChar2('Steven'))
+// console.log(removeChar2('elephant'))
+// console.log(removeChar2('Steven Mikhu'))
 
 
 const removeChar3 = (str) => {
@@ -1004,6 +1004,36 @@ const removeChar3 = (str) => {
     return splitting.join('')
 }
 
-console.log(removeChar3('Steven'))
-console.log(removeChar3('elephant'))
-console.log(removeChar3('Steven Mikhu'))
+// console.log(removeChar3('Steven'))
+// console.log(removeChar3('elephant'))
+// console.log(removeChar3('Steven Mikhu'))
+
+
+
+const positiveSum = (arr) => {
+    let positive = [];
+    let negative = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] * 1 < 0) {
+            negative.push(arr[i])
+        } else {
+            positive.push(arr[i])
+        }
+    }
+    return positive.reduce((a, b) => a + b, 0)
+}
+
+console.log(positiveSum([1,2,3,4,5]))
+console.log(positiveSum([1,-2,3,4,5]))
+console.log(positiveSum([-1,-2,-3,-4,-5]))
+console.log(positiveSum([-1,2,3,4,-5]))
+
+
+const positiveSum2 = (arr) => {
+    return arr.filter(num => num > 0).reduce((a, b) => a + b, 0)
+}
+
+console.log(positiveSum2([1,2,3,4,5]))
+console.log(positiveSum2([1,-2,3,4,5]))
+console.log(positiveSum2([-1,-2,-3,-4,-5, -20, 0, -21]))
+console.log(positiveSum2([-1,2,3,4,-5, 10, 20]))
