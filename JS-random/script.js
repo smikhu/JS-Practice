@@ -1023,17 +1023,77 @@ const positiveSum = (arr) => {
     return positive.reduce((a, b) => a + b, 0)
 }
 
-console.log(positiveSum([1,2,3,4,5]))
-console.log(positiveSum([1,-2,3,4,5]))
-console.log(positiveSum([-1,-2,-3,-4,-5]))
-console.log(positiveSum([-1,2,3,4,-5]))
+// console.log(positiveSum([1,2,3,4,5]))
+// console.log(positiveSum([1,-2,3,4,5]))
+// console.log(positiveSum([-1,-2,-3,-4,-5]))
+// console.log(positiveSum([-1,2,3,4,-5]))
 
 
 const positiveSum2 = (arr) => {
     return arr.filter(num => num > 0).reduce((a, b) => a + b, 0)
 }
 
-console.log(positiveSum2([1,2,3,4,5]))
-console.log(positiveSum2([1,-2,3,4,5]))
-console.log(positiveSum2([-1,-2,-3,-4,-5, -20, 0, -21]))
-console.log(positiveSum2([-1,2,3,4,-5, 10, 20]))
+// console.log(positiveSum2([1,2,3,4,5]))
+// console.log(positiveSum2([1,-2,3,4,5]))
+// console.log(positiveSum2([-1,-2,-3,-4,-5, -20, 0, -21]))
+// console.log(positiveSum2([-1,2,3,4,-5, 10, 20]))
+
+
+const positiveSum3 = (arr) => {
+    let sum = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > 0) {
+            sum = sum + arr[i]
+        }
+    }
+    return sum
+}
+
+
+// console.log(positiveSum3([1,2,3,4,5]))
+// console.log(positiveSum3([1,-2,3,4,5]))
+// console.log(positiveSum3([-1,-2,-3,-4,-5, -20, 0, -21]))
+// console.log(positiveSum3([-1,2,3,4,-5, 10, 20]))
+
+
+
+
+const basicOp = (operation, value1, value2) => {
+    if(operation === '+') {
+        return value1 + value2
+    } else if(operation === '-') {
+        return value1 - value2
+    } else if(operation === '*') {
+        return value1 * value2
+    } else if(operation === '/') {
+        return value1 / value2
+    }
+}
+
+console.log(basicOp('+', 4, 7))
+console.log(basicOp('-', 15, 18))
+console.log(basicOp('*', 5, 5))
+console.log(basicOp('/', 49, 7))
+
+
+const basicOp2 = (operation, value1, value2) => {
+    switch(operation) {
+        case '+':
+            return value1 + value2
+        case '-':
+            return value1 - value2
+        case '*':
+            return value1 * value2
+        case '/':
+            return value1 / value2
+        default:
+            return 'Operation must be one of + - * /'
+    }
+}
+
+console.log(basicOp2('+', 4, 7))
+console.log(basicOp2('-', 15, 18))
+console.log(basicOp2('*', 5, 5))
+console.log(basicOp2('/', 49, 7))
+console.log(basicOp2('#', 49, 7))
