@@ -852,7 +852,7 @@ const summation = (num) => {
 
 const summation2 = n => n * (n + 1) / 2;
 
-console.log(summation2(34))
+// console.log(summation2(34))
 
 
 
@@ -879,7 +879,7 @@ const getAverage = (marks) => {
     return Math.floor(average)
 }
 
-console.log(getAverage([1,2,3,4,5,6,7,8,9,10]))
+// console.log(getAverage([1,2,3,4,5,6,7,8,9,10]))
 
 
 
@@ -894,7 +894,7 @@ const getAverage2 = (marks) => {
     return Math.floor(total / marks.length)
 }
 
-console.log(getAverage2([1,2,3,4,5,6,7,8,9,10,20]))
+// console.log(getAverage2([1,2,3,4,5,6,7,8,9,10,20]))
 
 
 
@@ -903,4 +903,63 @@ const getAverage3 = (marks) => {
     return Math.floor(marks.reduce((a, b) => a + b) / marks.length);
 }
 
-console.log(getAverage3([2,4,6,8,10,12,14,16,18,20]))
+// console.log(getAverage3([2,4,6,8,10,12,14,16,18,20]))
+
+
+
+
+// ROCK, PAPER, SCISSORS
+
+
+const rps = (p1, p2) => {
+    if(p1 === 'Rock' && p2 === 'Scissors') {
+        return 'Player 1 wins!'
+    } else if (p1 === 'Paper' && p2 === 'Rock') {
+        return 'Player 1 wins!'
+    } else if (p1 === 'Scissors' && p2 === 'Paper') {
+        return 'Player 1 wins!'
+    } else if (p1 === p2) {
+        return 'Draw!'
+    } else {
+        return 'Player 2 wins!'
+    }
+}
+
+// console.log(rps('Rock', 'Scissors'))
+// console.log(rps('Paper', 'Rock'))
+// console.log(rps('Scissors', 'Paper'))
+// console.log(rps('Rock', 'Rock'))
+// console.log(rps('Scissors', 'Scissors'))
+// console.log(rps('Paper', 'Paper'))
+// console.log(rps('Rock', 'Paper'))
+// console.log(rps('Paper', 'Scissors'))
+// console.log(rps('Scissors', 'Rock'))
+
+
+
+const winsOver = {
+    'Rock' : 'Scissors',
+    'Paper' : 'Rock',
+    'Scissors' : 'Paper'
+}
+
+const rps2 = (p1, p2) => {
+    if (p1 === p2) {
+        return 'Draw'
+    } else if (winsOver[p1] === p2) {
+        return 'Player 1 Won!'
+    } else {
+        return 'Player 2 Won!'
+    }
+}
+
+
+// console.log(rps2('Rock', 'Scissors'))
+// console.log(rps2('Paper', 'Rock'))
+// console.log(rps2('Scissors', 'Paper'))
+// console.log(rps2('Rock', 'Rock'))
+// console.log(rps2('Scissors', 'Scissors'))
+// console.log(rps2('Paper', 'Paper'))
+// console.log(rps2('Rock', 'Paper'))
+// console.log(rps2('Paper', 'Scissors'))
+// console.log(rps2('Scissors', 'Rock'))
