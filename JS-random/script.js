@@ -1153,3 +1153,37 @@ const noSpace = (x) => {
 // console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'))
 // console.log(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'))
 // console.log(noSpace('8aaaaa dddd r     '))
+
+
+
+const noSpace2 = (x) => {
+    return x.replace(/\s/g, '')
+}
+
+
+console.log(noSpace2('8 j 8   mBliB8g  imjB8B8  jl  B'))
+console.log(noSpace2('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'))
+console.log(noSpace2('8aaaaa dddd r     '))
+
+
+
+const maps = (x) => {
+    let newArr = []
+    for(let i = 0; i < x.length; i++) {
+        newArr.push(x[i] * 2)
+    }
+    
+    return newArr;
+}
+
+// console.log(maps([1, 2, 3]))
+// console.log(maps([2, 4, 6]))
+
+
+const maps3 = (x) => {
+    return x.map(num => num * 2)
+}
+
+// console.log(maps3([1, 2, 3]))
+// console.log(maps3([2, 4, 6]))
+// console.log(maps3([3, 6, 9]))
