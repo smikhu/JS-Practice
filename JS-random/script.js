@@ -963,3 +963,47 @@ const rps2 = (p1, p2) => {
 // console.log(rps2('Rock', 'Paper'))
 // console.log(rps2('Paper', 'Scissors'))
 // console.log(rps2('Scissors', 'Rock'))
+
+
+
+
+
+
+
+const digits = [5, 20, 40, 60, 80, 100]
+
+let averageNumber = Math.floor(digits.reduce((a, b) => a + b) / digits.length)
+
+// console.log(averageNumber)
+
+
+
+
+const removeChar = (str) => {
+    return str.slice(1, -1)
+}
+
+console.log(removeChar('Steven'))
+console.log(removeChar('elephant'))
+console.log(removeChar('Steven Mikhu'))
+
+
+const removeChar2 = (str) => {
+    return str.substring(1, str.length - 1)
+}
+
+console.log(removeChar2('Steven'))
+console.log(removeChar2('elephant'))
+console.log(removeChar2('Steven Mikhu'))
+
+
+const removeChar3 = (str) => {
+    let splitting = str.split('')
+    splitting.pop()
+    splitting.shift()
+    return splitting.join('')
+}
+
+console.log(removeChar3('Steven'))
+console.log(removeChar3('elephant'))
+console.log(removeChar3('Steven Mikhu'))
