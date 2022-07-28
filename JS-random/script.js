@@ -778,17 +778,58 @@ const charactersByEyeColor = characters.reduce((acc, cur) => {
 
 
 
-const makeNegative = (num) => {
-    if (num > 0) {
-        return num * -1 
-    } else {
-        return num
+// const makeNegative = (num) => {
+//     if (num > 0) {
+//         return num * -1 
+//     } else {
+//         return num
+//     }
+// }
+
+// console.log(makeNegative(5))
+
+
+// const makeNegative2 = num => num < 0 ? num : -num
+
+// console.log(makeNegative2(10))
+
+
+
+const findSmallestInt = (args) => {
+    args.sort((a, b) => {
+        return a - b
+    })
+    return args[0]
+}
+    
+// console.log(findSmallestInt([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
+
+
+
+const findSmallestInt2 = (args) => {
+
+    let num;
+
+    for(let i = 0; i < args.length; i++) {
+        
+        const newNum = args[i];
+        
+        if(i === 0) {
+            num = newNum
+        }
+
+        if(newNum < num) {
+            num = newNum;
+        }
     }
+    return num
 }
 
-console.log(makeNegative(5))
+console.log(findSmallestInt2([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
 
 
-const makeNegative2 = num => num < 0 ? num : -num
+const findSmallestInt3 = (args) => {
+    return Math.min(...args)
+}
 
-console.log(makeNegative2(10))
+console.log(findSmallestInt3([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
