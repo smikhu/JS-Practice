@@ -825,11 +825,41 @@ const findSmallestInt2 = (args) => {
     return num
 }
 
-console.log(findSmallestInt2([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
+// console.log(findSmallestInt2([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
 
 
 const findSmallestInt3 = (args) => {
     return Math.min(...args)
 }
 
-console.log(findSmallestInt3([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
+// console.log(findSmallestInt3([5, 10, 20, 3, 45, 5, 2, 1, -2, -8214, -4, 56, 84772, -9]))
+
+
+
+
+const summation = (num) => {
+    let sum = 0;
+    for(let i = 1; i <= num; i++) {
+        sum = sum + i
+        console.log(sum)
+    }
+    return sum
+}
+
+
+// console.log(summation(100))
+
+
+const summation2 = n => n * (n + 1) / 2;
+
+console.log(summation2(34))
+
+
+
+const randomNumbers  = ['100','300','400','60','40'];
+
+const sortingRandomNumbers = randomNumbers.reduce((a, b) => {
+    return parseInt(a) + parseInt(b)
+}, 0)
+
+// console.log(sortingRandomNumbers)
