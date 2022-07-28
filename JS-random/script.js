@@ -776,3 +776,19 @@ const charactersByEyeColor = characters.reduce((acc, cur) => {
 // console.log(charactersByEyeColor)
 
 
+
+
+const makeNegative = (num) => {
+    if (num > 0) {
+        return num * -1 
+    } else {
+        return num
+    }
+}
+
+console.log(makeNegative(5))
+
+
+const makeNegative2 = num => num < 0 ? num : -num
+
+console.log(makeNegative2(10))
