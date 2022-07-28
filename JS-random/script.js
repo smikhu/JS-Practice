@@ -1235,3 +1235,69 @@ const hero3 = (bullets, dragons) => {
 // console.log(hero3(100, 40))
 // console.log(hero3(1500, 751))
 // console.log(hero3(0, 1))
+
+
+
+const arrayPlusArray = (arr1, arr2) => {
+    let firstArray = arr1.reduce((a, b) => a + b, 0)
+    let secondArray = arr2.reduce((a, b) => a + b, 0)
+    return firstArray + secondArray
+}
+
+// console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
+// console.log(arrayPlusArray([-1, -2, -3], [-4, -5, -6]))
+// console.log(arrayPlusArray([0, 0, 0], [4, 5, 6]))
+// console.log(arrayPlusArray([100, 200, 300], [400, 500, 600]))
+
+
+const arrayPlusArray2 = (arr1, arr2) => {
+    return arr1.concat(arr2).reduce((a, b) => a + b, 0)
+}
+
+// console.log(arrayPlusArray2([1, 2, 3], [4, 5, 6]))
+// console.log(arrayPlusArray2([-1, -2, -3], [-4, -5, -6]))
+// console.log(arrayPlusArray2([0, 0, 0], [4, 5, 6]))
+// console.log(arrayPlusArray2([100, 200, 300], [400, 500, 600]))
+
+
+
+const arrayPlusArray3 = (arr1, arr2) => {
+    let result = 0;
+    for(let i = 0; i < arr1.length; i+=1) {
+        result += arr1[i] + arr2[i]
+    }
+    return result;
+}
+
+// console.log(arrayPlusArray3([1, 2, 3], [4, 5, 6]))
+// console.log(arrayPlusArray3([-1, -2, -3], [-4, -5, -6]))
+// console.log(arrayPlusArray3([0, 0, 0], [4, 5, 6]))
+// console.log(arrayPlusArray3([100, 200, 300], [400, 500, 600]))
+
+
+const arrayPlusArray4 = (arr1, arr2) => {
+    let result = 0;
+    for(let i = 0; i < arr1.length; i++) {
+        result+= arr1[i]
+    }
+    for(let i = 0; i < arr2.length; i++) {
+        result+= arr2[i]
+    }
+    return result;
+}
+
+// console.log(arrayPlusArray4([1, 2, 3], [4, 5, 6]))
+// console.log(arrayPlusArray4([-1, -2, -3], [-4, -5, -6]))
+// console.log(arrayPlusArray4([0, 0, 0], [4, 5, 6]))
+// console.log(arrayPlusArray4([100, 200, 300], [400, 500, 600]))
+
+
+
+const arrayPlusArray5 = (arr1, arr2, arr3) => {
+    return arr1.concat(arr2).concat(arr3).reduce((a, b) => a + b, 0)
+}
+
+// console.log(arrayPlusArray5([1, 2, 3], [4, 5, 6], [7, 8, 9]))
+// console.log(arrayPlusArray5([-1, -2, -3], [-4, -5, -6], [-7, -8, -9]))
+// console.log(arrayPlusArray5([0, 0, 0], [4, 5, 6], [10, 15, 20]))
+// console.log(arrayPlusArray5([100, 200, 300], [400, 500, 600], [700, 800, 900]))
