@@ -1161,9 +1161,9 @@ const noSpace2 = (x) => {
 }
 
 
-console.log(noSpace2('8 j 8   mBliB8g  imjB8B8  jl  B'))
-console.log(noSpace2('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'))
-console.log(noSpace2('8aaaaa dddd r     '))
+// console.log(noSpace2('8 j 8   mBliB8g  imjB8B8  jl  B'))
+// console.log(noSpace2('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'))
+// console.log(noSpace2('8aaaaa dddd r     '))
 
 
 
@@ -1187,3 +1187,51 @@ const maps3 = (x) => {
 // console.log(maps3([1, 2, 3]))
 // console.log(maps3([2, 4, 6]))
 // console.log(maps3([3, 6, 9]))
+
+
+
+
+const hero = (bullets, dragons) => {
+    if(bullets - dragons >= dragons) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// console.log(hero(10, 5))
+// console.log(hero(7, 4))
+// console.log(hero(4, 5))
+// console.log(hero(100, 40))
+// console.log(hero(1500, 751))
+// console.log(hero(0, 1))
+
+
+
+const hero2 = (bullets, dragons) => {
+    if(dragons * 2 <= bullets) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// console.log(hero2(10, 5))
+// console.log(hero2(7, 4))
+// console.log(hero2(4, 5))
+// console.log(hero2(100, 40))
+// console.log(hero2(1500, 751))
+// console.log(hero2(0, 1))
+
+
+const hero3 = (bullets, dragons) => {
+    return bullets / dragons >= 2
+}
+
+
+// console.log(hero3(10, 5))
+// console.log(hero3(7, 4))
+// console.log(hero3(4, 5))
+// console.log(hero3(100, 40))
+// console.log(hero3(1500, 751))
+// console.log(hero3(0, 1))
