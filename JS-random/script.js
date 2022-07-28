@@ -1071,10 +1071,10 @@ const basicOp = (operation, value1, value2) => {
     }
 }
 
-console.log(basicOp('+', 4, 7))
-console.log(basicOp('-', 15, 18))
-console.log(basicOp('*', 5, 5))
-console.log(basicOp('/', 49, 7))
+// console.log(basicOp('+', 4, 7))
+// console.log(basicOp('-', 15, 18))
+// console.log(basicOp('*', 5, 5))
+// console.log(basicOp('/', 49, 7))
 
 
 const basicOp2 = (operation, value1, value2) => {
@@ -1092,8 +1092,64 @@ const basicOp2 = (operation, value1, value2) => {
     }
 }
 
-console.log(basicOp2('+', 4, 7))
-console.log(basicOp2('-', 15, 18))
-console.log(basicOp2('*', 5, 5))
-console.log(basicOp2('/', 49, 7))
-console.log(basicOp2('#', 49, 7))
+// console.log(basicOp2('+', 4, 7))
+// console.log(basicOp2('-', 15, 18))
+// console.log(basicOp2('*', 5, 5))
+// console.log(basicOp2('/', 49, 7))
+// console.log(basicOp2('#', 49, 7))
+
+
+const basicOp3 = (operation, value1, value2) => {
+    return eval(value1 + operation + value2)
+}
+
+// console.log(basicOp3('+', 4, 7))
+// console.log(basicOp3('-', 15, 18))
+// console.log(basicOp3('*', 5, 5))
+// console.log(basicOp3('/', 49, 7))
+
+
+const repeatStr = (numberOfRepeats, str) => {
+    let starterString = ''
+
+    for(let i = 0; i < numberOfRepeats; i++) {
+        starterString += str
+    }
+    return starterString
+}
+
+// console.log(repeatStr(3, 'S'))
+// console.log(repeatStr(5, '#'))
+// console.log(repeatStr(23, 'a'))
+// console.log(repeatStr(7, 'haha'))
+
+
+const repeatStr2 = (numberOfRepeats, str) => {
+    return str.repeat(numberOfRepeats);
+}
+
+
+// console.log(repeatStr2(3, 'S'))
+// console.log(repeatStr2(5, '#'))
+// console.log(repeatStr2(23, 'a'))
+// console.log(repeatStr2(7, 'haha'))
+
+
+const stringToArray = (str) => {
+    return str.split(' ')
+}
+
+// console.log(stringToArray('I love arrays they are my favorite'))
+// console.log(stringToArray('Steven Mikhu'))
+
+
+
+
+const noSpace = (x) => {
+    let splitting = x.split(' ')
+    return splitting.join('')
+}
+
+// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'))
+// console.log(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'))
+// console.log(noSpace('8aaaaa dddd r     '))
