@@ -1301,3 +1301,26 @@ const arrayPlusArray5 = (arr1, arr2, arr3) => {
 // console.log(arrayPlusArray5([-1, -2, -3], [-4, -5, -6], [-7, -8, -9]))
 // console.log(arrayPlusArray5([0, 0, 0], [4, 5, 6], [10, 15, 20]))
 // console.log(arrayPlusArray5([100, 200, 300], [400, 500, 600], [700, 800, 900]))
+
+
+const humanYearsCatYearsDogYear = (humanYears) => {
+    if (humanYears === 1) {
+        return [humanYears, 15, 15]
+    }
+
+    if (humanYears === 2) {
+        return [humanYears, 24, 24]
+    }
+
+    const excessYears = humanYears - 2;
+    const extraCatyears = excessYears * 4;
+    const extraDogYears = excessYears * 5;
+
+    return [humanYears, 24 + extraCatyears, 24 + extraDogYears];
+}
+
+// console.log(humanYearsCatYearsDogYear(10))
+
+
+
+
