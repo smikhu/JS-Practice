@@ -1323,4 +1323,68 @@ const humanYearsCatYearsDogYear = (humanYears) => {
 
 
 
+const randomNumbers2 = [5, 1, 3, 2, 6];
 
+const filterEven = randomNumbers2.filter(x => x > 4)
+
+console.log(filterEven);
+
+
+const reduceNumbers = randomNumbers2.reduce((a, b) => a + b, 0)
+
+console.log(reduceNumbers)
+
+const maxNumber = randomNumbers2.reduce((a, b) => {
+    if(a > b) {
+        b = a
+    }
+    return b
+});
+
+console.log(maxNumber)
+
+
+
+const users = [
+    { firstName: "ashkay", lastName: "saini", age:26},
+    { firstName: "donald", lastName: "trump", age:75},
+    { firstName: "elon", lastName: "musk", age:50},
+    { firstName: "deepika", lastName: "padukone", age:26},
+];
+
+
+const listOfFullNames = users.map((x) => {
+    return (x.firstName + ' ' + x.lastName)
+})
+
+console.log(listOfFullNames)
+
+
+const sameAge = users.reduce((acc, curr) => {
+    if(acc[curr.age]) {
+        acc[curr.age]++
+    } else {
+        acc[curr.age] = 1
+    }
+
+    return acc
+}, {})
+
+console.log(sameAge)
+
+
+const lessThan30 = users
+.filter(user => user.age < 30)
+.map(user => user.firstName)
+
+console.log(lessThan30)
+
+
+const lessthan30UsingReduce = users.reduce((acc, curr) => {
+    if(curr.age < 30) {
+        acc.push(curr.firstName)
+    }
+    return acc    
+}, [])
+
+console.log(lessthan30UsingReduce)
