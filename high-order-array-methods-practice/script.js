@@ -1,83 +1,134 @@
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const countries = [
+  "Finland",
+  "Sweden",
+  "Denmark",
+  "Norway",
+  "IceLand",
+  "England",
+  "ethiopia",
+];
+const names = ["Asabeneh", "Mathias", "Elias", "Brook"];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const products = [
-  { product: 'banana', price: 3 },
-  { product: 'mango', price: 6 },
-  { product: 'potato', price: ' ' },
-  { product: 'avocado', price: 8 },
-  { product: 'coffee', price: 10 },
-  { product: 'tea', price: '' },
-]
-
-
+  { product: "banana", price: 3 },
+  { product: "mango", price: 6 },
+  { product: "potato", price: " " },
+  { product: "avocado", price: 8 },
+  { product: "coffee", price: 10 },
+  { product: "tea", price: "" },
+];
 
 // Explain the difference between forEach, map, filter, and reduce.
 // Define a callback function before you use it in forEach, map, filter or reduce.
 // Use forEach to console.log each country in the countries array.
 countries.forEach((ele, index, arr) => {
-    console.log(ele)
-})
+  console.log(ele);
+});
 
 // Use forEach to console.log each name in the names array.
 names.forEach((ele, index, arr) => {
-    console.log(ele)
-})
+  console.log(ele);
+});
+
 // Use forEach to console.log each number in the numbers array.
 numbers.forEach((ele, index, arr) => {
-    console.log(ele)
-})
+  console.log(ele);
+});
+
 // Use map to create a new array by changing each country to uppercase in the countries array.
 const uppercaseCountries = countries.map((country) => {
-    return country.toUpperCase()
-    // return country.charAt(0).toUpperCase() + country.slice(1)
-})
+  return country.toUpperCase();
+  // return country.charAt(0).toUpperCase() + country.slice(1)
+});
 
-console.log(uppercaseCountries)
+console.log(uppercaseCountries);
+
 // Use map to create an array of countries length from countries array.
-const countryLength = countries.map((country) => country.length)
+const countryLength = countries.map((country) => country.length);
 
-console.log(countryLength)
+console.log(countryLength);
+
 // Use map to create a new array by changing each number to square in the numbers array
-const squaredNumber = numbers.map(num => num * num)
+const squaredNumber = numbers.map((num) => num * num);
 
-console.log(squaredNumber)
+console.log(squaredNumber);
+
 // Use map to change to each name to uppercase in the names array
-const uppercaseNames = names.map(name => name.toUpperCase());
-    // const uppercaseNames = names.map(name => name.charAt(0) + name.slice(1));
+const uppercaseNames = names.map((name) => name.toUpperCase());
+// const uppercaseNames = names.map(name => name.charAt(0) + name.slice(1));
 
-console.log(uppercaseNames)
+console.log(uppercaseNames);
+
 // Use map to map the products array to its corresponding prices.
 const correspondingPrices = products.map((product) => {
-    return product.price
-})
+  return product.price;
+});
 
-console.log(correspondingPrices)
+console.log(correspondingPrices);
+
 // Use filter to filter out countries containing land.
 const containingLand = countries.filter((country) => {
-    // return !country.includes('land') && !country.includes('Land')
-    if(!country.includes('land') && !country.includes('Land')) {
-        return
-    }
-    return country
-})
+  // return !country.includes('land') && !country.includes('Land')
+  if (!country.includes("land") && !country.includes("Land")) {
+    return;
+  }
+  return country;
+});
 
-console.log(containingLand)
+console.log(containingLand);
+
 // Use filter to filter out countries having six character.
-const countriesWith6Characters = countries.filter(country => {
-    return country.length === 6
+const countriesWith6Characters = countries.filter((country) => {
+  return country.length === 6;
+});
+
+console.log(countriesWith6Characters);
+
+// Use filter to filter out countries containing six letters and more in the country array.
+const countriesWith6OrMoreCharacters = countries.filter((country) => {
+  return country.length >= 6;
+});
+
+console.log(countriesWith6OrMoreCharacters);
+
+// Use filter to filter out country start with 'E';
+const countriesThatStartWithE = countries.filter((country) => {
+  return country.charAt(0) === "E" || country.charAt(0) === "e";
+});
+
+console.log(countriesThatStartWithE);
+
+// Use filter to filter out only prices with values.
+const onlyPricesWithValue = products.filter(product => typeof product.price === 'number');
+
+console.log(onlyPricesWithValue);
+
+// Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+
+// Use reduce to sum all the numbers in the numbers array.
+const sumOfAll = numbers.reduce((acc, curr) => {
+    return acc + curr
 })
 
-console.log(countriesWith6Characters)
-// Use filter to filter out countries containing six letters and more in the country array.
-// Use filter to filter out country start with 'E';
-// Use filter to filter out only prices with values.
-// Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
-// Use reduce to sum all the numbers in the numbers array.
+console.log(sumOfAll)
+
 // Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+const concatenateCountries = countries.join(', ') + ' ' + 'are all northern European countries.'
+
+console.log(concatenateCountries)
 // Explain the difference between some and every
 // Use some to check if some names' length greater than seven in names array
+const someLength = (ele) => {
+    return ele.length > 7
+}
+
+console.log(names.some(someLength))
 // Use every to check if all the countries contain the word land
+const everyCountry = (ele) => {
+    return ele.includes('e')
+}
+
+console.log(countries.every(everyCountry))
 // Explain the difference between find and findIndex.
 // Use find to find the first country containing only six letters in the countries array
 // Use findIndex to find the position of the first country containing only six letters in the countries array
