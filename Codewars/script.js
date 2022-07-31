@@ -1158,23 +1158,42 @@ const descendingOrder = (n) => {
   return parseInt(split.join(''))
 }
 
-console.log(descendingOrder(0))
-console.log(descendingOrder(1))
-console.log(descendingOrder(111))
-console.log(descendingOrder(15))
-console.log(descendingOrder(1021))
-console.log(descendingOrder(123456789))
+// console.log(descendingOrder(0))
+// console.log(descendingOrder(1))
+// console.log(descendingOrder(111))
+// console.log(descendingOrder(15))
+// console.log(descendingOrder(1021))
+// console.log(descendingOrder(123456789))
 
 const descendingOrder2 = (n) => {
   return parseInt(String(n).split('').sort((a, b) => b - a).join(''))
 }
 
-console.log(descendingOrder2(0))
-console.log(descendingOrder2(1))
-console.log(descendingOrder2(111))
-console.log(descendingOrder2(15))
-console.log(descendingOrder2(1021))
-console.log(descendingOrder2(123456789))
+// console.log(descendingOrder2(0))
+// console.log(descendingOrder2(1))
+// console.log(descendingOrder2(111))
+// console.log(descendingOrder2(15))
+// console.log(descendingOrder2(1021))
+// console.log(descendingOrder2(123456789))
 
 
 
+const highAndLow = (numbers) => {
+  let splitting = numbers.split(' ')
+  console.log(splitting)
+  let sorting = splitting.sort((a, b) => b - a)
+  console.log(sorting)
+  return `${sorting[0]} ${sorting.slice(-1)}`
+}
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+console.log(highAndLow("1 2 3"))
+
+
+const highAndLow2 = (numbers) => {
+  let sorting = numbers.split(' ').sort((a, b) => b - a)
+  return `${sorting[0]} ${sorting.slice(-1)}`
+}
+
+console.log(highAndLow2("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+console.log(highAndLow2("1 2 3"))
