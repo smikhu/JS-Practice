@@ -1135,6 +1135,46 @@ const findShort = (s) => {
     return split.pop().length
 }
 
-console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
-console.log(findShort("turns out random test cases are easier than writing out basic ones"))
-console.log(findShort("Let's travel abroad shall we"))
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
+// console.log(findShort("turns out random test cases are easier than writing out basic ones"))
+// console.log(findShort("Let's travel abroad shall we"))
+
+const findShort2 = (s) => {
+    return s.split(' ').reduce((a, b) => Math.min(a, b))
+}
+
+
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
+// console.log(findShort("turns out random test cases are easier than writing out basic ones"))
+// console.log(findShort("Let's travel abroad shall we"))
+
+
+const descendingOrder = (n) => {
+  let str = n.toString()
+  let split = str.split('')
+  split.sort((a, b) => {
+    return b - a
+  })
+  return parseInt(split.join(''))
+}
+
+console.log(descendingOrder(0))
+console.log(descendingOrder(1))
+console.log(descendingOrder(111))
+console.log(descendingOrder(15))
+console.log(descendingOrder(1021))
+console.log(descendingOrder(123456789))
+
+const descendingOrder2 = (n) => {
+  return parseInt(String(n).split('').sort((a, b) => b - a).join(''))
+}
+
+console.log(descendingOrder2(0))
+console.log(descendingOrder2(1))
+console.log(descendingOrder2(111))
+console.log(descendingOrder2(15))
+console.log(descendingOrder2(1021))
+console.log(descendingOrder2(123456789))
+
+
+
