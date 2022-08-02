@@ -1231,7 +1231,7 @@ const removeSmallest = (numbers) => {
 // console.log(removeSmallest([2, 2, 1, 2, 1]))
 
 const countPositivesSumNegatives = (input) => {
-  if(input == null || input.length == 0) {
+  if(input == null) {
     return [];
   }
 
@@ -1260,3 +1260,33 @@ const countPositivesSumNegatives2 = (input) => {
 
 console.log(countPositivesSumNegatives2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
 console.log(countPositivesSumNegatives2([21, 7, 5505, -3, -21, -36, -81, 32, 23, 10, 9, 12, -57, -358, -21, -25]));
+
+
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  let gas = distanceToPump / mpg
+  if(gas <= fuelLeft) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// console.log(zeroFuel(50, 25, 2))
+// console.log(zeroFuel(100, 50, 1))
+
+
+
+const seriesSum = (n) => {
+  let sum = 0;
+  for(let i = 0; i < n; i++) {
+    sum += 1 / (3 * i + 1)
+  }
+  return sum.toFixed(2)
+}
+
+// console.log(seriesSum(1))
+// console.log(seriesSum(2))
+// console.log(seriesSum(3))
+// console.log(seriesSum(4))
+
