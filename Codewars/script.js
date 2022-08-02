@@ -1247,19 +1247,19 @@ const countPositivesSumNegatives = (input) => {
   return [positiveLength, negativeSum]
 };
 
-console.log(
-  countPositivesSumNegatives([
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
-  ])
-);
+// console.log(
+//   countPositivesSumNegatives([
+//     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
+//   ])
+// );
 
 
 const countPositivesSumNegatives2 = (input) => {
   return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)]: [];
 }
 
-console.log(countPositivesSumNegatives2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
-console.log(countPositivesSumNegatives2([21, 7, 5505, -3, -21, -36, -81, 32, 23, 10, 9, 12, -57, -358, -21, -25]));
+// console.log(countPositivesSumNegatives2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
+// console.log(countPositivesSumNegatives2([21, 7, 5505, -3, -21, -36, -81, 32, 23, 10, 9, 12, -57, -358, -21, -25]));
 
 
 
@@ -1290,3 +1290,45 @@ const seriesSum = (n) => {
 // console.log(seriesSum(3))
 // console.log(seriesSum(4))
 
+
+const rowSumOddNumbers = (n) => {
+  return n * n * n
+}
+
+// console.log(rowSumOddNumbers(1))
+// console.log(rowSumOddNumbers(42))
+
+const rowSumOddNumbers2 = (n) => {
+  return Math.pow(n, 3)
+}
+
+// console.log(rowSumOddNumbers2(1))
+// console.log(rowSumOddNumbers2(2))
+
+const twoSum = (nums, target) => {
+  for(let i = 0; i < nums.length; i++) {
+    for(let j = 0; j < nums.length; j++) {
+      if(nums[i] + nums[j] === target){
+        return [i, j]
+      }
+    }
+  }
+}
+
+console.log(twoSum([2, 4, 6, 8, 10], 16))
+
+
+const twoSum2 = (nums, target) => {
+  let map = {};
+  for(let i = 0; i < nums.length; i++) {
+    let value = nums[i]
+    let complimentPairs = target - value
+      if(map[complimentPairs] !== undefined) {
+        return [map[complimentPairs], i];
+      } else {
+        map[value] = i;
+      }
+  }
+}
+
+console.log(twoSum2([2, 4, 6, 8, 10], 16))
