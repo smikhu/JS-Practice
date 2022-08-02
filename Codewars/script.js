@@ -1106,10 +1106,9 @@ const loveFunc = (flower1, flower2) => {
 // console.log(loveFunc(0, 1));
 // console.log(loveFunc(0, 0));
 
-
 const loveFunc2 = (flower1, flower2) => {
-    return flower1 % 2 !== flower2 % 2
-}
+  return flower1 % 2 !== flower2 % 2;
+};
 
 // console.log(loveFunc2(1, 4));
 // console.log(loveFunc2(2, 4));
@@ -1117,10 +1116,9 @@ const loveFunc2 = (flower1, flower2) => {
 // console.log(loveFunc2(0, 0));
 // console.log(loveFunc2(3222, 5662));
 
-
 const past = (h, m, s) => {
-    return ((h*60*60+m*60+s)*1000)
-}
+  return (h * 60 * 60 + m * 60 + s) * 1000;
+};
 
 // console.log(past(0, 1, 1))
 // console.log(past(1, 1, 1))
@@ -1128,35 +1126,32 @@ const past = (h, m, s) => {
 // console.log(past(1, 0, 1))
 // console.log(past(1, 0, 0))
 
-
 const findShort = (s) => {
-    let split = s.split(' ')
-    split.sort((a, b) => b.length - a.length)
-    return split.pop().length
-}
+  let split = s.split(" ");
+  split.sort((a, b) => b.length - a.length);
+  return split.pop().length;
+};
 
 // console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
 // console.log(findShort("turns out random test cases are easier than writing out basic ones"))
 // console.log(findShort("Let's travel abroad shall we"))
 
 const findShort2 = (s) => {
-    return s.split(' ').reduce((a, b) => Math.min(a, b))
-}
-
+  return s.split(" ").reduce((a, b) => Math.min(a, b));
+};
 
 // console.log(findShort("bitcoin take over the world maybe who knows perhaps"))
 // console.log(findShort("turns out random test cases are easier than writing out basic ones"))
 // console.log(findShort("Let's travel abroad shall we"))
 
-
 const descendingOrder = (n) => {
-  let str = n.toString()
-  let split = str.split('')
+  let str = n.toString();
+  let split = str.split("");
   split.sort((a, b) => {
-    return b - a
-  })
-  return parseInt(split.join(''))
-}
+    return b - a;
+  });
+  return parseInt(split.join(""));
+};
 
 // console.log(descendingOrder(0))
 // console.log(descendingOrder(1))
@@ -1166,8 +1161,13 @@ const descendingOrder = (n) => {
 // console.log(descendingOrder(123456789))
 
 const descendingOrder2 = (n) => {
-  return parseInt(String(n).split('').sort((a, b) => b - a).join(''))
-}
+  return parseInt(
+    String(n)
+      .split("")
+      .sort((a, b) => b - a)
+      .join("")
+  );
+};
 
 // console.log(descendingOrder2(0))
 // console.log(descendingOrder2(1))
@@ -1176,24 +1176,87 @@ const descendingOrder2 = (n) => {
 // console.log(descendingOrder2(1021))
 // console.log(descendingOrder2(123456789))
 
-
-
 const highAndLow = (numbers) => {
-  let splitting = numbers.split(' ')
-  console.log(splitting)
-  let sorting = splitting.sort((a, b) => b - a)
-  console.log(sorting)
-  return `${sorting[0]} ${sorting.slice(-1)}`
-}
+  let splitting = numbers.split(" ");
+  let sorting = splitting.sort((a, b) => b - a);
+  return `${sorting[0]} ${sorting.slice(-1)}`;
+};
 
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
-console.log(highAndLow("1 2 3"))
-
+// console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+// console.log(highAndLow("1 2 3"))
 
 const highAndLow2 = (numbers) => {
-  let sorting = numbers.split(' ').sort((a, b) => b - a)
-  return `${sorting[0]} ${sorting.slice(-1)}`
+  let sorting = numbers.split(" ").sort((a, b) => b - a);
+  return `${sorting[0]} ${sorting.slice(-1)}`;
+};
+
+// console.log(highAndLow2("8 3 -5 42 -1 0 0 -9 -23 4 7 4 -4"))
+// console.log(highAndLow2("1 2 3"))
+
+const highAndLow3 = (numbers) => {
+  num = numbers.split(" ");
+  return `${Math.max(...num)} ${Math.min(...num)}`;
+};
+
+// console.log(highAndLow3("8 3 -5 42 -1 0 0 -9 -23 4 7 4 -4"))
+// console.log(highAndLow3("1 2 3"))
+
+const paperwork = (n, m) => {
+  if (n < 0 || m < 0) {
+    return 0;
+  }
+  return n * m;
+};
+
+// console.log(paperwork(5, 5))
+// console.log(paperwork(5, -5))
+// console.log(paperwork(-5, -5))
+// console.log(paperwork(-5, 5))
+// console.log(paperwork(5, 0))
+
+const numberToString = (num) => {
+  return num.toString();
+};
+
+// console.log(numberToString(67))
+
+const removeSmallest = (numbers) => {
+  let indexOfMin = numbers.indexOf(Math.min(...numbers));
+  console.log(indexOfMin);
+  return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+};
+
+// console.log(removeSmallest([1, 2, 3, 4, 5]))
+// console.log(removeSmallest([5, 3, 2, 1, 4]))
+// console.log(removeSmallest([2, 2, 1, 2, 1]))
+
+const countPositivesSumNegatives = (input) => {
+  if(input == null || input.length == 0) {
+    return [];
+  }
+
+  let negativeSum = 0;
+  let positiveLength = input.filter(num => num > 0).length
+  let negative = input.filter(num => {
+    if(num < 0) {
+      negativeSum = negativeSum + num
+    }
+  })
+
+  
+  return [positiveLength, negativeSum]
+};
+
+console.log(
+  countPositivesSumNegatives([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15
+  ])
+);
+
+
+const countPositivesSumNegatives2 = (input) => {
+  return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)]: [];
 }
 
-console.log(highAndLow2("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
-console.log(highAndLow2("1 2 3"))
+console.log(countPositivesSumNegatives2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
+console.log(countPositivesSumNegatives2([21, 7, 5505, -3, -21, -36, -81, 32, 23, 10, 9, 12, -57, -358, -21, -25]));
