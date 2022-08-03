@@ -1315,7 +1315,7 @@ const twoSum = (nums, target) => {
   }
 }
 
-console.log(twoSum([2, 4, 6, 8, 10], 16))
+// console.log(twoSum([2, 4, 6, 8, 10], 16))
 
 
 const twoSum2 = (nums, target) => {
@@ -1331,4 +1331,92 @@ const twoSum2 = (nums, target) => {
   }
 }
 
-console.log(twoSum2([2, 4, 6, 8, 10], 16))
+// console.log(twoSum2([2, 4, 6, 8, 10], 16))
+
+
+
+const busStop = (passenger) => {
+  let totalPeople = 0;
+  for (let i = 0; i < passenger.length; i++) {
+    totalPeople += passenger[i][0]
+    totalPeople -= passenger[i][1]
+  }
+  return totalPeople
+}
+
+// console.log(busStop([[10,0],[3,5],[5,8]]))
+// console.log(busStop([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
+// console.log(busStop([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
+// console.log(busStop([[0,0]]))
+
+
+const busStop2 = (passenger) => {
+  return passenger.reduce((rem, [on, off]) => {
+    return rem + on - off
+  }, 0)
+}
+
+// console.log(busStop2([[10,0],[3,5],[5,8]]))
+// console.log(busStop2([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
+// console.log(busStop2([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
+// console.log(busStop2([[0,0]]))
+
+
+const busStop3 = (passenger) => {
+  return passenger.reduce((a, b) => a + b[0] - b[1], 0)
+}
+
+// console.log(busStop3([[10,0],[3,5],[5,8]]))
+// console.log(busStop3([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
+// console.log(busStop3([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
+// console.log(busStop3([[0,0]]))
+
+
+const findNeedle = (haystack) => {
+  for(let i = 0; i < haystack.length; i++) {
+    if(haystack[i] === 'needle') {
+      return `found the needle at position ${i}`
+    }
+  }
+}
+
+// console.log(findNeedle(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]))
+// console.log(findNeedle(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']))
+// console.log(findNeedle([1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54]))
+
+const findNeedle2 = (haystack) => {
+  return `found the needle at position ${haystack.indexOf('needle')}`
+}
+
+// console.log(findNeedle2(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]))
+// console.log(findNeedle2(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']))
+// console.log(findNeedle2([1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54]))
+
+
+const filterList = (l) => {
+  return l
+  .filter(a => a === Number(a))
+}
+
+// console.log(filterList([1,2,'a','b']))
+// console.log(filterList([1,'a','b',0,15]))
+// console.log(filterList([1,2,'aasf','1','123',123]))
+
+
+const filterList2 = (l) => {
+  return l.filter(e => Number.isInteger(e));
+}
+
+// console.log(filterList2([1,2,'a','b']))
+// console.log(filterList2([1,'a','b',0,15]))
+// console.log(filterList2([1,2,'aasf','1','123',123]))
+
+
+const filterList3 = (l) => {
+  return l.filter(v => typeof v === 'number')
+}
+
+// console.log(filterList3([1,2,'a','b']))
+// console.log(filterList3([1,'a','b',0,15]))
+// console.log(filterList3([1,2,'aasf','1','123',123]))
+
