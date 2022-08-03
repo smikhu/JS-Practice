@@ -1468,3 +1468,57 @@ const isIsogram3 = (str) => {
 // console.log(isIsogram3("moOse"))
 // console.log(isIsogram3("isIsogram"))
 // console.log(isIsogram3(""))
+
+
+const openOrSenior = (data) => {
+  let newArr = [];
+  for(let i = 0; i < data.length; i++) {
+    if(data[i][0] >= 55 && data[i][1] > 7) {
+      newArr.push('Senior')
+    } else {
+      newArr.push('Open')
+    }
+  }
+  return newArr;
+}
+
+// console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]));
+// console.log(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]));
+// console.log(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]));
+
+
+const openOrSenior2 = (data) => {
+  return data.map(([age, handicap]) => {
+    if(age >= 55 && handicap > 7) {
+      return 'Senior'
+    } else {
+      return 'Open'
+    }
+  })
+}
+
+// console.log(openOrSenior2([[45, 12],[55,21],[19, -2],[104, 20]]));
+// console.log(openOrSenior2([[3, 12],[55,1],[91, -2],[53, 23]]));
+// console.log(openOrSenior2([[59, 12],[55,-1],[12, -2],[12, 12]]));
+
+
+const openOrSenior3 = (data) => {
+  return data.map(([age, handicap]) => (age >= 55 && handicap > 7) ? 'Senior' : 'Open')
+}
+
+// console.log(openOrSenior3([[45, 12],[55,21],[19, -2],[104, 20]]));
+// console.log(openOrSenior3([[3, 12],[55,1],[91, -2],[53, 23]]));
+// console.log(openOrSenior3([[59, 12],[55,-1],[12, -2],[12, 12]]));
+
+
+const getSum = (a, b) => {
+  let min = Math.min(a, b);
+  let max = Math.max(a, b);
+    return (max - min + 1) * (min + max) / 2;
+}
+
+console.log(getSum(0, -1))
+console.log(getSum(0, 1))
+console.log(getSum(0, 0))
+console.log(getSum(1, 1))
+console.log(getSum(1, 100))
