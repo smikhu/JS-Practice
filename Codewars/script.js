@@ -1420,3 +1420,51 @@ const filterList3 = (l) => {
 // console.log(filterList3([1,'a','b',0,15]))
 // console.log(filterList3([1,2,'aasf','1','123',123]))
 
+
+const isIsogram = (str) => {
+  str = str.toLowerCase();
+  for(let i = 0; i < str.length; i++) {
+    for(let j = i + 1; j < str.length; j++) {
+      if(str[i] === str[j]) {
+        return false
+      }
+    }
+  }
+  return true
+}
+
+// console.log(isIsogram("Dermatoglyphics"))
+// console.log(isIsogram("isogram"))
+// console.log(isIsogram("aba"))
+// console.log(isIsogram("moOse"))
+// console.log(isIsogram("isIsogram"))
+// console.log(isIsogram(""))
+
+
+const isIsogram2 = (str) => {
+  return str
+    .toLowerCase()
+    .split('')
+    .every((letter, index, array) => {
+      return array.indexOf(letter) === index;
+    })
+}
+
+// console.log(isIsogram2("Dermatoglyphics"))
+// console.log(isIsogram2("isogram"))
+// console.log(isIsogram2("aba"))
+// console.log(isIsogram2("moOse"))
+// console.log(isIsogram2("isIsogram"))
+// console.log(isIsogram2(""))
+
+
+const isIsogram3 = (str) => {
+  return new Set(str.toUpperCase()).size == str.length;
+}
+
+// console.log(isIsogram3("Dermatoglyphics"))
+// console.log(isIsogram3("isogram"))
+// console.log(isIsogram3("aba"))
+// console.log(isIsogram3("moOse"))
+// console.log(isIsogram3("isIsogram"))
+// console.log(isIsogram3(""))
