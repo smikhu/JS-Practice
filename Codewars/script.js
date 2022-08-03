@@ -1517,8 +1517,84 @@ const getSum = (a, b) => {
     return (max - min + 1) * (min + max) / 2;
 }
 
-console.log(getSum(0, -1))
-console.log(getSum(0, 1))
-console.log(getSum(0, 0))
-console.log(getSum(1, 1))
-console.log(getSum(1, 100))
+// console.log(getSum(0, -1))
+// console.log(getSum(0, 1))
+// console.log(getSum(0, 0))
+// console.log(getSum(1, 1))
+// console.log(getSum(1, 100))
+// console.log(getSum(1, 200))
+// console.log(getSum(-50, 200))
+
+
+const areaOrPerimeter = (l, w) => {
+  let area = l * w;
+  let perimeter = (l + w) * 2;
+
+  return l === w ? area : perimeter
+}
+
+// console.log(areaOrPerimeter(4, 4))
+// console.log(areaOrPerimeter(6, 10))
+
+
+const boolToWord = (bool) => {
+  return bool ? 'Yes' : 'No';
+}
+
+// console.log(boolToWord(true))
+// console.log(boolToWord(false))
+
+const boolToWord2 = (bool) => {
+  return bool === true ? 'Yes' : 'No'
+}
+
+// console.log(boolToWord2(true))
+// console.log(boolToWord2(false))
+
+
+const areYouPlayingBanjo = (name) => {
+  if(name[0] === 'R' | name[0] === 'r') {
+    return `${name} plays Banjo`
+  }
+  return `${name} does not play Banjo`
+}
+
+// console.log(areYouPlayingBanjo('Adam'))
+// console.log(areYouPlayingBanjo('Paul'))
+// console.log(areYouPlayingBanjo('Ringo'))
+// console.log(areYouPlayingBanjo('bravo'))
+// console.log(areYouPlayingBanjo('rolf'))
+
+
+const areYouPlayingBanjo2 = (name) => {
+  return name.charAt(0) === 'R' || name.charAt(0) === 'r' ? `${name} plays Banjo` : `${name} does not play the banjo`
+}
+
+// console.log(areYouPlayingBanjo2('Adam'))
+// console.log(areYouPlayingBanjo2('Paul'))
+// console.log(areYouPlayingBanjo2('Ringo'))
+// console.log(areYouPlayingBanjo2('bravo'))
+// console.log(areYouPlayingBanjo2('rolf'))
+
+
+const areYouPlayingBanjo3 = (name) => {
+  return name.toLowerCase().charAt(0) === 'r' ? `${name} plays banjo` : `${name} does not play banjo`
+}
+
+// console.log(areYouPlayingBanjo3('Adam'))
+// console.log(areYouPlayingBanjo3('Paul'))
+// console.log(areYouPlayingBanjo3('Ringo'))
+// console.log(areYouPlayingBanjo3('bravo'))
+// console.log(areYouPlayingBanjo3('rolf'))
+
+
+const cockroachSpeed = (s) => {
+  const secsInHour = 3600;
+  const centimetersInKilometers = 100000;
+
+  return Math.floor((s*centimetersInKilometers) / secsInHour)
+}
+
+// console.log(cockroachSpeed(1.08))
+// console.log(cockroachSpeed(1.09))
+// console.log(cockroachSpeed(0))
