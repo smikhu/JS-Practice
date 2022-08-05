@@ -1625,60 +1625,105 @@ const solution2 = (str, ending) => {
 // console.log(solution2("static", "c"));
 // console.log(solution2("steven", "v"));
 
-
 const solution3 = (str, ending) => {
-  return ending === str.substr(str.length - ending.length, str.length)
-}
+  return ending === str.substr(str.length - ending.length, str.length);
+};
 
 // console.log(solution3("abc", "bc"));
 // console.log(solution3("abc", "d"));
 // console.log(solution3("static", "c"));
 // console.log(solution3("steven", "v"));
 
-
 const digitize = (n) => {
   // let split = n.toString().split('').reverse()
   // return split.map(ele => parseInt(ele))
-  return String(n).split('').reverse().map((ele) => Number(ele))
-}
+  return String(n)
+    .split("")
+    .reverse()
+    .map((ele) => Number(ele));
+};
 
 // console.log(digitize(35231))
 // console.log(digitize(0))
 // console.log(digitize(5234689875))
 
-
 const digitize2 = (n) => {
-  return String(n).split('').map(Number).reverse()
-}
+  return String(n).split("").map(Number).reverse();
+};
 
 // console.log(digitize2(35231))
 // console.log(digitize2(0))
 // console.log(digitize2(5234689875))
 
 const opposite = (number) => {
-  if(number > 0) {
-    return number * -1
+  if (number > 0) {
+    return number * -1;
   } else if (number < 0) {
-    return number * -1
+    return number * -1;
   } else {
-    return 0
+    return 0;
   }
-}
+};
 
-console.log(opposite(1))
-console.log(opposite(0))
-console.log(opposite(4.25))
-console.log(opposite(3.333333))
-console.log(opposite(-12525220.3325))
-console.log(opposite(-5))
+// console.log(opposite(1))
+// console.log(opposite(0))
+// console.log(opposite(4.25))
+// console.log(opposite(3.333333))
+// console.log(opposite(-12525220.3325))
+// console.log(opposite(-5))
 
 const opposite2 = (number) => {
-  return number * (-1)
+  return number * -1;
+};
+
+// console.log(opposite2(1))
+// console.log(opposite2(0))
+// console.log(opposite2(4.25))
+// console.log(opposite2(3.333333))
+// console.log(opposite2(-12525220.3325))
+// console.log(opposite2(-5))
+
+const fakeBin = (x) => {
+  return x
+    .split("")
+    .map((ele) => (ele < 5 ? 0 : 1))
+    .join("");
+};
+
+// console.log(fakeBin("45385593107843568"));
+// console.log(fakeBin("509321967506747"));
+// console.log(fakeBin("366058562030849490134388085"));
+
+const fakeBin2 = (x) => {
+  let newStr = "";
+  for (let i = 0; i < x.length; i++) {
+    newStr += x[i] < 5 ? 0 : 1;
+  }
+  return newStr;
+};
+
+// console.log(fakeBin2("45385593107843568"));
+// console.log(fakeBin2("509321967506747"));
+// console.log(fakeBin2("366058562030849490134388085"));
+
+
+const simpleMultiplication = (number) => {
+  return number % 2 === 0 ? number * 8 : number * 9
 }
 
-console.log(opposite2(1))
-console.log(opposite2(0))
-console.log(opposite2(4.25))
-console.log(opposite2(3.333333))
-console.log(opposite2(-12525220.3325))
-console.log(opposite2(-5))
+// console.log(simpleMultiplication(2))
+// console.log(simpleMultiplication(1))
+// console.log(simpleMultiplication(8))
+// console.log(simpleMultiplication(4))
+// console.log(simpleMultiplication(5))
+
+
+const simpleMultiplication2 = (number) => {
+  return number * (number % 2 ? 9 : 8)
+}
+
+// console.log(simpleMultiplication2(2))
+// console.log(simpleMultiplication2(1))
+// console.log(simpleMultiplication2(8))
+// console.log(simpleMultiplication2(4))
+// console.log(simpleMultiplication2(5))
