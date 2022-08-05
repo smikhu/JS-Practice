@@ -1231,20 +1231,19 @@ const removeSmallest = (numbers) => {
 // console.log(removeSmallest([2, 2, 1, 2, 1]))
 
 const countPositivesSumNegatives = (input) => {
-  if(input == null) {
+  if (input == null) {
     return [];
   }
 
   let negativeSum = 0;
-  let positiveLength = input.filter(num => num > 0).length
-  let negative = input.filter(num => {
-    if(num < 0) {
-      negativeSum = negativeSum + num
+  let positiveLength = input.filter((num) => num > 0).length;
+  let negative = input.filter((num) => {
+    if (num < 0) {
+      negativeSum = negativeSum + num;
     }
-  })
+  });
 
-  
-  return [positiveLength, negativeSum]
+  return [positiveLength, negativeSum];
 };
 
 // console.log(
@@ -1253,185 +1252,173 @@ const countPositivesSumNegatives = (input) => {
 //   ])
 // );
 
-
 const countPositivesSumNegatives2 = (input) => {
-  return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)]: [];
-}
+  return input && input.length
+    ? [
+        input.filter((p) => p > 0).length,
+        input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
+      ]
+    : [];
+};
 
 // console.log(countPositivesSumNegatives2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
 // console.log(countPositivesSumNegatives2([21, 7, 5505, -3, -21, -36, -81, 32, 23, 10, 9, 12, -57, -358, -21, -25]));
 
-
-
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-  let gas = distanceToPump / mpg
-  if(gas <= fuelLeft) {
+  let gas = distanceToPump / mpg;
+  if (gas <= fuelLeft) {
     return true;
   } else {
     return false;
   }
-}
+};
 
 // console.log(zeroFuel(50, 25, 2))
 // console.log(zeroFuel(100, 50, 1))
 
-
-
 const seriesSum = (n) => {
   let sum = 0;
-  for(let i = 0; i < n; i++) {
-    sum += 1 / (3 * i + 1)
+  for (let i = 0; i < n; i++) {
+    sum += 1 / (3 * i + 1);
   }
-  return sum.toFixed(2)
-}
+  return sum.toFixed(2);
+};
 
 // console.log(seriesSum(1))
 // console.log(seriesSum(2))
 // console.log(seriesSum(3))
 // console.log(seriesSum(4))
 
-
 const rowSumOddNumbers = (n) => {
-  return n * n * n
-}
+  return n * n * n;
+};
 
 // console.log(rowSumOddNumbers(1))
 // console.log(rowSumOddNumbers(42))
 
 const rowSumOddNumbers2 = (n) => {
-  return Math.pow(n, 3)
-}
+  return Math.pow(n, 3);
+};
 
 // console.log(rowSumOddNumbers2(1))
 // console.log(rowSumOddNumbers2(2))
 
 const twoSum = (nums, target) => {
-  for(let i = 0; i < nums.length; i++) {
-    for(let j = 0; j < nums.length; j++) {
-      if(nums[i] + nums[j] === target){
-        return [i, j]
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
       }
     }
   }
-}
+};
 
 // console.log(twoSum([2, 4, 6, 8, 10], 16))
 
-
 const twoSum2 = (nums, target) => {
   let map = {};
-  for(let i = 0; i < nums.length; i++) {
-    let value = nums[i]
-    let complimentPairs = target - value
-      if(map[complimentPairs] !== undefined) {
-        return [map[complimentPairs], i];
-      } else {
-        map[value] = i;
-      }
+  for (let i = 0; i < nums.length; i++) {
+    let value = nums[i];
+    let complimentPairs = target - value;
+    if (map[complimentPairs] !== undefined) {
+      return [map[complimentPairs], i];
+    } else {
+      map[value] = i;
+    }
   }
-}
+};
 
 // console.log(twoSum2([2, 4, 6, 8, 10], 16))
-
-
 
 const busStop = (passenger) => {
   let totalPeople = 0;
   for (let i = 0; i < passenger.length; i++) {
-    totalPeople += passenger[i][0]
-    totalPeople -= passenger[i][1]
+    totalPeople += passenger[i][0];
+    totalPeople -= passenger[i][1];
   }
-  return totalPeople
-}
+  return totalPeople;
+};
 
 // console.log(busStop([[10,0],[3,5],[5,8]]))
 // console.log(busStop([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
 // console.log(busStop([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
 // console.log(busStop([[0,0]]))
 
-
 const busStop2 = (passenger) => {
   return passenger.reduce((rem, [on, off]) => {
-    return rem + on - off
-  }, 0)
-}
+    return rem + on - off;
+  }, 0);
+};
 
 // console.log(busStop2([[10,0],[3,5],[5,8]]))
 // console.log(busStop2([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
 // console.log(busStop2([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
 // console.log(busStop2([[0,0]]))
 
-
 const busStop3 = (passenger) => {
-  return passenger.reduce((a, b) => a + b[0] - b[1], 0)
-}
+  return passenger.reduce((a, b) => a + b[0] - b[1], 0);
+};
 
 // console.log(busStop3([[10,0],[3,5],[5,8]]))
 // console.log(busStop3([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
 // console.log(busStop3([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))
 // console.log(busStop3([[0,0]]))
 
-
 const findNeedle = (haystack) => {
-  for(let i = 0; i < haystack.length; i++) {
-    if(haystack[i] === 'needle') {
-      return `found the needle at position ${i}`
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === "needle") {
+      return `found the needle at position ${i}`;
     }
   }
-}
+};
 
 // console.log(findNeedle(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]))
 // console.log(findNeedle(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']))
 // console.log(findNeedle([1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54]))
 
 const findNeedle2 = (haystack) => {
-  return `found the needle at position ${haystack.indexOf('needle')}`
-}
+  return `found the needle at position ${haystack.indexOf("needle")}`;
+};
 
 // console.log(findNeedle2(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]))
 // console.log(findNeedle2(['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago']))
 // console.log(findNeedle2([1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,'needle',1,2,3,4,5,5,6,5,4,32,3,45,54]))
 
-
 const filterList = (l) => {
-  return l
-  .filter(a => a === Number(a))
-}
+  return l.filter((a) => a === Number(a));
+};
 
 // console.log(filterList([1,2,'a','b']))
 // console.log(filterList([1,'a','b',0,15]))
 // console.log(filterList([1,2,'aasf','1','123',123]))
 
-
 const filterList2 = (l) => {
-  return l.filter(e => Number.isInteger(e));
-}
+  return l.filter((e) => Number.isInteger(e));
+};
 
 // console.log(filterList2([1,2,'a','b']))
 // console.log(filterList2([1,'a','b',0,15]))
 // console.log(filterList2([1,2,'aasf','1','123',123]))
 
-
 const filterList3 = (l) => {
-  return l.filter(v => typeof v === 'number')
-}
+  return l.filter((v) => typeof v === "number");
+};
 
 // console.log(filterList3([1,2,'a','b']))
 // console.log(filterList3([1,'a','b',0,15]))
 // console.log(filterList3([1,2,'aasf','1','123',123]))
 
-
 const isIsogram = (str) => {
   str = str.toLowerCase();
-  for(let i = 0; i < str.length; i++) {
-    for(let j = i + 1; j < str.length; j++) {
-      if(str[i] === str[j]) {
-        return false
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j < str.length; j++) {
+      if (str[i] === str[j]) {
+        return false;
       }
     }
   }
-  return true
-}
+  return true;
+};
 
 // console.log(isIsogram("Dermatoglyphics"))
 // console.log(isIsogram("isogram"))
@@ -1440,15 +1427,14 @@ const isIsogram = (str) => {
 // console.log(isIsogram("isIsogram"))
 // console.log(isIsogram(""))
 
-
 const isIsogram2 = (str) => {
   return str
     .toLowerCase()
-    .split('')
+    .split("")
     .every((letter, index, array) => {
       return array.indexOf(letter) === index;
-    })
-}
+    });
+};
 
 // console.log(isIsogram2("Dermatoglyphics"))
 // console.log(isIsogram2("isogram"))
@@ -1457,10 +1443,9 @@ const isIsogram2 = (str) => {
 // console.log(isIsogram2("isIsogram"))
 // console.log(isIsogram2(""))
 
-
 const isIsogram3 = (str) => {
   return new Set(str.toUpperCase()).size == str.length;
-}
+};
 
 // console.log(isIsogram3("Dermatoglyphics"))
 // console.log(isIsogram3("isogram"))
@@ -1469,53 +1454,51 @@ const isIsogram3 = (str) => {
 // console.log(isIsogram3("isIsogram"))
 // console.log(isIsogram3(""))
 
-
 const openOrSenior = (data) => {
   let newArr = [];
-  for(let i = 0; i < data.length; i++) {
-    if(data[i][0] >= 55 && data[i][1] > 7) {
-      newArr.push('Senior')
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][0] >= 55 && data[i][1] > 7) {
+      newArr.push("Senior");
     } else {
-      newArr.push('Open')
+      newArr.push("Open");
     }
   }
   return newArr;
-}
+};
 
 // console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]));
 // console.log(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]));
 // console.log(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]));
 
-
 const openOrSenior2 = (data) => {
   return data.map(([age, handicap]) => {
-    if(age >= 55 && handicap > 7) {
-      return 'Senior'
+    if (age >= 55 && handicap > 7) {
+      return "Senior";
     } else {
-      return 'Open'
+      return "Open";
     }
-  })
-}
+  });
+};
 
 // console.log(openOrSenior2([[45, 12],[55,21],[19, -2],[104, 20]]));
 // console.log(openOrSenior2([[3, 12],[55,1],[91, -2],[53, 23]]));
 // console.log(openOrSenior2([[59, 12],[55,-1],[12, -2],[12, 12]]));
 
-
 const openOrSenior3 = (data) => {
-  return data.map(([age, handicap]) => (age >= 55 && handicap > 7) ? 'Senior' : 'Open')
-}
+  return data.map(([age, handicap]) =>
+    age >= 55 && handicap > 7 ? "Senior" : "Open"
+  );
+};
 
 // console.log(openOrSenior3([[45, 12],[55,21],[19, -2],[104, 20]]));
 // console.log(openOrSenior3([[3, 12],[55,1],[91, -2],[53, 23]]));
 // console.log(openOrSenior3([[59, 12],[55,-1],[12, -2],[12, 12]]));
 
-
 const getSum = (a, b) => {
   let min = Math.min(a, b);
   let max = Math.max(a, b);
-    return (max - min + 1) * (min + max) / 2;
-}
+  return ((max - min + 1) * (min + max)) / 2;
+};
 
 // console.log(getSum(0, -1))
 // console.log(getSum(0, 1))
@@ -1525,39 +1508,36 @@ const getSum = (a, b) => {
 // console.log(getSum(1, 200))
 // console.log(getSum(-50, 200))
 
-
 const areaOrPerimeter = (l, w) => {
   let area = l * w;
   let perimeter = (l + w) * 2;
 
-  return l === w ? area : perimeter
-}
+  return l === w ? area : perimeter;
+};
 
 // console.log(areaOrPerimeter(4, 4))
 // console.log(areaOrPerimeter(6, 10))
 
-
 const boolToWord = (bool) => {
-  return bool ? 'Yes' : 'No';
-}
+  return bool ? "Yes" : "No";
+};
 
 // console.log(boolToWord(true))
 // console.log(boolToWord(false))
 
 const boolToWord2 = (bool) => {
-  return bool === true ? 'Yes' : 'No'
-}
+  return bool === true ? "Yes" : "No";
+};
 
 // console.log(boolToWord2(true))
 // console.log(boolToWord2(false))
 
-
 const areYouPlayingBanjo = (name) => {
-  if(name[0] === 'R' | name[0] === 'r') {
-    return `${name} plays Banjo`
+  if ((name[0] === "R") | (name[0] === "r")) {
+    return `${name} plays Banjo`;
   }
-  return `${name} does not play Banjo`
-}
+  return `${name} does not play Banjo`;
+};
 
 // console.log(areYouPlayingBanjo('Adam'))
 // console.log(areYouPlayingBanjo('Paul'))
@@ -1565,10 +1545,11 @@ const areYouPlayingBanjo = (name) => {
 // console.log(areYouPlayingBanjo('bravo'))
 // console.log(areYouPlayingBanjo('rolf'))
 
-
 const areYouPlayingBanjo2 = (name) => {
-  return name.charAt(0) === 'R' || name.charAt(0) === 'r' ? `${name} plays Banjo` : `${name} does not play the banjo`
-}
+  return name.charAt(0) === "R" || name.charAt(0) === "r"
+    ? `${name} plays Banjo`
+    : `${name} does not play the banjo`;
+};
 
 // console.log(areYouPlayingBanjo2('Adam'))
 // console.log(areYouPlayingBanjo2('Paul'))
@@ -1576,10 +1557,11 @@ const areYouPlayingBanjo2 = (name) => {
 // console.log(areYouPlayingBanjo2('bravo'))
 // console.log(areYouPlayingBanjo2('rolf'))
 
-
 const areYouPlayingBanjo3 = (name) => {
-  return name.toLowerCase().charAt(0) === 'r' ? `${name} plays banjo` : `${name} does not play banjo`
-}
+  return name.toLowerCase().charAt(0) === "r"
+    ? `${name} plays banjo`
+    : `${name} does not play banjo`;
+};
 
 // console.log(areYouPlayingBanjo3('Adam'))
 // console.log(areYouPlayingBanjo3('Paul'))
@@ -1587,22 +1569,21 @@ const areYouPlayingBanjo3 = (name) => {
 // console.log(areYouPlayingBanjo3('bravo'))
 // console.log(areYouPlayingBanjo3('rolf'))
 
-
 const cockroachSpeed = (s) => {
   const secsInHour = 3600;
   const centimetersInKilometers = 100000;
 
-  return Math.floor((s*centimetersInKilometers) / secsInHour)
-}
+  return Math.floor((s * centimetersInKilometers) / secsInHour);
+};
 
 // console.log(cockroachSpeed(1.08))
 // console.log(cockroachSpeed(1.09))
 // console.log(cockroachSpeed(0))
 
 const doubleChar = (str) => {
-  let split = str.split('')
-  return split.map(c => c + c).join('')
-}
+  let split = str.split("");
+  return split.map((c) => c + c).join("");
+};
 
 // console.log(doubleChar('abcd'))
 // console.log(doubleChar('Adidas'))
@@ -1611,14 +1592,13 @@ const doubleChar = (str) => {
 // console.log(doubleChar('123456'))
 // console.log(doubleChar('%^&*('))
 
-
 const doubleChar2 = (str) => {
-  let newWord = '';
-  for(let i = 0; i < str.length; i++) {
-    newWord += str[i] + str[i]
+  let newWord = "";
+  for (let i = 0; i < str.length; i++) {
+    newWord += str[i] + str[i];
   }
-  return newWord
-}
+  return newWord;
+};
 
 // console.log(doubleChar2('abcd'))
 // console.log(doubleChar2('Adidas'))
@@ -1627,12 +1607,50 @@ const doubleChar2 = (str) => {
 // console.log(doubleChar2('123456'))
 // console.log(doubleChar2('%^&*('))
 
-
 const solution = (str, ending) => {
-  return str.endsWith(ending)
+  return str.endsWith(ending);
+};
+
+// console.log(solution('abc', 'bc'))
+// console.log(solution('abc', 'd'))
+// console.log(solution('static', 'c'))
+// console.log(solution('abc', 'd'))
+
+const solution2 = (str, ending) => {
+  return str.substr(-ending.length) == ending;
+};
+
+// console.log(solution2("abc", "bc"));
+// console.log(solution2("abc", "d"));
+// console.log(solution2("static", "c"));
+// console.log(solution2("steven", "v"));
+
+
+const solution3 = (str, ending) => {
+  return ending === str.substr(str.length - ending.length, str.length)
 }
 
-console.log(solution('abc', 'bc'))
-console.log(solution('abc', 'd'))
-console.log(solution('static', 'c'))
-console.log(solution('abc', 'd'))
+// console.log(solution3("abc", "bc"));
+// console.log(solution3("abc", "d"));
+// console.log(solution3("static", "c"));
+// console.log(solution3("steven", "v"));
+
+
+const digitize = (n) => {
+  // let split = n.toString().split('').reverse()
+  // return split.map(ele => parseInt(ele))
+  return String(n).split('').reverse().map((ele) => Number(ele))
+}
+
+// console.log(digitize(35231))
+// console.log(digitize(0))
+// console.log(digitize(5234689875))
+
+
+const digitize2 = (n) => {
+  return String(n).split('').map(Number).reverse()
+}
+
+// console.log(digitize2(35231))
+// console.log(digitize2(0))
+// console.log(digitize2(5234689875))
