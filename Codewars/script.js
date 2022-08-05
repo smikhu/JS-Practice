@@ -1654,3 +1654,31 @@ const digitize2 = (n) => {
 // console.log(digitize2(35231))
 // console.log(digitize2(0))
 // console.log(digitize2(5234689875))
+
+const opposite = (number) => {
+  if(number > 0) {
+    return number * -1
+  } else if (number < 0) {
+    return number * -1
+  } else {
+    return 0
+  }
+}
+
+console.log(opposite(1))
+console.log(opposite(0))
+console.log(opposite(4.25))
+console.log(opposite(3.333333))
+console.log(opposite(-12525220.3325))
+console.log(opposite(-5))
+
+const opposite2 = (number) => {
+  return number * (-1)
+}
+
+console.log(opposite2(1))
+console.log(opposite2(0))
+console.log(opposite2(4.25))
+console.log(opposite2(3.333333))
+console.log(opposite2(-12525220.3325))
+console.log(opposite2(-5))
