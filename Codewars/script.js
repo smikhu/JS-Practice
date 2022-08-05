@@ -1598,3 +1598,41 @@ const cockroachSpeed = (s) => {
 // console.log(cockroachSpeed(1.08))
 // console.log(cockroachSpeed(1.09))
 // console.log(cockroachSpeed(0))
+
+const doubleChar = (str) => {
+  let split = str.split('')
+  return split.map(c => c + c).join('')
+}
+
+// console.log(doubleChar('abcd'))
+// console.log(doubleChar('Adidas'))
+// console.log(doubleChar('1337'))
+// console.log(doubleChar('illuminati'))
+// console.log(doubleChar('123456'))
+// console.log(doubleChar('%^&*('))
+
+
+const doubleChar2 = (str) => {
+  let newWord = '';
+  for(let i = 0; i < str.length; i++) {
+    newWord += str[i] + str[i]
+  }
+  return newWord
+}
+
+// console.log(doubleChar2('abcd'))
+// console.log(doubleChar2('Adidas'))
+// console.log(doubleChar2('1337'))
+// console.log(doubleChar2('illuminati'))
+// console.log(doubleChar2('123456'))
+// console.log(doubleChar2('%^&*('))
+
+
+const solution = (str, ending) => {
+  return str.endsWith(ending)
+}
+
+console.log(solution('abc', 'bc'))
+console.log(solution('abc', 'd'))
+console.log(solution('static', 'c'))
+console.log(solution('abc', 'd'))
