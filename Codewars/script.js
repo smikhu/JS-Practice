@@ -1727,3 +1727,120 @@ const simpleMultiplication2 = (number) => {
 // console.log(simpleMultiplication2(8))
 // console.log(simpleMultiplication2(4))
 // console.log(simpleMultiplication2(5))
+
+
+const enough = (cap, on, wait) => {
+  return (on + wait > cap) ? on + wait - cap : 0;
+}
+
+// console.log(enough(10, 5, 5))
+// console.log(enough(100, 60, 50))
+// console.log(enough(20, 5, 5))
+
+
+const squareSum = (numbers) => {
+  // return numbers.map(ele => ele * ele ).reduce((a, b) => a + b, 0)
+  return numbers.reduce((acc, curr) => acc + (curr * curr), 0)
+}
+
+// console.log(squareSum([1, 2]))
+// console.log(squareSum([0, 3, 4, 5]))
+// console.log(squareSum([]))
+
+
+const squareSum2 = (numbers) => {
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++) {
+    sum = sum + (numbers[i] * numbers[i])
+  }
+  return sum
+}
+
+// console.log(squareSum2([1, 2]))
+// console.log(squareSum2([0, 3, 4, 5]))
+// console.log(squareSum2([]))
+
+
+const jadenCase = (str) => {
+  console.log(str)
+  return str.split(' ').map(ele => ele.charAt(0).toUpperCase() + ele.slice(1)).join(' ')
+}
+
+// console.log(jadenCase("How can mirrors be real if our eyes aren't real"))
+
+
+const isSquare = (n) => {
+  return Number.isInteger(Math.sqrt(n))
+}
+
+// console.log(isSquare(-1))
+// console.log(isSquare(0))
+// console.log(isSquare(3))
+// console.log(isSquare(4))
+// console.log(isSquare(25))
+// console.log(isSquare(26))
+
+
+const validatePin = (pin) => {
+  var pinLength = pin.length;
+  var isCorrectLength = (pinLength == 4 || pinLength == 6)
+  var hasOnlyNumbers = pin.match(/^\d+$/);
+
+  if(isCorrectLength && hasOnlyNumbers) {
+    return true;
+  }
+  return false;
+}
+
+// console.log(validatePin("1"))
+// console.log(validatePin("12"))
+// console.log(validatePin("123"))
+// console.log(validatePin("1345"))
+// console.log(validatePin("123456"))
+// console.log(validatePin("1234567"))
+// console.log(validatePin("-1234"))
+// console.log(validatePin("1.234"))
+// console.log(validatePin("-1.234"))
+// console.log(validatePin("00000000"))
+
+
+const validatePin2 = (pin) => {
+  return /^(\d{4}|\d{6})$/.test(pin)
+}
+
+// console.log(validatePin2("1"))
+// console.log(validatePin2("12"))
+// console.log(validatePin2("123"))
+// console.log(validatePin2("1345"))
+// console.log(validatePin2("123456"))
+// console.log(validatePin2("1234567"))
+// console.log(validatePin2("-1234"))
+// console.log(validatePin2("1.234"))
+// console.log(validatePin2("-1.234"))
+// console.log(validatePin2("00000000"))
+
+
+const camelCase = (string) => {
+
+  let splitAndMapping = string.split('').map((el) => {
+    if(el === el.toUpperCase()) {
+      el = ' ' + el
+    }
+    return el
+  })
+  return splitAndMapping.join('')
+}
+
+// console.log(camelCase('camelCasing'))
+// console.log(camelCase('camelCasingTest'))
+
+
+const camelCase2 = (string) => {
+  return [...string].map((char) => {
+    return (char === char.toUpperCase()) ? ` ${char}` : char;
+  }).join('')
+}
+
+// console.log(camelCase2('camelCasing'))
+// console.log(camelCase2('camelCasingTest'))
+// console.log(camelCase2('blooBlooBlooblooBlooBBlOO'))
