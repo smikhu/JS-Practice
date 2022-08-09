@@ -1844,3 +1844,38 @@ const camelCase2 = (string) => {
 // console.log(camelCase2('camelCasing'))
 // console.log(camelCase2('camelCasingTest'))
 // console.log(camelCase2('blooBlooBlooblooBlooBBlOO'))
+
+
+const DNAtoRNA = (dna) => {
+  return dna.split('T').join('U')
+}
+
+// console.log(DNAtoRNA('TTTT'))
+// console.log(DNAtoRNA('GCAT'))
+// console.log(DNAtoRNA('GACCGCCGCC'))
+
+
+const DNAtoRNA2 = (dna) => {
+  let hold = ''
+  for(let i = 0; i < dna.length; i++) {
+    if(dna[i] === 'T') {
+      hold = hold + 'U'
+    } else {
+      {hold+=dna[i]}
+    }
+  }
+  return hold
+}
+
+// console.log(DNAtoRNA2('TTTT'))
+// console.log(DNAtoRNA2('GCAT'))
+// console.log(DNAtoRNA2('GACCGCCGCC'))
+
+
+const DNAtoRNA3 = (dna) => {
+  return dna.replace(/T/g, 'U');
+}
+
+// console.log(DNAtoRNA3('TTTT'))
+// console.log(DNAtoRNA3('GCAT'))
+// console.log(DNAtoRNA3('GACCGCCGCC'))
