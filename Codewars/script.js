@@ -1706,10 +1706,9 @@ const fakeBin2 = (x) => {
 // console.log(fakeBin2("509321967506747"));
 // console.log(fakeBin2("366058562030849490134388085"));
 
-
 const simpleMultiplication = (number) => {
-  return number % 2 === 0 ? number * 8 : number * 9
-}
+  return number % 2 === 0 ? number * 8 : number * 9;
+};
 
 // console.log(simpleMultiplication(2))
 // console.log(simpleMultiplication(1))
@@ -1717,10 +1716,9 @@ const simpleMultiplication = (number) => {
 // console.log(simpleMultiplication(4))
 // console.log(simpleMultiplication(5))
 
-
 const simpleMultiplication2 = (number) => {
-  return number * (number % 2 ? 9 : 8)
-}
+  return number * (number % 2 ? 9 : 8);
+};
 
 // console.log(simpleMultiplication2(2))
 // console.log(simpleMultiplication2(1))
@@ -1728,50 +1726,48 @@ const simpleMultiplication2 = (number) => {
 // console.log(simpleMultiplication2(4))
 // console.log(simpleMultiplication2(5))
 
-
 const enough = (cap, on, wait) => {
-  return (on + wait > cap) ? on + wait - cap : 0;
-}
+  return on + wait > cap ? on + wait - cap : 0;
+};
 
 // console.log(enough(10, 5, 5))
 // console.log(enough(100, 60, 50))
 // console.log(enough(20, 5, 5))
 
-
 const squareSum = (numbers) => {
   // return numbers.map(ele => ele * ele ).reduce((a, b) => a + b, 0)
-  return numbers.reduce((acc, curr) => acc + (curr * curr), 0)
-}
+  return numbers.reduce((acc, curr) => acc + curr * curr, 0);
+};
 
 // console.log(squareSum([1, 2]))
 // console.log(squareSum([0, 3, 4, 5]))
 // console.log(squareSum([]))
 
-
 const squareSum2 = (numbers) => {
   let sum = 0;
-  for(let i = 0; i < numbers.length; i++) {
-    sum = sum + (numbers[i] * numbers[i])
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i] * numbers[i];
   }
-  return sum
-}
+  return sum;
+};
 
 // console.log(squareSum2([1, 2]))
 // console.log(squareSum2([0, 3, 4, 5]))
 // console.log(squareSum2([]))
 
-
 const jadenCase = (str) => {
-  console.log(str)
-  return str.split(' ').map(ele => ele.charAt(0).toUpperCase() + ele.slice(1)).join(' ')
-}
+  console.log(str);
+  return str
+    .split(" ")
+    .map((ele) => ele.charAt(0).toUpperCase() + ele.slice(1))
+    .join(" ");
+};
 
 // console.log(jadenCase("How can mirrors be real if our eyes aren't real"))
 
-
 const isSquare = (n) => {
-  return Number.isInteger(Math.sqrt(n))
-}
+  return Number.isInteger(Math.sqrt(n));
+};
 
 // console.log(isSquare(-1))
 // console.log(isSquare(0))
@@ -1780,17 +1776,16 @@ const isSquare = (n) => {
 // console.log(isSquare(25))
 // console.log(isSquare(26))
 
-
 const validatePin = (pin) => {
   var pinLength = pin.length;
-  var isCorrectLength = (pinLength == 4 || pinLength == 6)
+  var isCorrectLength = pinLength == 4 || pinLength == 6;
   var hasOnlyNumbers = pin.match(/^\d+$/);
 
-  if(isCorrectLength && hasOnlyNumbers) {
+  if (isCorrectLength && hasOnlyNumbers) {
     return true;
   }
   return false;
-}
+};
 
 // console.log(validatePin("1"))
 // console.log(validatePin("12"))
@@ -1803,10 +1798,9 @@ const validatePin = (pin) => {
 // console.log(validatePin("-1.234"))
 // console.log(validatePin("00000000"))
 
-
 const validatePin2 = (pin) => {
-  return /^(\d{4}|\d{6})$/.test(pin)
-}
+  return /^(\d{4}|\d{6})$/.test(pin);
+};
 
 // console.log(validatePin2("1"))
 // console.log(validatePin2("12"))
@@ -1819,74 +1813,70 @@ const validatePin2 = (pin) => {
 // console.log(validatePin2("-1.234"))
 // console.log(validatePin2("00000000"))
 
-
 const camelCase = (string) => {
-
-  let splitAndMapping = string.split('').map((el) => {
-    if(el === el.toUpperCase()) {
-      el = ' ' + el
+  let splitAndMapping = string.split("").map((el) => {
+    if (el === el.toUpperCase()) {
+      el = " " + el;
     }
-    return el
-  })
-  return splitAndMapping.join('')
-}
+    return el;
+  });
+  return splitAndMapping.join("");
+};
 
 // console.log(camelCase('camelCasing'))
 // console.log(camelCase('camelCasingTest'))
 
-
 const camelCase2 = (string) => {
-  return [...string].map((char) => {
-    return (char === char.toUpperCase()) ? ` ${char}` : char;
-  }).join('')
-}
+  return [...string]
+    .map((char) => {
+      return char === char.toUpperCase() ? ` ${char}` : char;
+    })
+    .join("");
+};
 
 // console.log(camelCase2('camelCasing'))
 // console.log(camelCase2('camelCasingTest'))
 // console.log(camelCase2('blooBlooBlooblooBlooBBlOO'))
 
-
 const DNAtoRNA = (dna) => {
-  return dna.split('T').join('U')
-}
+  return dna.split("T").join("U");
+};
 
 // console.log(DNAtoRNA('TTTT'))
 // console.log(DNAtoRNA('GCAT'))
 // console.log(DNAtoRNA('GACCGCCGCC'))
 
-
 const DNAtoRNA2 = (dna) => {
-  let hold = ''
-  for(let i = 0; i < dna.length; i++) {
-    if(dna[i] === 'T') {
-      hold = hold + 'U'
+  let hold = "";
+  for (let i = 0; i < dna.length; i++) {
+    if (dna[i] === "T") {
+      hold = hold + "U";
     } else {
-      {hold+=dna[i]}
+      {
+        hold += dna[i];
+      }
     }
   }
-  return hold
-}
+  return hold;
+};
 
 // console.log(DNAtoRNA2('TTTT'))
 // console.log(DNAtoRNA2('GCAT'))
 // console.log(DNAtoRNA2('GACCGCCGCC'))
 
-
 const DNAtoRNA3 = (dna) => {
-  return dna.replace(/T/g, 'U');
-}
+  return dna.replace(/T/g, "U");
+};
 
 // console.log(DNAtoRNA3('TTTT'))
 // console.log(DNAtoRNA3('GCAT'))
 // console.log(DNAtoRNA3('GACCGCCGCC'))
 
-
 const betterThanAverage = (classPoints, yourPoints) => {
-  
   let total = classPoints.reduce((a, b) => a + b, 0);
-  let average = total / classPoints.length
-  return yourPoints > average
-}
+  let average = total / classPoints.length;
+  return yourPoints > average;
+};
 
 // console.log(betterThanAverage([2, 3], 5))
 // console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
@@ -1894,10 +1884,11 @@ const betterThanAverage = (classPoints, yourPoints) => {
 // console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50))
 // console.log(betterThanAverage([29, 55, 74, 60, 11, 90, 67, 28], 21))
 
-
 const betterThanAverage2 = (classPoints, yourPoints) => {
-  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length;
-}
+  return (
+    yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length
+  );
+};
 
 // console.log(betterThanAverage2([2, 3], 5))
 // console.log(betterThanAverage2([100, 40, 34, 57, 29, 72, 57, 88], 75))
@@ -1905,146 +1896,195 @@ const betterThanAverage2 = (classPoints, yourPoints) => {
 // console.log(betterThanAverage2([41, 75, 72, 56, 80, 82, 81, 33], 50))
 // console.log(betterThanAverage2([29, 55, 74, 60, 11, 90, 67, 28], 21))
 
-
 const addBinary = (a, b) => {
-  return (a+b).toString(2)
-}
+  return (a + b).toString(2);
+};
 
 // console.log(addBinary(1, 2))
 // console.log(addBinary(5, 9))
 
-
 const wave = (str) => {
-let result = [];
+  let result = [];
 
-str.split('').forEach((char, index) => {
-  if(/[a-z]/.test(char)) {
-    result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1))
-  }
-})
-return result
-}
+  str.split("").forEach((char, index) => {
+    if (/[a-z]/.test(char)) {
+      result.push(
+        str.slice(0, index) + char.toUpperCase() + str.slice(index + 1)
+      );
+    }
+  });
+  return result;
+};
 
 // console.log(wave('hello'))
 
-
 const wave2 = (str) => {
-let result = [];
-for(let i = 0; i < str.length; i++) {
-  let copy = str.split('')
-  // console.log(copy)
-  if(copy[i] !== ' ') {
-    copy[i] = copy[i].toUpperCase()
+  let result = [];
+  for (let i = 0; i < str.length; i++) {
+    let copy = str.split("");
     // console.log(copy)
-    result.push(copy.join(''))
+    if (copy[i] !== " ") {
+      copy[i] = copy[i].toUpperCase();
+      // console.log(copy)
+      result.push(copy.join(""));
+    }
   }
-}
-return result
-}
+  return result;
+};
 
 // console.log(wave2('elephant'))
 
-
-
 const letterCount = (str) => {
-let newObj = {};
+  let newObj = {};
 
-let splitting = str.split('')
-splitting.map((ele) => {
-  if(newObj[ele]) {
-    newObj[ele]++
-  } else {
-    newObj[ele] = 1
-  }
-  // newObj[ele] ? newObj[ele]++ : newObj[ele] = 1;
-})
-return newObj
-}
+  let splitting = str.split("");
+  splitting.map((ele) => {
+    if (newObj[ele]) {
+      newObj[ele]++;
+    } else {
+      newObj[ele] = 1;
+    }
+    // newObj[ele] ? newObj[ele]++ : newObj[ele] = 1;
+  });
+  return newObj;
+};
 
 // console.log(letterCount('elephant'))
 
-
-
 const letterCount2 = (str) => {
-  return str.split('').reduce((acc, val) => {
+  return str.split("").reduce((acc, val) => {
     acc[val] = (acc[val] || 0) + 1;
-    return acc
-  }, {})
-}
+    return acc;
+  }, {});
+};
 
 // console.log(letterCount2('abaaaa'))
 
-
-
 const sumOfAll = (numbers) => {
-  return numbers.reduce((acc, val) => acc + val, 0)
-}
+  return numbers.reduce((acc, val) => acc + val, 0);
+};
 
 // console.log(sumOfAll([]))
 // console.log(sumOfAll([1, 5.2, 4, 0, -1]))
 
-
 const sumOfAll2 = (numbers) => {
   let total = 0;
-  for(let i = 0; i < numbers.length; i++) {
-    total = total + numbers[i]
+  for (let i = 0; i < numbers.length; i++) {
+    total = total + numbers[i];
   }
-  return total
-}
+  return total;
+};
 
 // console.log(sumOfAll2([]))
 // console.log(sumOfAll2([1, 5.2, 4, 0, -1]))
 
-
 const persistence = (num) => {
-  for(var i = 0; num > 9; i++) {
-    num = num.toString().split('').reduce((t, c) => t * c)
+  for (var i = 0; num > 9; i++) {
+    num = num
+      .toString()
+      .split("")
+      .reduce((t, c) => t * c);
   }
   return i;
-}
+};
 
 // console.log(persistence(39))
 // console.log(persistence(999))
 // console.log(persistence(4))
 
-
 const checkForMatch = (a, x) => {
-  return a.includes(x)
-}
+  return a.includes(x);
+};
 
 // console.log(checkForMatch([66, 101], 66))
 // console.log(checkForMatch([101, 45, 75, 105, 99, 107], 107))
 // console.log(checkForMatch(['t', 'e', 's', 't'], 'e'))
 // console.log(checkForMatch(['what', 'a', 'great', 'kata'], 'kat'))
 
-
 const checkForMatch2 = (a, x) => {
   let foundTarget = false;
   a.forEach((ele, i, array) => {
-    if(x === ele) {
-      foundTarget = true
+    if (x === ele) {
+      foundTarget = true;
     }
-  })
-  return foundTarget
-}
+  });
+  return foundTarget;
+};
 
 // console.log(checkForMatch2([66, 101], 66))
 // console.log(checkForMatch2([101, 45, 75, 105, 99, 107], 107))
 // console.log(checkForMatch2(['t', 'e', 's', 't'], 'e'))
 // console.log(checkForMatch2(['what', 'a', 'great', 'kata'], 'kat'))
 
-
 const checkForMatch3 = (a, x) => {
   let foundTarget = false;
-  for(let i = 0; i < a.length; i++) {
-    if(a[i] === x) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === x) {
       foundTarget = true;
     }
   }
   return foundTarget;
-}
+};
 
-console.log(checkForMatch3([66, 101], 66))
-console.log(checkForMatch3([101, 45, 75, 105, 99, 107], 107))
-console.log(checkForMatch3(['t', 'e', 's', 't'], 'e'))
-console.log(checkForMatch3(['what', 'a', 'great', 'kata'], 'kat'))
+// console.log(checkForMatch3([66, 101], 66))
+// console.log(checkForMatch3([101, 45, 75, 105, 99, 107], 107))
+// console.log(checkForMatch3(['t', 'e', 's', 't'], 'e'))
+// console.log(checkForMatch3(['what', 'a', 'great', 'kata'], 'kat'))
+
+const checkForMatch4 = (a, x) => {
+  return a.some((ele) => ele === x);
+};
+
+// console.log(checkForMatch4([66, 101], 66))
+// console.log(checkForMatch4([101, 45, 75, 105, 99, 107], 107))
+// console.log(checkForMatch4(['t', 'e', 's', 't'], 'e'))
+// console.log(checkForMatch4(['what', 'a', 'great', 'kata'], 'kat'))
+
+const uniqueInOrder = (iterable) => {
+  var result = [];
+  var last;
+
+  for (let i = 0; i < iterable.length; i++) {
+    if (iterable[i] !== last) {
+      result.push((last = iterable[i]));
+    }
+  }
+  return result;
+};
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+// console.log(uniqueInOrder('ABBCcAD'))
+// console.log(uniqueInOrder([1, 2, 3]))
+// console.log(uniqueInOrder([1, 2, 3, 3, 3, 5, 5, 4, 5, 5, 5, 6, 7, 8, 8, 9]))
+
+const uniqueInOrder2 = (iterable) => {
+  return [...iterable].filter((a, i) => a !== iterable[i - 1]);
+};
+
+// console.log(uniqueInOrder2("AAAABBBCCDAABBB"));
+// console.log(uniqueInOrder2("ABBCcAD"));
+// console.log(uniqueInOrder2([1, 2, 3]));
+// console.log(uniqueInOrder2([1, 2, 3, 3, 3, 5, 5, 4, 5, 5, 5, 6, 7, 8, 8, 9]));
+
+const uniqueInOrder3 = (iterable) => {
+  let newArr = [];
+
+  if (typeof iterable === "string") {
+    iterable = iterable.split("");
+  }
+
+  let arr = iterable.reduce((prev, curr) => {
+    if (prev !== curr) {
+      newArr.push(prev);
+    }
+    return curr;
+  });
+  newArr.push(arr);
+
+  return newArr;
+};
+
+// console.log(uniqueInOrder3("AAAABBBCCDAABBB"));
+// console.log(uniqueInOrder3("ABBCcAD"));
+// console.log(uniqueInOrder3([1, 2, 3]));
+// console.log(uniqueInOrder3([1, 2, 3, 3, 3, 5, 5, 4, 5, 5, 5, 6, 7, 8, 8, 9]));
