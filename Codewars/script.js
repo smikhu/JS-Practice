@@ -1925,4 +1925,126 @@ str.split('').forEach((char, index) => {
 return result
 }
 
-console.log(wave('hello'))
+// console.log(wave('hello'))
+
+
+const wave2 = (str) => {
+let result = [];
+for(let i = 0; i < str.length; i++) {
+  let copy = str.split('')
+  // console.log(copy)
+  if(copy[i] !== ' ') {
+    copy[i] = copy[i].toUpperCase()
+    // console.log(copy)
+    result.push(copy.join(''))
+  }
+}
+return result
+}
+
+// console.log(wave2('elephant'))
+
+
+
+const letterCount = (str) => {
+let newObj = {};
+
+let splitting = str.split('')
+splitting.map((ele) => {
+  if(newObj[ele]) {
+    newObj[ele]++
+  } else {
+    newObj[ele] = 1
+  }
+  // newObj[ele] ? newObj[ele]++ : newObj[ele] = 1;
+})
+return newObj
+}
+
+// console.log(letterCount('elephant'))
+
+
+
+const letterCount2 = (str) => {
+  return str.split('').reduce((acc, val) => {
+    acc[val] = (acc[val] || 0) + 1;
+    return acc
+  }, {})
+}
+
+// console.log(letterCount2('abaaaa'))
+
+
+
+const sumOfAll = (numbers) => {
+  return numbers.reduce((acc, val) => acc + val, 0)
+}
+
+// console.log(sumOfAll([]))
+// console.log(sumOfAll([1, 5.2, 4, 0, -1]))
+
+
+const sumOfAll2 = (numbers) => {
+  let total = 0;
+  for(let i = 0; i < numbers.length; i++) {
+    total = total + numbers[i]
+  }
+  return total
+}
+
+// console.log(sumOfAll2([]))
+// console.log(sumOfAll2([1, 5.2, 4, 0, -1]))
+
+
+const persistence = (num) => {
+  for(var i = 0; num > 9; i++) {
+    num = num.toString().split('').reduce((t, c) => t * c)
+  }
+  return i;
+}
+
+// console.log(persistence(39))
+// console.log(persistence(999))
+// console.log(persistence(4))
+
+
+const checkForMatch = (a, x) => {
+  return a.includes(x)
+}
+
+// console.log(checkForMatch([66, 101], 66))
+// console.log(checkForMatch([101, 45, 75, 105, 99, 107], 107))
+// console.log(checkForMatch(['t', 'e', 's', 't'], 'e'))
+// console.log(checkForMatch(['what', 'a', 'great', 'kata'], 'kat'))
+
+
+const checkForMatch2 = (a, x) => {
+  let foundTarget = false;
+  a.forEach((ele, i, array) => {
+    if(x === ele) {
+      foundTarget = true
+    }
+  })
+  return foundTarget
+}
+
+// console.log(checkForMatch2([66, 101], 66))
+// console.log(checkForMatch2([101, 45, 75, 105, 99, 107], 107))
+// console.log(checkForMatch2(['t', 'e', 's', 't'], 'e'))
+// console.log(checkForMatch2(['what', 'a', 'great', 'kata'], 'kat'))
+
+
+const checkForMatch3 = (a, x) => {
+  let foundTarget = false;
+  for(let i = 0; i < a.length; i++) {
+    if(a[i] === x) {
+      foundTarget = true;
+    }
+  }
+  return foundTarget;
+}
+
+console.log(checkForMatch3([66, 101], 66))
+console.log(checkForMatch3([101, 45, 75, 105, 99, 107], 107))
+console.log(checkForMatch3(['t', 'e', 's', 't'], 'e'))
+console.log(checkForMatch3(['what', 'a', 'great', 'kata'], 'kat'))
