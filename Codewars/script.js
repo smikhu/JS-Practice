@@ -1904,3 +1904,11 @@ const betterThanAverage2 = (classPoints, yourPoints) => {
 // console.log(betterThanAverage2([12, 23, 34, 45, 56, 67, 78, 89, 90], 9))
 // console.log(betterThanAverage2([41, 75, 72, 56, 80, 82, 81, 33], 50))
 // console.log(betterThanAverage2([29, 55, 74, 60, 11, 90, 67, 28], 21))
+
+
+const addBinary = (a, b) => {
+  return (a+b).toString(2)
+}
+
+// console.log(addBinary(1, 2))
+// console.log(addBinary(5, 9))
