@@ -111,9 +111,9 @@ const palindrome = (str) => {
   return reverseStr === lowRegStr;
 };
 
-console.log(palindrome("A man, a plan, a canal. Panama"));
-console.log(palindrome("toot"));
-console.log(palindrome("hey now"));
+// console.log(palindrome("A man, a plan, a canal. Panama"));
+// console.log(palindrome("toot"));
+// console.log(palindrome("hey now"));
 
 const palindrom2 = (str) => {
   var re = /[^A-Za-z0-9]/g;
@@ -127,6 +127,26 @@ const palindrom2 = (str) => {
   return true;
 };
 
-console.log(palindrome("A man, a plan, a canal. Panama"));
-console.log(palindrome("toot"));
-console.log(palindrome("hey now"));
+// console.log(palindrome("A man, a plan, a canal. Panama"));
+// console.log(palindrome("toot"));
+// console.log(palindrome("hey now"));
+
+
+var romanToInt = (s) => {
+  const map = {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000};
+  let res = 0;
+  s.split('').forEach((num, i) => {
+    if(map[num] < map[s[i + 1]]) {
+      res -= map[num]
+    } else {
+      res += map[num]
+    }
+  })
+  return res
+}
+
+console.log(romanToInt('III'))
+console.log(romanToInt('IV'))
+console.log(romanToInt('IX'))
+console.log(romanToInt('LVIII'))
+console.log(romanToInt('MCMXCIV'))
