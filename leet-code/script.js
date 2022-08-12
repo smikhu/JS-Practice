@@ -131,22 +131,44 @@ const palindrom2 = (str) => {
 // console.log(palindrome("toot"));
 // console.log(palindrome("hey now"));
 
-
-var romanToInt = (s) => {
-  const map = {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000};
+const romanToInt = (s) => {
+  const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
   let res = 0;
-  s.split('').forEach((num, i) => {
-    if(map[num] < map[s[i + 1]]) {
-      res -= map[num]
+  s.split("").forEach((num, i) => {
+    if (map[num] < map[s[i + 1]]) {
+      res -= map[num];
     } else {
-      res += map[num]
+      res += map[num];
     }
-  })
-  return res
-}
+  });
+  return res;
+};
 
-console.log(romanToInt('III'))
-console.log(romanToInt('IV'))
-console.log(romanToInt('IX'))
-console.log(romanToInt('LVIII'))
-console.log(romanToInt('MCMXCIV'))
+// console.log(romanToInt("III"));
+// console.log(romanToInt("IV"));
+// console.log(romanToInt("IX"));
+// console.log(romanToInt("LVIII"));
+// console.log(romanToInt("MCMXCIV"));
+
+const romanToInt2 = (s) => {
+  const key = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let ans = [];
+
+  for(let i = 0; i < s.length; i++) {
+    if(key[s[i]] < key[s[i + 1]]) {
+      ans.push(key[s[i + 1]] - key[s[i]])
+      i++;
+      continue;
+    } else {
+      ans.push(key[s[i]])
+    }
+  }
+  return ans.reduce((total, curr) => total + curr, 0)
+};
+
+console.log(romanToInt2("I"));
+console.log(romanToInt2("III"));
+console.log(romanToInt2("IV"));
+console.log(romanToInt2("IX"));
+console.log(romanToInt2("LVIII"));
+console.log(romanToInt2("MCMXCIV"));
