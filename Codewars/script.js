@@ -2088,3 +2088,75 @@ const uniqueInOrder3 = (iterable) => {
 // console.log(uniqueInOrder3("ABBCcAD"));
 // console.log(uniqueInOrder3([1, 2, 3]));
 // console.log(uniqueInOrder3([1, 2, 3, 3, 3, 5, 5, 4, 5, 5, 5, 6, 7, 8, 8, 9]));
+
+
+const bmi = (weight, height) => {
+  let final = weight / (height * height)
+  console.log(final)
+  if(final <= 18.5) {
+    return 'Underweight'
+  } else if (final <= 25.0) {
+    return 'Normal'
+  } else if (final <= 30.0) {
+    return 'Overweight'
+  } else if (final > 30) {
+    return 'Obese'
+  }
+  
+}
+
+// console.log(bmi(80, 1.80))
+
+
+const stray = (numbers) => {
+  for (var i in numbers) {
+    if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
+      return numbers[i]
+    }
+  }
+}
+
+// console.log(stray([1, 1, 2, 1, 1]))
+// console.log(stray([17, 17, 17, 17, 17, 18, 17, 17, 17, 17]))
+
+
+const sumTwoSmallestNumbers = (numbers) => {
+  let sorting = numbers.sort((a, b) => {
+    if (a < b) {
+      return -1
+    }
+  })
+  return sorting[0] + sorting[1]
+}
+
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]))
+// console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]))
+// console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]))
+// console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]))
+// console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]))
+
+
+const sumTwoSmallestNumbers2 = (numbers) => {
+  numbers = numbers.sort((a, b) => a - b);
+  return numbers[0] + numbers[1]
+}
+
+// console.log(sumTwoSmallestNumbers2([5, 8, 12, 19, 22]))
+// console.log(sumTwoSmallestNumbers2([15, 28, 4, 2, 43]))
+// console.log(sumTwoSmallestNumbers2([3, 87, 45, 12, 7]))
+// console.log(sumTwoSmallestNumbers2([23, 71, 33, 82, 1]))
+// console.log(sumTwoSmallestNumbers2([52, 76, 14, 12, 4]))
+
+
+const sumTwoSmallestNumbers3 = (numbers) => {
+  let [smaller, smallest] = numbers.slice().sort((a, b) => a - b);
+  return smaller + smallest
+}
+
+// console.log(sumTwoSmallestNumbers3([5, 8, 12, 19, 22]))
+// console.log(sumTwoSmallestNumbers3([15, 28, 4, 2, 43]))
+// console.log(sumTwoSmallestNumbers3([3, 87, 45, 12, 7]))
+// console.log(sumTwoSmallestNumbers3([23, 71, 33, 82, 1]))
+// console.log(sumTwoSmallestNumbers3([52, 76, 14, 12, 4]))
+
+
