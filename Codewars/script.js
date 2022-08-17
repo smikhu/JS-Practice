@@ -2288,3 +2288,28 @@ const litres = (time) => {
 // console.log(litres(11.8))
 // console.log(litres(1787))
 // console.log(litres(0))
+
+
+const quarterOf = (month) => {
+  if(month <= 3) {
+    return 1
+  } else if(month <= 6) {
+    return 2
+  } else if(month <= 9) {
+    return 3
+  } else {
+    return 4
+  }
+}
+
+// console.log(quarterOf(3))
+// console.log(quarterOf(8))
+// console.log(quarterOf(11))
+
+const quarterOf2 = (month) => {
+  return Math.ceil(month/3)
+}
+
+// console.log(quarterOf2(3))
+// console.log(quarterOf2(8))
+// console.log(quarterOf2(11))
