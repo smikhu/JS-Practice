@@ -2184,3 +2184,13 @@ const minMax2 = (arr) => {
 // console.log(minMax2([1, 2, 3, 4, 5]))
 // console.log(minMax2([2334454, 5]))
 // console.log(minMax2([5]))
+
+
+const friend = (friends) => {
+  return friends.filter(a => a.length === 4 && isNaN(a))
+}
+
+console.log(friend(["Ryan", "Kieran", "Mark"]))
+console.log(friend(["Ryan", "Jimmy", "1243", "4", "Cool Man"]))
+console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
+console.log(friend(["Love", "Your", "Face", "1"]))
