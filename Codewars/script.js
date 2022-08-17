@@ -2217,3 +2217,61 @@ const grow2 = (x) => {
 // console.log(grow2([4, 1, 1, 1, 4]))
 // console.log(grow2([2, 2, 2, 2, 2, 2]))
 // console.log(grow2([3, 2, 5, 6, 1, 6]))
+
+
+const longest = (s1, s2) => {
+  let output = [];
+  let combi = s1.concat(s2);
+  let array = combi.split('').sort()
+
+  for(let i = 0; i < array.length; i++) {
+    if(!output.includes(array[i])) {
+      output.push(array[i])
+    }
+  }
+  return output.join('')
+}
+
+// console.log(longest("aretheyhere", "yestheyarehere"))
+// console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
+// console.log(longest("inmanylanguages", "theresapairoffunctions"))
+
+
+const longest2 = (s1, s2) => {
+  // return [...new Set(s1+s2)].sort().join('')
+  let str = new Set([...s1, ...s2])
+  console.log(str)
+  return [...str].sort().join('')
+}
+
+// console.log(longest2("aretheyhere", "yestheyarehere"))
+// console.log(longest2("loopingisfunbutdangerous", "lessdangerousthancoding"))
+// console.log(longest2("inmanylanguages", "theresapairoffunctions"))
+
+const removeExclamationMarks = (s) => {
+  let splitting = s.split('')
+  console.log(splitting)
+
+  for(let i = 0; i < splitting.length; i++) {
+    if (splitting[i] === '!') {
+      splitting[i] = ''
+    }
+  }
+  return splitting.join('')
+}
+
+console.log(removeExclamationMarks('Hello World!'))
+
+
+const removeExclamationMarks2 =  (s) => {
+  return s.split('!').join('')
+}
+
+console.log(removeExclamationMarks2('Hel!!!!lo Wo!!!!!rl!!!!!d!!!! ! ! ! !!! !   !!!'))
+
+
+const removeExclamationMarks3 = (s) => {
+  return s.replace(/!/gi, '')
+}
+
+console.log(removeExclamationMarks3('Hel!!!!lo Wo!!!!!rl!!!!!d!!!! ! ! ! !!! !   !!!'))
