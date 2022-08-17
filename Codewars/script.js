@@ -2160,3 +2160,27 @@ const sumTwoSmallestNumbers3 = (numbers) => {
 // console.log(sumTwoSmallestNumbers3([52, 76, 14, 12, 4]))
 
 
+const minMax = (arr) => {
+  return [Math.min(...arr), Math.max(...arr)]
+}
+
+// console.log(minMax([1, 2, 3, 4, 5]))
+// console.log(minMax([2334454, 5]))
+// console.log(minMax([5]))
+
+
+const minMax2 = (arr) => {
+  let min = arr[0]; let max = arr[0]
+  for (const num of arr) {
+    if (num < min) {
+      min = num
+    } else if(num > max) {
+      max = num;
+    }
+  }
+  return [min, max]
+}
+
+// console.log(minMax2([1, 2, 3, 4, 5]))
+// console.log(minMax2([2334454, 5]))
+// console.log(minMax2([5]))
