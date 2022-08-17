@@ -2313,3 +2313,99 @@ const quarterOf2 = (month) => {
 // console.log(quarterOf2(3))
 // console.log(quarterOf2(8))
 // console.log(quarterOf2(11))
+
+
+const hoopCount = (n) => {
+  return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it';
+}
+
+// console.log(hoopCount(3))
+// console.log(hoopCount(11))
+// console.log(hoopCount(15))
+// console.log(hoopCount(2))
+
+
+const getGrade = (s1, s2, s3) => {
+let average = (s1+s2+s3) / 3
+
+if(average >= 90) {
+  return 'A'
+} else if (average >= 80) {
+  return 'B'
+} else if (average >= 70) {
+  return 'C'
+} else if (average >= 60) {
+  return 'D'
+} else return 'F'
+}
+
+// console.log(getGrade(95, 90, 93))
+// console.log(getGrade(100, 85, 96))
+// console.log(getGrade(92, 93, 94))
+// console.log(getGrade(70, 70, 100))
+// console.log(getGrade(85, 85, 87))
+// console.log(getGrade(84, 79, 85))
+// console.log(getGrade(89, 89, 90))
+// console.log(getGrade(60, 82, 76))
+// console.log(getGrade(58, 62, 70))
+// console.log(getGrade(48, 55, 52))
+
+
+const invert = (array) => {
+  return array.map(ele => ele * -1)
+}
+
+// console.log(invert([1, 2, 3, 4, 5]))
+// console.log(invert([1, -2, 3, -4, 5]))
+// console.log(invert([]))
+// console.log(invert([0]))
+
+
+
+// function findEvenIndex(arr)
+// {
+//   var left = 0, right = arr.reduce(function(pv, cv) { return pv + cv; }, 0);
+//   for(var i = 0; i < arr.length; i++) {
+//       if(i > 0) left += arr[i-1];
+//       right -= arr[i];
+      
+//       if(left == right) return i;
+//   }
+  
+//   return -1;
+// }
+
+
+// function findEvenIndex(arr)
+// {
+//   let left = 0;
+//   let right = arr.reduce((s,n) => s + n, 0);
+//   for (let i = 0; i < arr.length; i++) {
+//     right -= arr[i];
+//     if (left === right) return i;
+//     left += arr[i];
+//   }
+//   return -1;
+// }
+
+
+const findEvenIndex = (arr) => {
+  let left = 0;
+  let right = arr.reduce((a, b) => a + b, 0)
+  // console.log(right)
+  for(let i = 0; i < arr.length; i++) {
+    // console.log(right)
+    console.log(arr[i])
+    right = right - arr[i]
+    // console.log(right)
+    if(left === right) return i;
+    left = left + arr[i]
+  }
+
+  return -1;
+}
+
+console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
+console.log(findEvenIndex([1, 100, 50, -51, 1, 1]))
+console.log(findEvenIndex([1, 2, 3, 4, 5, 6]))
+console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]))
