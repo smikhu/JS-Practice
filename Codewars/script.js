@@ -2190,7 +2190,30 @@ const friend = (friends) => {
   return friends.filter(a => a.length === 4 && isNaN(a))
 }
 
-console.log(friend(["Ryan", "Kieran", "Mark"]))
-console.log(friend(["Ryan", "Jimmy", "1243", "4", "Cool Man"]))
-console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
-console.log(friend(["Love", "Your", "Face", "1"]))
+// console.log(friend(["Ryan", "Kieran", "Mark"]))
+// console.log(friend(["Ryan", "Jimmy", "1243", "4", "Cool Man"]))
+// console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
+// console.log(friend(["Love", "Your", "Face", "1"]))
+
+
+const grow = (x) => {
+  return x.reduce((acc, curr) => acc * curr, 1)
+}
+
+// console.log(grow([1, 2, 3]))
+// console.log(grow([4, 1, 1, 1, 4]))
+// console.log(grow([2, 2, 2, 2, 2, 2]))
+// console.log(grow([3, 2, 5, 6, 1, 6]))
+
+const grow2 = (x) => {
+  let initialValue = 1;
+  for(let i = 0; i < x.length; i++) {
+    initialValue = initialValue * x[i]
+  }
+  return initialValue
+}
+
+// console.log(grow2([1, 2, 3]))
+// console.log(grow2([4, 1, 1, 1, 4]))
+// console.log(grow2([2, 2, 2, 2, 2, 2]))
+// console.log(grow2([3, 2, 5, 6, 1, 6]))
