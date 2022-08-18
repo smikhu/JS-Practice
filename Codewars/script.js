@@ -2089,45 +2089,41 @@ const uniqueInOrder3 = (iterable) => {
 // console.log(uniqueInOrder3([1, 2, 3]));
 // console.log(uniqueInOrder3([1, 2, 3, 3, 3, 5, 5, 4, 5, 5, 5, 6, 7, 8, 8, 9]));
 
-
 const bmi = (weight, height) => {
-  let final = weight / (height * height)
-  console.log(final)
-  if(final <= 18.5) {
-    return 'Underweight'
+  let final = weight / (height * height);
+  console.log(final);
+  if (final <= 18.5) {
+    return "Underweight";
   } else if (final <= 25.0) {
-    return 'Normal'
+    return "Normal";
   } else if (final <= 30.0) {
-    return 'Overweight'
+    return "Overweight";
   } else if (final > 30) {
-    return 'Obese'
+    return "Obese";
   }
-  
-}
+};
 
 // console.log(bmi(80, 1.80))
-
 
 const stray = (numbers) => {
   for (var i in numbers) {
     if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
-      return numbers[i]
+      return numbers[i];
     }
   }
-}
+};
 
 // console.log(stray([1, 1, 2, 1, 1]))
 // console.log(stray([17, 17, 17, 17, 17, 18, 17, 17, 17, 17]))
 
-
 const sumTwoSmallestNumbers = (numbers) => {
   let sorting = numbers.sort((a, b) => {
     if (a < b) {
-      return -1
+      return -1;
     }
-  })
-  return sorting[0] + sorting[1]
-}
+  });
+  return sorting[0] + sorting[1];
+};
 
 // console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]))
 // console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]))
@@ -2135,11 +2131,10 @@ const sumTwoSmallestNumbers = (numbers) => {
 // console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]))
 // console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]))
 
-
 const sumTwoSmallestNumbers2 = (numbers) => {
   numbers = numbers.sort((a, b) => a - b);
-  return numbers[0] + numbers[1]
-}
+  return numbers[0] + numbers[1];
+};
 
 // console.log(sumTwoSmallestNumbers2([5, 8, 12, 19, 22]))
 // console.log(sumTwoSmallestNumbers2([15, 28, 4, 2, 43]))
@@ -2147,11 +2142,10 @@ const sumTwoSmallestNumbers2 = (numbers) => {
 // console.log(sumTwoSmallestNumbers2([23, 71, 33, 82, 1]))
 // console.log(sumTwoSmallestNumbers2([52, 76, 14, 12, 4]))
 
-
 const sumTwoSmallestNumbers3 = (numbers) => {
   let [smaller, smallest] = numbers.slice().sort((a, b) => a - b);
-  return smaller + smallest
-}
+  return smaller + smallest;
+};
 
 // console.log(sumTwoSmallestNumbers3([5, 8, 12, 19, 22]))
 // console.log(sumTwoSmallestNumbers3([15, 28, 4, 2, 43]))
@@ -2159,46 +2153,43 @@ const sumTwoSmallestNumbers3 = (numbers) => {
 // console.log(sumTwoSmallestNumbers3([23, 71, 33, 82, 1]))
 // console.log(sumTwoSmallestNumbers3([52, 76, 14, 12, 4]))
 
-
 const minMax = (arr) => {
-  return [Math.min(...arr), Math.max(...arr)]
-}
+  return [Math.min(...arr), Math.max(...arr)];
+};
 
 // console.log(minMax([1, 2, 3, 4, 5]))
 // console.log(minMax([2334454, 5]))
 // console.log(minMax([5]))
 
-
 const minMax2 = (arr) => {
-  let min = arr[0]; let max = arr[0]
+  let min = arr[0];
+  let max = arr[0];
   for (const num of arr) {
     if (num < min) {
-      min = num
-    } else if(num > max) {
+      min = num;
+    } else if (num > max) {
       max = num;
     }
   }
-  return [min, max]
-}
+  return [min, max];
+};
 
 // console.log(minMax2([1, 2, 3, 4, 5]))
 // console.log(minMax2([2334454, 5]))
 // console.log(minMax2([5]))
 
-
 const friend = (friends) => {
-  return friends.filter(a => a.length === 4 && isNaN(a))
-}
+  return friends.filter((a) => a.length === 4 && isNaN(a));
+};
 
 // console.log(friend(["Ryan", "Kieran", "Mark"]))
 // console.log(friend(["Ryan", "Jimmy", "1243", "4", "Cool Man"]))
 // console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
 // console.log(friend(["Love", "Your", "Face", "1"]))
 
-
 const grow = (x) => {
-  return x.reduce((acc, curr) => acc * curr, 1)
-}
+  return x.reduce((acc, curr) => acc * curr, 1);
+};
 
 // console.log(grow([1, 2, 3]))
 // console.log(grow([4, 1, 1, 1, 4]))
@@ -2207,79 +2198,74 @@ const grow = (x) => {
 
 const grow2 = (x) => {
   let initialValue = 1;
-  for(let i = 0; i < x.length; i++) {
-    initialValue = initialValue * x[i]
+  for (let i = 0; i < x.length; i++) {
+    initialValue = initialValue * x[i];
   }
-  return initialValue
-}
+  return initialValue;
+};
 
 // console.log(grow2([1, 2, 3]))
 // console.log(grow2([4, 1, 1, 1, 4]))
 // console.log(grow2([2, 2, 2, 2, 2, 2]))
 // console.log(grow2([3, 2, 5, 6, 1, 6]))
 
-
 const longest = (s1, s2) => {
   let output = [];
   let combi = s1.concat(s2);
-  let array = combi.split('').sort()
+  let array = combi.split("").sort();
 
-  for(let i = 0; i < array.length; i++) {
-    if(!output.includes(array[i])) {
-      output.push(array[i])
+  for (let i = 0; i < array.length; i++) {
+    if (!output.includes(array[i])) {
+      output.push(array[i]);
     }
   }
-  return output.join('')
-}
+  return output.join("");
+};
 
 // console.log(longest("aretheyhere", "yestheyarehere"))
 // console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
 // console.log(longest("inmanylanguages", "theresapairoffunctions"))
 
-
 const longest2 = (s1, s2) => {
   // return [...new Set(s1+s2)].sort().join('')
-  let str = new Set([...s1, ...s2])
-  console.log(str)
-  return [...str].sort().join('')
-}
+  let str = new Set([...s1, ...s2]);
+  console.log(str);
+  return [...str].sort().join("");
+};
 
 // console.log(longest2("aretheyhere", "yestheyarehere"))
 // console.log(longest2("loopingisfunbutdangerous", "lessdangerousthancoding"))
 // console.log(longest2("inmanylanguages", "theresapairoffunctions"))
 
 const removeExclamationMarks = (s) => {
-  let splitting = s.split('')
-  console.log(splitting)
+  let splitting = s.split("");
+  console.log(splitting);
 
-  for(let i = 0; i < splitting.length; i++) {
-    if (splitting[i] === '!') {
-      splitting[i] = ''
+  for (let i = 0; i < splitting.length; i++) {
+    if (splitting[i] === "!") {
+      splitting[i] = "";
     }
   }
-  return splitting.join('')
-}
+  return splitting.join("");
+};
 
 // console.log(removeExclamationMarks('Hello World!'))
 
-
-const removeExclamationMarks2 =  (s) => {
-  return s.split('!').join('')
-}
+const removeExclamationMarks2 = (s) => {
+  return s.split("!").join("");
+};
 
 // console.log(removeExclamationMarks2('Hel!!!!lo Wo!!!!!rl!!!!!d!!!! ! ! ! !!! !   !!!'))
 
-
 const removeExclamationMarks3 = (s) => {
-  return s.replace(/!/gi, '')
-}
+  return s.replace(/!/gi, "");
+};
 
 // console.log(removeExclamationMarks3('Hel!!!!lo Wo!!!!!rl!!!!!d!!!! ! ! ! !!! !   !!!'))
 
-
 const litres = (time) => {
-  return Math.floor(time * 0.5)
-}
+  return Math.floor(time * 0.5);
+};
 
 // console.log(litres(2))
 // console.log(litres(1.4))
@@ -2289,55 +2275,54 @@ const litres = (time) => {
 // console.log(litres(1787))
 // console.log(litres(0))
 
-
 const quarterOf = (month) => {
-  if(month <= 3) {
-    return 1
-  } else if(month <= 6) {
-    return 2
-  } else if(month <= 9) {
-    return 3
+  if (month <= 3) {
+    return 1;
+  } else if (month <= 6) {
+    return 2;
+  } else if (month <= 9) {
+    return 3;
   } else {
-    return 4
+    return 4;
   }
-}
+};
 
 // console.log(quarterOf(3))
 // console.log(quarterOf(8))
 // console.log(quarterOf(11))
 
 const quarterOf2 = (month) => {
-  return Math.ceil(month/3)
-}
+  return Math.ceil(month / 3);
+};
 
 // console.log(quarterOf2(3))
 // console.log(quarterOf2(8))
 // console.log(quarterOf2(11))
 
-
 const hoopCount = (n) => {
-  return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it';
-}
+  return n >= 10
+    ? "Great, now move on to tricks"
+    : "Keep at it until you get it";
+};
 
 // console.log(hoopCount(3))
 // console.log(hoopCount(11))
 // console.log(hoopCount(15))
 // console.log(hoopCount(2))
 
-
 const getGrade = (s1, s2, s3) => {
-let average = (s1+s2+s3) / 3
+  let average = (s1 + s2 + s3) / 3;
 
-if(average >= 90) {
-  return 'A'
-} else if (average >= 80) {
-  return 'B'
-} else if (average >= 70) {
-  return 'C'
-} else if (average >= 60) {
-  return 'D'
-} else return 'F'
-}
+  if (average >= 90) {
+    return "A";
+  } else if (average >= 80) {
+    return "B";
+  } else if (average >= 70) {
+    return "C";
+  } else if (average >= 60) {
+    return "D";
+  } else return "F";
+};
 
 // console.log(getGrade(95, 90, 93))
 // console.log(getGrade(100, 85, 96))
@@ -2350,17 +2335,14 @@ if(average >= 90) {
 // console.log(getGrade(58, 62, 70))
 // console.log(getGrade(48, 55, 52))
 
-
 const invert = (array) => {
-  return array.map(ele => ele * -1)
-}
+  return array.map((ele) => ele * -1);
+};
 
 // console.log(invert([1, 2, 3, 4, 5]))
 // console.log(invert([1, -2, 3, -4, 5]))
 // console.log(invert([]))
 // console.log(invert([0]))
-
-
 
 // function findEvenIndex(arr)
 // {
@@ -2368,13 +2350,12 @@ const invert = (array) => {
 //   for(var i = 0; i < arr.length; i++) {
 //       if(i > 0) left += arr[i-1];
 //       right -= arr[i];
-      
+
 //       if(left == right) return i;
 //   }
-  
+
 //   return -1;
 // }
-
 
 // function findEvenIndex(arr)
 // {
@@ -2388,24 +2369,59 @@ const invert = (array) => {
 //   return -1;
 // }
 
-
 const findEvenIndex = (arr) => {
   let left = 0;
-  let right = arr.reduce((a, b) => a + b, 0)
-  // console.log(right)
-  for(let i = 0; i < arr.length; i++) {
-    // console.log(right)
-    console.log(arr[i])
-    right = right - arr[i]
-    // console.log(right)
-    if(left === right) return i;
-    left = left + arr[i]
+  let right = arr.reduce((a, b) => a + b, 0);
+
+  for (let i = 0; i < arr.length; i++) {
+    right = right - arr[i];
+
+    if (left === right) {
+      return i;
+    }
+
+    left = left + arr[i];
   }
 
   return -1;
+};
+
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
+// console.log(findEvenIndex([1, 100, 50, -51, 1, 1]));
+// console.log(findEvenIndex([1, 2, 3, 4, 5, 6]));
+// console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]));
+
+
+const greet = (name, owner) => {
+  return name === owner ? 'Hello boss' : 'Hello guest'
 }
 
-console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
-console.log(findEvenIndex([1, 100, 50, -51, 1, 1]))
-console.log(findEvenIndex([1, 2, 3, 4, 5, 6]))
-console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]))
+// console.log(greet('Daniel', 'Daniel'))
+// console.log(greet('Greg', 'Daniel'))
+
+
+
+const abbrevName = (name) => {
+  return name.split(' ').map(ele => ele[0].toUpperCase()).join('.')
+}
+
+// console.log(abbrevName('Sam Harris'))
+// console.log(abbrevName('Patrick Feenan'))
+// console.log(abbrevName('patrick feenan'))
+// console.log(abbrevName('Evan Cole'))
+// console.log(abbrevName('P Favuzzi'))
+// console.log(abbrevName('David Mendieta'))
+
+
+const countSheep = (num) => {
+  let newStr = ''
+  for(let i = 1; i <= num; i++) {
+    newStr = newStr + `${i} sheep...`
+  }
+  return newStr
+}
+
+console.log(countSheep(0))
+console.log(countSheep(1))
+console.log(countSheep(2))
+console.log(countSheep(3))
