@@ -2784,3 +2784,44 @@ const comp3 = (array1, array2) => {
 }
 
 // console.log(comp3([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
+
+
+const accum = (s) => {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-')
+}
+
+// console.log(accum("ZpglnRxqenU"))
+// console.log(accum("NyffsGeyylB"))
+// console.log(accum("MjtkuBovqrU"))
+// console.log(accum("EvidjUnokmM"))
+// console.log(accum("HbideVbxncC"))
+
+
+const arithmetic = (a, b, operator) => {
+  if(operator === 'add') {
+    return a + b
+  } else if (operator === 'subtract') {
+    return a - b
+  } else if (operator === 'multiply') {
+    return a * b
+  } else return a / b
+}
+
+// console.log(arithmetic(1, 2, 'add'))
+// console.log(arithmetic(8, 2, 'subtract'))
+// console.log(arithmetic(5, 2, 'multiply'))
+// console.log(arithmetic(8, 2, 'divide'))
+
+
+const arithmetic2 = (a, b, operator) => ({
+  'add' : a + b,
+  'subtract' : a - b,
+  'multiply' : a * b,
+  'divide' : a / b
+
+}[operator]);
+
+// console.log(arithmetic2(1, 2, 'add'))
+// console.log(arithmetic2(8, 2, 'subtract'))
+// console.log(arithmetic2(5, 2, 'multiply'))
+// console.log(arithmetic2(8, 2, 'divide'))
