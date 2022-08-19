@@ -2391,19 +2391,19 @@ const findEvenIndex = (arr) => {
 // console.log(findEvenIndex([1, 2, 3, 4, 5, 6]));
 // console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35]));
 
-
 const greet = (name, owner) => {
-  return name === owner ? 'Hello boss' : 'Hello guest'
-}
+  return name === owner ? "Hello boss" : "Hello guest";
+};
 
 // console.log(greet('Daniel', 'Daniel'))
 // console.log(greet('Greg', 'Daniel'))
 
-
-
 const abbrevName = (name) => {
-  return name.split(' ').map(ele => ele[0].toUpperCase()).join('.')
-}
+  return name
+    .split(" ")
+    .map((ele) => ele[0].toUpperCase())
+    .join(".");
+};
 
 // console.log(abbrevName('Sam Harris'))
 // console.log(abbrevName('Patrick Feenan'))
@@ -2412,25 +2412,22 @@ const abbrevName = (name) => {
 // console.log(abbrevName('P Favuzzi'))
 // console.log(abbrevName('David Mendieta'))
 
-
 const countSheep = (num) => {
-  let newStr = ''
-  for(let i = 1; i <= num; i++) {
-    newStr = newStr + `${i} sheep...`
+  let newStr = "";
+  for (let i = 1; i <= num; i++) {
+    newStr = newStr + `${i} sheep...`;
   }
-  return newStr
-}
+  return newStr;
+};
 
 // console.log(countSheep(0))
 // console.log(countSheep(1))
 // console.log(countSheep(2))
 // console.log(countSheep(3))
 
-
-
 const stringToNumber = (str) => {
-  return Number(str)
-}
+  return Number(str);
+};
 
 // console.log(stringToNumber('1234'))
 // console.log(stringToNumber('605'))
@@ -2439,16 +2436,16 @@ const stringToNumber = (str) => {
 
 const getAge = (inputString) => {
   // return Number(`${inputString[0]}`)
-  return parseInt(inputString)
-}
+  return parseInt(inputString);
+};
 
 // console.log(getAge('4 years old'))
 // console.log(getAge('5 years old'))
 // console.log(getAge('21 years old'))
 
 const makeUpperCase = (str) => {
-  return str.toUpperCase()
-}
+  return str.toUpperCase();
+};
 
 // console.log(makeUpperCase('hello'))
 // console.log(makeUpperCase('goodbye'))
@@ -2458,32 +2455,29 @@ const powersOfTwo = (n) => {
   let result = [];
 
   for (let i = 0; i <= n; i++) {
-    result.push(Math.pow(2, i))
+    result.push(Math.pow(2, i));
   }
   return result;
-}
+};
 
 // console.log(powersOfTwo(0))
 // console.log(powersOfTwo(1))
 // console.log(powersOfTwo(4))
 
-
-
 const getMiddle = (str) => {
   let length = str.length;
   // console.log(length)
-  let middle = Math.floor(length / 2)
+  let middle = Math.floor(length / 2);
   // console.log(middle)
 
-  if(length % 2 === 0) {
+  if (length % 2 === 0) {
     // even
-    return str[middle -1] + str[middle]
+    return str[middle - 1] + str[middle];
   } else {
     // odd
-    return str[middle]
+    return str[middle];
   }
-
-}
+};
 
 // console.log(getMiddle('test'))
 // console.log(getMiddle('testing'))
@@ -2491,39 +2485,114 @@ const getMiddle = (str) => {
 // console.log(getMiddle('A'))
 
 const sumMix = (x) => {
-  return x.reduce((acc, curr) => acc + Number(curr), 0)
-}
+  return x.reduce((acc, curr) => acc + Number(curr), 0);
+};
 
 // console.log(sumMix([9, 3, '7', '3']))
 // console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]))
 // console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
 
-
 const sumStr = (a, b) => {
-  return (Number(a) + Number(b)).toString()
-}
+  return (Number(a) + Number(b)).toString();
+};
 
 // console.log(sumStr('4', '5'))
 // console.log(sumStr('34', '5'))
 
-
 const likes = (names) => {
-  if(names.length === 0) {
-    return 'no one likes this'
+  if (names.length === 0) {
+    return "no one likes this";
   } else if (names.length === 1) {
-    return `${names} likes this`
+    return `${names} likes this`;
   } else if (names.length === 2) {
-    return `${names[0]} and ${names[1]} like this`
+    return `${names[0]} and ${names[1]} like this`;
   } else if (names.length === 3) {
-    return `${names[0]}, ${names[1]} and ${names[2]} like this`
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`;
   } else if (names.length >= 4) {
-    return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+    return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
   }
-}
+};
 
-console.log(likes([]))
-console.log(likes(['Peter']))
-console.log(likes(['Jacob', 'Alex']))
-console.log(likes(['Max', 'John', 'Mark']))
-console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']))
-console.log(likes(['Alex', 'Jacob', 'Mark', 'Max', 'Steven', 'David', 'Alex', 'Sami']))
+// console.log(likes([]))
+// console.log(likes(['Peter']))
+// console.log(likes(['Jacob', 'Alex']))
+// console.log(likes(['Max', 'John', 'Mark']))
+// console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']))
+// console.log(likes(['Alex', 'Jacob', 'Mark', 'Max', 'Steven', 'David', 'Alex', 'Sami']))
+
+const isValidWalk = (walk) => {
+  let dx = 0;
+  let dy = 0;
+  let dt = walk.length;
+
+  for (let i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case "n":
+        dy--;
+        break;
+      case "s":
+        dy++;
+        break;
+      case "w":
+        dx--;
+        break;
+      case "e":
+        dx++;
+        break;
+    }
+  }
+
+  return dt === 10 && dx === 0 && dy === 0;
+};
+
+// console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
+// console.log(
+//   isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"])
+// );
+// console.log(isValidWalk(["w"]));
+// console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"]));
+
+const testEven = (n) => {
+  return n % 2 === 0;
+};
+
+// console.log(testEven(0))
+// console.log(testEven(0.5))
+// console.log(testEven(1))
+// console.log(testEven(2))
+// console.log(testEven(-4))
+
+const twoSort = (s) => {
+  
+  return s.sort()[0].split('').join('***')
+};
+
+// console.log(
+//   twoSort([
+//     "bitcoin",
+//     "take",
+//     "over",
+//     "the",
+//     "world",
+//     "maybe",
+//     "who",
+//     "knows",
+//     "perhaps",
+//   ])
+// );
+// console.log(
+//   twoSort([
+//     "turns",
+//     "out",
+//     "random",
+//     "test",
+//     "cases",
+//     "are",
+//     "easier",
+//     "than",
+//     "writing",
+//     "out",
+//     "basic",
+//     "ones",
+//   ])
+// );
