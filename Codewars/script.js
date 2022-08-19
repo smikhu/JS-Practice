@@ -2497,3 +2497,33 @@ const sumMix = (x) => {
 // console.log(sumMix([9, 3, '7', '3']))
 // console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]))
 // console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
+
+
+const sumStr = (a, b) => {
+  return (Number(a) + Number(b)).toString()
+}
+
+// console.log(sumStr('4', '5'))
+// console.log(sumStr('34', '5'))
+
+
+const likes = (names) => {
+  if(names.length === 0) {
+    return 'no one likes this'
+  } else if (names.length === 1) {
+    return `${names} likes this`
+  } else if (names.length === 2) {
+    return `${names[0]} and ${names[1]} like this`
+  } else if (names.length === 3) {
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`
+  } else if (names.length >= 4) {
+    return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+  }
+}
+
+console.log(likes([]))
+console.log(likes(['Peter']))
+console.log(likes(['Jacob', 'Alex']))
+console.log(likes(['Max', 'John', 'Mark']))
+console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']))
+console.log(likes(['Alex', 'Jacob', 'Mark', 'Max', 'Steven', 'David', 'Alex', 'Sami']))
