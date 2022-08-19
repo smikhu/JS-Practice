@@ -2421,7 +2421,79 @@ const countSheep = (num) => {
   return newStr
 }
 
-console.log(countSheep(0))
-console.log(countSheep(1))
-console.log(countSheep(2))
-console.log(countSheep(3))
+// console.log(countSheep(0))
+// console.log(countSheep(1))
+// console.log(countSheep(2))
+// console.log(countSheep(3))
+
+
+
+const stringToNumber = (str) => {
+  return Number(str)
+}
+
+// console.log(stringToNumber('1234'))
+// console.log(stringToNumber('605'))
+// console.log(stringToNumber('1405'))
+// console.log(stringToNumber('-7'))
+
+const getAge = (inputString) => {
+  // return Number(`${inputString[0]}`)
+  return parseInt(inputString)
+}
+
+// console.log(getAge('4 years old'))
+// console.log(getAge('5 years old'))
+// console.log(getAge('21 years old'))
+
+const makeUpperCase = (str) => {
+  return str.toUpperCase()
+}
+
+// console.log(makeUpperCase('hello'))
+// console.log(makeUpperCase('goodbye'))
+// console.log(makeUpperCase('sha sha sha da da'))
+
+const powersOfTwo = (n) => {
+  let result = [];
+
+  for (let i = 0; i <= n; i++) {
+    result.push(Math.pow(2, i))
+  }
+  return result;
+}
+
+// console.log(powersOfTwo(0))
+// console.log(powersOfTwo(1))
+// console.log(powersOfTwo(4))
+
+
+
+const getMiddle = (str) => {
+  let length = str.length;
+  // console.log(length)
+  let middle = Math.floor(length / 2)
+  // console.log(middle)
+
+  if(length % 2 === 0) {
+    // even
+    return str[middle -1] + str[middle]
+  } else {
+    // odd
+    return str[middle]
+  }
+
+}
+
+// console.log(getMiddle('test'))
+// console.log(getMiddle('testing'))
+// console.log(getMiddle('middle'))
+// console.log(getMiddle('A'))
+
+const sumMix = (x) => {
+  return x.reduce((acc, curr) => acc + Number(curr), 0)
+}
+
+// console.log(sumMix([9, 3, '7', '3']))
+// console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]))
+// console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
