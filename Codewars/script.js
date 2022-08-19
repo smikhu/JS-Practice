@@ -2825,3 +2825,73 @@ const arithmetic2 = (a, b, operator) => ({
 // console.log(arithmetic2(8, 2, 'subtract'))
 // console.log(arithmetic2(5, 2, 'multiply'))
 // console.log(arithmetic2(8, 2, 'divide'))
+
+
+const sequenceSum = (begin, end, step) => {
+  let sum = 0;
+  for(let i = begin; i <= end; i+=step) {
+    console.log(i)
+    sum = sum + i
+  }
+  return sum
+}
+
+// console.log(sequenceSum(2, 6, 2))
+// console.log(sequenceSum(1, 5, 1))
+// console.log(sequenceSum(1, 5, 3))
+
+
+const duplicateEncode = (word) => {
+  let unique = ''
+
+  word = word.toLowerCase();
+    for(let i = 0; i < word.length; i++) {
+      if(word.lastIndexOf(word[i]) == word.indexOf(word[i])) {
+        unique = unique + '('
+      } else {
+        unique = unique + ')'
+      }
+    }
+    return unique
+}
+
+// console.log(duplicateEncode('din'))
+// console.log(duplicateEncode('recede'))
+// console.log(duplicateEncode('Success'))
+// console.log(duplicateEncode('(( @'))
+
+
+const duplicateEncode2 = (word) => {
+  return word.toLowerCase().split('').map((ele, index, arr) => {
+    return arr.indexOf(ele) == arr.lastIndexOf(ele) ? '(' : ')'
+  }).join('')
+}
+
+// console.log(duplicateEncode2('din'))
+// console.log(duplicateEncode2('recede'))
+// console.log(duplicateEncode2('Success'))
+// console.log(duplicateEncode2('(( @'))
+
+
+const duplicateCount = (text) => {
+  let count = 0;
+  let buffer = '';
+  let sortedStr = text.toLowerCase().split('').sort().join('');
+ 
+
+  for(let i = 0; i < sortedStr.length; i++) {
+    
+    if(sortedStr[i] == sortedStr[i+1] && sortedStr[i] != buffer) {
+      buffer = sortedStr[i];
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(duplicateCount(''))
+console.log(duplicateCount('abcde'))
+console.log(duplicateCount('aabbcde'))
+console.log(duplicateCount('aabBcde'))
+console.log(duplicateCount('Indivisibility'))
+console.log(duplicateCount('Indivisibilities'))
