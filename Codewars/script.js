@@ -2563,8 +2563,7 @@ const testEven = (n) => {
 // console.log(testEven(-4))
 
 const twoSort = (s) => {
-  
-  return s.sort()[0].split('').join('***')
+  return s.sort()[0].split("").join("***");
 };
 
 // console.log(
@@ -2597,15 +2596,191 @@ const twoSort = (s) => {
 //   ])
 // );
 
-
-
 const reverseWords = (str) => {
-  return str.split(' ').map(ele => {
-    return ele.split('').reverse().join('')
-  }).join(' ')
+  return str
+    .split(" ")
+    .map((ele) => {
+      return ele.split("").reverse().join("");
+    })
+    .join(" ");
+};
+
+// console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
+// console.log(reverseWords('apple'))
+// console.log(reverseWords('a b c d'))
+// console.log(reverseWords('double  spaced  words'))
+
+const messiGoals = (laLigaGoals, copaDelReyGoals, championsLeagueGoals) => {
+  return [laLigaGoals, copaDelReyGoals, championsLeagueGoals].reduce(
+    (a, b) => a + b,
+    0
+  );
+};
+
+// console.log(messiGoals(0, 0, 0))
+// console.log(messiGoals(43, 10, 5))
+// console.log(messiGoals(32, 52, 45))
+
+const gooseFilter = (birds) => {
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+  return birds.filter((ele) => !geese.includes(ele));
+};
+
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+// console.log(gooseFilter(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"]))
+// console.log(gooseFilter(["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]))
+
+const gooseFilter2 = (birds) => {
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+  let newArr = [];
+  for (let i = 0; i < birds.length; i++) {
+    if (!geese.includes(birds[i])) {
+      newArr.push(birds[i]);
+    }
+  }
+  return newArr;
+};
+
+// console.log(gooseFilter2(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+// console.log(gooseFilter2(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"]))
+// console.log(gooseFilter2(["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]))
+
+const countSmileys = (arr) => {
+  let map = [
+    ":)",
+    ";)",
+    ":D",
+    ";D",
+    ":-)",
+    ";-)",
+    ":~)",
+    ";~)",
+    ":-D",
+    ";-D",
+    ":~D",
+    ";~)",
+    ";~D",
+  ];
+
+  let val = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (map.includes(arr[i])) {
+      val++;
+    }
+  }
+  return val;
+};
+
+// console.log(countSmileys([]))
+// console.log(countSmileys([':D',':~)',';~D',':)']))
+// console.log(countSmileys([':)',':(',':D',':O',':;']))
+// console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))
+
+const findDifference = (a, b) => {
+  return Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
+};
+
+// console.log(findDifference([3, 2, 5], [1, 4, 4]))
+// console.log(findDifference([9, 7, 2], [5, 2, 2]))
+// console.log(findDifference([11, 2, 5], [1, 10, 8]))
+// console.log(findDifference([4, 4, 7], [3, 9, 3]))
+// console.log(findDifference([15, 20, 25], [10, 30, 25]))
+
+const alternatingCases = (str) => {
+  return str
+    .split("")
+    .map((ele) =>
+      ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase()
+    )
+    .join("");
+};
+
+// console.log(alternatingCases('hello world'))
+// console.log(alternatingCases('HELLO WORLD'))
+// console.log(alternatingCases('hello WORLD'))
+// console.log(alternatingCases('HELLO world'))
+
+const greet3 = (language) => {
+  let greetings = {
+    english: "Welcome",
+    czech: "Vitejte",
+    danish: "Velkomst",
+    dutch: "Welkom",
+    estonian: "Tere tulemast",
+    finnish: "Tervetuloa",
+    flemish: "Welgekomen",
+    french: "Bienvenue",
+    german: "Willkommen",
+    irish: "Failte",
+    italian: "Benvenuto",
+    latvian: "Gaidits",
+    lithuanian: "Laukiamas",
+    polish: "Witamy",
+    spanish: "Bienvenido",
+    swedish: "Valkommen",
+    welsh: "Croeso",
+  };
+
+  return greetings[language] || "Welcome";
+};
+
+// console.log(greet3("english"));
+// console.log(greet3("dutch"));
+// console.log(greet3("flemish"));
+// console.log(greet3("finnish"));
+// console.log(greet3("IP_ADDRESS_INVALID"));
+
+const isPalindrome = (x) =>
+  x.split("").reverse().join("").toLowerCase() === x.toLowerCase();
+
+// console.log(isPalindrome('a'))
+// console.log(isPalindrome('aba'))
+// console.log(isPalindrome('Abba'))
+// console.log(isPalindrome('hello'))
+// console.log(isPalindrome('Bob'))
+// console.log(isPalindrome('Madam'))
+// console.log(isPalindrome('AbBa'))
+// console.log(isPalindrome(''))
+
+const smash = (words) => {
+  return words.join(' ')
+};
+
+// console.log(smash([]));
+// console.log(smash(["hello"]));
+// console.log(smash(["hello", "world"]));
+// console.log(smash(["hello", "amazing", "world"]));
+// console.log(smash(["this", "is", "a", "really", "long", "sentence"]));
+
+
+const comp = (array1, array2) => {
+  if(array1 == null || array2 == null) {
+    return false;
+  }
+
+  array1.sort((a, b) => a - b)
+  array2.sort((a, b) => a - b)
+
+  return array1.map(v => v * v).every((v, i) => v == array2[i])
+  
 }
 
-console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
-console.log(reverseWords('apple'))
-console.log(reverseWords('a b c d'))
-console.log(reverseWords('double  spaced  words'))
+// console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
+
+
+
+const comp2 = (array1, array2) => {
+  return !!array1 && !!array2 && array1.map(ele => ele * ele).sort().join() == array2.sort().join()
+}
+
+// console.log(comp2([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
+
+
+const comp3 = (array1, array2) => {
+  if (!array1 || !array2 || array1.length != array2.length) return false;
+  return array1.map(ele => ele * ele).sort().toString() === array2.sort().toString();
+}
+
+// console.log(comp3([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
