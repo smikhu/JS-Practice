@@ -2745,7 +2745,7 @@ const isPalindrome = (x) =>
 // console.log(isPalindrome(''))
 
 const smash = (words) => {
-  return words.join(' ')
+  return words.join(" ");
 };
 
 // console.log(smash([]));
@@ -2754,41 +2754,50 @@ const smash = (words) => {
 // console.log(smash(["hello", "amazing", "world"]));
 // console.log(smash(["this", "is", "a", "really", "long", "sentence"]));
 
-
 const comp = (array1, array2) => {
-  if(array1 == null || array2 == null) {
+  if (array1 == null || array2 == null) {
     return false;
   }
 
-  array1.sort((a, b) => a - b)
-  array2.sort((a, b) => a - b)
+  array1.sort((a, b) => a - b);
+  array2.sort((a, b) => a - b);
 
-  return array1.map(v => v * v).every((v, i) => v == array2[i])
-  
-}
+  return array1.map((v) => v * v).every((v, i) => v == array2[i]);
+};
 
 // console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
 
-
-
 const comp2 = (array1, array2) => {
-  return !!array1 && !!array2 && array1.map(ele => ele * ele).sort().join() == array2.sort().join()
-}
+  return (
+    !!array1 &&
+    !!array2 &&
+    array1
+      .map((ele) => ele * ele)
+      .sort()
+      .join() == array2.sort().join()
+  );
+};
 
 // console.log(comp2([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
 
-
 const comp3 = (array1, array2) => {
   if (!array1 || !array2 || array1.length != array2.length) return false;
-  return array1.map(ele => ele * ele).sort().toString() === array2.sort().toString();
-}
+  return (
+    array1
+      .map((ele) => ele * ele)
+      .sort()
+      .toString() === array2.sort().toString()
+  );
+};
 
 // console.log(comp3([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
 
-
 const accum = (s) => {
-  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-')
-}
+  return s
+    .split("")
+    .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+    .join("-");
+};
 
 // console.log(accum("ZpglnRxqenU"))
 // console.log(accum("NyffsGeyylB"))
@@ -2796,102 +2805,249 @@ const accum = (s) => {
 // console.log(accum("EvidjUnokmM"))
 // console.log(accum("HbideVbxncC"))
 
-
 const arithmetic = (a, b, operator) => {
-  if(operator === 'add') {
-    return a + b
-  } else if (operator === 'subtract') {
-    return a - b
-  } else if (operator === 'multiply') {
-    return a * b
-  } else return a / b
-}
+  if (operator === "add") {
+    return a + b;
+  } else if (operator === "subtract") {
+    return a - b;
+  } else if (operator === "multiply") {
+    return a * b;
+  } else return a / b;
+};
 
 // console.log(arithmetic(1, 2, 'add'))
 // console.log(arithmetic(8, 2, 'subtract'))
 // console.log(arithmetic(5, 2, 'multiply'))
 // console.log(arithmetic(8, 2, 'divide'))
 
-
-const arithmetic2 = (a, b, operator) => ({
-  'add' : a + b,
-  'subtract' : a - b,
-  'multiply' : a * b,
-  'divide' : a / b
-
-}[operator]);
+const arithmetic2 = (a, b, operator) =>
+  ({
+    add: a + b,
+    subtract: a - b,
+    multiply: a * b,
+    divide: a / b,
+  }[operator]);
 
 // console.log(arithmetic2(1, 2, 'add'))
 // console.log(arithmetic2(8, 2, 'subtract'))
 // console.log(arithmetic2(5, 2, 'multiply'))
 // console.log(arithmetic2(8, 2, 'divide'))
 
-
 const sequenceSum = (begin, end, step) => {
   let sum = 0;
-  for(let i = begin; i <= end; i+=step) {
-    console.log(i)
-    sum = sum + i
+  for (let i = begin; i <= end; i += step) {
+    console.log(i);
+    sum = sum + i;
   }
-  return sum
-}
+  return sum;
+};
 
 // console.log(sequenceSum(2, 6, 2))
 // console.log(sequenceSum(1, 5, 1))
 // console.log(sequenceSum(1, 5, 3))
 
-
 const duplicateEncode = (word) => {
-  let unique = ''
+  let unique = "";
 
   word = word.toLowerCase();
-    for(let i = 0; i < word.length; i++) {
-      if(word.lastIndexOf(word[i]) == word.indexOf(word[i])) {
-        unique = unique + '('
-      } else {
-        unique = unique + ')'
-      }
+  for (let i = 0; i < word.length; i++) {
+    if (word.lastIndexOf(word[i]) == word.indexOf(word[i])) {
+      unique = unique + "(";
+    } else {
+      unique = unique + ")";
     }
-    return unique
-}
+  }
+  return unique;
+};
 
 // console.log(duplicateEncode('din'))
 // console.log(duplicateEncode('recede'))
 // console.log(duplicateEncode('Success'))
 // console.log(duplicateEncode('(( @'))
 
-
 const duplicateEncode2 = (word) => {
-  return word.toLowerCase().split('').map((ele, index, arr) => {
-    return arr.indexOf(ele) == arr.lastIndexOf(ele) ? '(' : ')'
-  }).join('')
-}
+  return word
+    .toLowerCase()
+    .split("")
+    .map((ele, index, arr) => {
+      return arr.indexOf(ele) == arr.lastIndexOf(ele) ? "(" : ")";
+    })
+    .join("");
+};
 
 // console.log(duplicateEncode2('din'))
 // console.log(duplicateEncode2('recede'))
 // console.log(duplicateEncode2('Success'))
 // console.log(duplicateEncode2('(( @'))
 
-
 const duplicateCount = (text) => {
   let count = 0;
-  let buffer = '';
-  let sortedStr = text.toLowerCase().split('').sort().join('');
- 
+  let buffer = "";
+  let sortedStr = text.toLowerCase().split("").sort().join("");
 
-  for(let i = 0; i < sortedStr.length; i++) {
-    
-    if(sortedStr[i] == sortedStr[i+1] && sortedStr[i] != buffer) {
+  for (let i = 0; i < sortedStr.length; i++) {
+    if (sortedStr[i] == sortedStr[i + 1] && sortedStr[i] != buffer) {
       buffer = sortedStr[i];
       count++;
     }
   }
   return count;
+};
+
+// console.log(duplicateCount(''))
+// console.log(duplicateCount('abcde'))
+// console.log(duplicateCount('aabbcde'))
+// console.log(duplicateCount('aabBcde'))
+// console.log(duplicateCount('Indivisibility'))
+// console.log(duplicateCount('Indivisibilities'))
+
+const checkForFactor = (base, factor) => {
+  return base % factor === 0;
+};
+
+// console.log(checkForFactor(10, 2))
+// console.log(checkForFactor(63, 7))
+// console.log(checkForFactor(2450, 5))
+// console.log(checkForFactor(24612, 3))
+// console.log(checkForFactor(9, 2))
+// console.log(checkForFactor(653, 7))
+// console.log(checkForFactor(2453, 5))
+// console.log(checkForFactor(24617, 3))
+
+const removeUrlAnchor = (url) => {
+  return url.split("#")[0];
+};
+
+// console.log(removeUrlAnchor('www.codewars.com#about'))
+// console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'))
+// console.log(removeUrlAnchor('www.codewars.com/katas/'))
+
+const square = (n) => {
+  return n * n;
+};
+
+// console.log(square(3))
+
+const nameShuffler = (str) => {
+  return str.split(" ").reverse().join(" ");
+};
+
+// console.log(nameShuffler('john McClane'))
+// console.log(nameShuffler('Mary jeggins'))
+// console.log(nameShuffler('tom jerry'))
+
+const correct = (string) => {
+  let newStr = [];
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "0") {
+      newStr.push("O");
+    } else if (string[i] === "5") {
+      newStr.push("S");
+    } else if (string[i] === "1") {
+      newStr.push("I");
+    } else {
+      newStr.push(string[i]);
+    }
+  }
+  return newStr.join("");
+};
+
+// console.log(correct('L0ND0N'))
+// console.log(correct('DUBL1N'))
+// console.log(correct('51NGAP0RE'))
+// console.log(correct('BUDAPE5T'))
+// console.log(correct('PAR15'))
+
+const correct2 = (string) => {
+  return string.replace(/0/g, "O").replace(/5/g, "S").replace(/1/g, "I");
+};
+
+// console.log(correct2('L0ND0N'))
+// console.log(correct2('DUBL1N'))
+// console.log(correct2('51NGAP0RE'))
+// console.log(correct2('BUDAPE5T'))
+// console.log(correct2('PAR15'))
+
+const checkIndex = (array, n) => {
+  let newNum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (i === n) {
+      newNum = Math.pow(array[i], n);
+    }
+  }
+
+  if (n > array.length) {
+    newNum = -1;
+  }
+  return newNum;
+};
+
+// console.log(checkIndex([1, 2, 3, 4], 2))
+// console.log(checkIndex([1, 3, 10, 100],3))
+// console.log(checkIndex([1, 2],3))
+// console.log(checkIndex([1,1,1,1,1,1,1,1,1,1], 9))
+// console.log(checkIndex([1,1,1,1,1,1,1,1,1,2], 9))
+// console.log(checkIndex([29,82,45,10], 3))
+// console.log(checkIndex([6,31], 3))
+// console.log(checkIndex([75,68,35,61,9,36,89,0,30], 10))
+
+const checkIndex2 = (array, n) => {
+  if (array.length > n) {
+    return Math.pow(array[n], n);
+  } else {
+    return -1;
+  }
+};
+
+// console.log(checkIndex2([1, 2, 3, 4], 2))
+// console.log(checkIndex2([1, 3, 10, 100],3))
+// console.log(checkIndex2([1, 2],3))
+// console.log(checkIndex2([1,1,1,1,1,1,1,1,1,1], 9))
+// console.log(checkIndex2([1,1,1,1,1,1,1,1,1,2], 9))
+// console.log(checkIndex2([29,82,45,10], 3))
+// console.log(checkIndex2([6,31], 3))
+// console.log(checkIndex2([75,68,35,61,9,36,89,0,30], 10))
+
+const titleCase = (title, minorWords) => {
+  let minor = minorWords ? minorWords.toLowerCase().split(" ") : [];
+
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((v, i) => {
+      if (v != "" && (minor.indexOf(v) === -1 || i === 0)) {
+        v = v.split("");
+        v[0] = v[0].toUpperCase();
+        v = v.join("");
+      }
+      return v;
+    })
+    .join(" ");
+};
+
+// console.log(titleCase('a clash of KINGS', 'a an the of'))
+// console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
+// console.log(titleCase('the quick brown fox'))
+
+const numberedItems = (array) => {
+  return array.map((ele, i) => `${i + 1}: ${ele}`);
+};
+
+console.log(numberedItems([]));
+console.log(numberedItems(["a", "b", "c"]));
+
+
+const numberedItems2 = (array) => {
+  let newArr = [];
+
+  for(let i = 0; i < array.length; i++) {
+    newArr.push((i + 1) + ': ' + array[i]);
+  }
+
+  return newArr;
 }
 
-console.log(duplicateCount(''))
-console.log(duplicateCount('abcde'))
-console.log(duplicateCount('aabbcde'))
-console.log(duplicateCount('aabBcde'))
-console.log(duplicateCount('Indivisibility'))
-console.log(duplicateCount('Indivisibilities'))
+console.log(numberedItems2([]));
+console.log(numberedItems2(["a", "b", "c"]));
