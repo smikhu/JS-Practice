@@ -3216,3 +3216,53 @@ const sortedPassedArr = (nums) => {
 // console.log(sortedPassedArr([2, 20, 10]))
 
 
+const getRealFloor = (n) => {
+  if(n <= 0) {
+    return n
+  } else if (n >= 13) {
+    return n - 2
+  } else return n - 1
+}
+
+// console.log(getRealFloor(1))
+// console.log(getRealFloor(5))
+// console.log(getRealFloor(15))
+
+
+const towerBuilder = (floors) => {
+  let tower = []
+
+  for (let i = 0; i < floors; i++) {
+    tower.push(' '.repeat(floors - i - 1)
+    + '*'.repeat((i * 2) + 1) 
+    + ' '.repeat(floors - i - 1));
+  }
+  return tower
+}
+
+console.log(towerBuilder(1))
+console.log(towerBuilder(2))
+console.log(towerBuilder(3))
+
+
+const towerBuilder2 = (floors) => {
+  let bricks = '*'
+  let spaces = ''
+  let tower = []
+
+  for(let i = 1; i < floors; i++) {
+    spaces = spaces + ' '
+  }
+
+  for(let i = 0; i < floors; i++) {
+    let space = spaces.substring(0, floors - i - 1);
+    tower.push(space + bricks + space);
+    bricks = bricks + '**'
+  }
+
+  return tower
+} 
+
+// console.log(towerBuilder2(1))
+// console.log(towerBuilder2(2))
+// console.log(towerBuilder2(3))
