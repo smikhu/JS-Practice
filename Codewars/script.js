@@ -3449,3 +3449,35 @@ const expressionMatters = (a, b, c) => {
 // console.log(expressionMatters(1, 2, 3))
 // console.log(expressionMatters(1, 3, 1))
 // console.log(expressionMatters(2, 2, 2))
+
+const capitals = (word) => {
+  let newArr = [];
+
+  for(let i = 0; i < word.length; i++) {
+    if(word[i] === word[i].toUpperCase()) {
+      newArr.push(i)
+    }
+  }
+  return newArr;
+}
+
+// console.log(capitals('CodEWaRs'))
+
+
+const isPangram = (string) => {
+  return 'abcdefghijklmnopqrstuvwxyz'.split('').every((x) => string.toLowerCase().includes(x))
+}
+
+// console.log(isPangram('The quick brown fox jumps over the lazy dog.'))
+// console.log(isPangram('This is not a pangram.'))
+
+
+const isPangram2 = (string) => {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
+  string = string.toLowerCase();
+  return alphabet.every(ele => string.includes(ele))
+}
+
+// console.log(isPangram2('The quick brown fox jumps over the lazy dog.'))
+// console.log(isPangram2('This is not a pangram.'))
