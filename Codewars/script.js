@@ -3170,11 +3170,11 @@ const reverseSeq2 = (n) => {
 // console.log(reverseSeq2(35))
 
 const warnTheSheep = (q) => {
-  let reverseArr = q.reverse().indexOf('wolf')
-  if(reverseArr === 0) {
-    return 'Pls go away and stop eating my sheep'
+  let reverseArr = q.reverse().indexOf("wolf");
+  if (reverseArr === 0) {
+    return "Pls go away and stop eating my sheep";
   } else {
-    return `Oi! Sheep number ${reverseArr}! You are about to be eaten by a wolf!`
+    return `Oi! Sheep number ${reverseArr}! You are about to be eaten by a wolf!`;
   }
 };
 
@@ -3199,4 +3199,20 @@ const warnTheSheep = (q) => {
 // console.log(warnTheSheep(["sheep", "wolf", "sheep"]));
 // console.log(warnTheSheep(["wolf"]));
 // console.log(warnTheSheep(["sheep", "sheep", "wolf"]));
+
+const sortedPassedArr = (nums) => {
+  // if(nums === null) {
+  //   return []
+  // }
+  // return nums.sort((a, b) => a - b)
+
+  return nums !== null ? nums.sort((a, b) => a - b) : [];
+};
+
+// console.log(sortedPassedArr([1, 2, 3, 10, 5]))
+// console.log(sortedPassedArr([null]))
+// console.log(sortedPassedArr([]))
+// console.log(sortedPassedArr([20, 2, 10]))
+// console.log(sortedPassedArr([2, 20, 10]))
+
 
