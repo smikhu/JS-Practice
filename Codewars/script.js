@@ -3326,7 +3326,9 @@ const highestAndLowest3 = (arr) => {
 
 const helloName = (name) => {
   if (name) {
-    return "Hello, " + name[0].toUpperCase() + name.slice(1).toLowerCase() + "!";
+    return (
+      "Hello, " + name[0].toUpperCase() + name.slice(1).toLowerCase() + "!"
+    );
   } else {
     return "Hello, World!";
   }
@@ -3337,51 +3339,47 @@ const helloName = (name) => {
 // console.log(helloName());
 // console.log(helloName(""));
 
-
 const strCount = (str, letter) => {
   let sum = 0;
 
-  str.split('').map(ele => {
-    if(ele.includes(letter)) {
-      sum++
+  str.split("").map((ele) => {
+    if (ele.includes(letter)) {
+      sum++;
     }
-  })
+  });
   return sum;
-}
+};
 
 // console.log(strCount('Hello', 'o'))
 // console.log(strCount('Hello', 'l'))
 // console.log(strCount('', 'z'))
 
-
 const strCount2 = (str, letter) => {
-  return str.split(letter).length - 1
-}
+  return str.split(letter).length - 1;
+};
 
 // console.log(strCount2('Hello', 'o'))
 // console.log(strCount2('Hello', 'l'))
 // console.log(strCount2('', 'z'))
 
-
 const strCount3 = (str, letter) => {
   let sum = 0;
 
-  for(let i = 0; i < str.length; i++) {
-    if(letter === str[i]) {
-      sum++
+  for (let i = 0; i < str.length; i++) {
+    if (letter === str[i]) {
+      sum++;
     }
   }
-  return sum
-}
+  return sum;
+};
 
 // console.log(strCount3('Hello', 'o'))
 // console.log(strCount3('Hello', 'l'))
 // console.log(strCount3('', 'z'))
 
-
 const noBoringZeros = (n) => {
-  return +`${n}`.replace(/0*$/, '')
-}
+  return +`${n}`.replace(/0*$/, "");
+};
 
 // console.log(noBoringZeros(1450))
 // console.log(noBoringZeros(960000))
@@ -3390,17 +3388,64 @@ const noBoringZeros = (n) => {
 // console.log(noBoringZeros(-105))
 // console.log(noBoringZeros(0))
 
-
 const findSum = (n) => {
   let sum = 0;
 
-  for(let i = 0; i <= n; i++) {
+  for (let i = 0; i <= n; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      sum = sum + i
+      sum = sum + i;
     }
   }
-  return sum
+  return sum;
+};
+
+// console.log(findSum(5))
+// console.log(findSum(10))
+
+const findMultiples = (integer, limit) => {
+  let newArr = [];
+
+  for (let i = integer; i <= limit; i += integer) {
+    newArr.push(i);
+  }
+  return newArr;
+};
+
+// console.log(findMultiples(5, 25));
+// console.log(findMultiples(1, 2));
+// console.log(findMultiples(5, 7));
+// console.log(findMultiples(4, 27));
+// console.log(findMultiples(11, 54));
+
+
+const finalGrade = (exam, projects) => {
+  if( exam > 90 && projects > 10) {
+    return 100
+  } else if(exam > 75 && projects >= 5) {
+    return 90
+  } else if(exam > 50 && projects >= 2) {
+    return 75
+  } else return 0
 }
 
-console.log(findSum(5))
-console.log(findSum(10))
+// console.log(finalGrade(100, 12))
+// console.log(finalGrade(85, 5))
+
+
+const expressionMatters = (a, b, c) => {
+  return Math.max(
+    a + b + c,
+    a * b * c,
+    a * (b + c),
+    (a + b) * c,
+    a + b * c,
+    a * b + c
+  )
+}
+
+// console.log(expressionMatters(2, 1, 2))
+// console.log(expressionMatters(2, 1, 1))
+// console.log(expressionMatters(1, 1, 1))
+// console.log(expressionMatters(1, 2, 3))
+// console.log(expressionMatters(1, 3, 1))
+// console.log(expressionMatters(2, 2, 2))
