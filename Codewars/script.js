@@ -3038,34 +3038,31 @@ const numberedItems = (array) => {
 // console.log(numberedItems([]));
 // console.log(numberedItems(["a", "b", "c"]));
 
-
 const numberedItems2 = (array) => {
   let newArr = [];
 
-  for(let i = 0; i < array.length; i++) {
-    newArr.push((i + 1) + ': ' + array[i]);
+  for (let i = 0; i < array.length; i++) {
+    newArr.push(i + 1 + ": " + array[i]);
   }
 
   return newArr;
-}
+};
 
 // console.log(numberedItems2([]));
 // console.log(numberedItems2(["a", "b", "c"]));
 
-
 const sayHello = (name) => {
-  return `Hello, ${name}`
-}
+  return `Hello, ${name}`;
+};
 
 // console.log(sayHello('Mr. Spock'))
 // console.log(sayHello('Captain Kirk'))
 // console.log(sayHello('Liutenant Uhura'))
 // console.log(sayHello('Dr. McCoy'))
 
-
 const isUpperCase = (string) => {
-  return string === string.toUpperCase()
-}
+  return string === string.toUpperCase();
+};
 
 // console.log(isUpperCase('c'))
 // console.log(isUpperCase('C'))
@@ -3074,37 +3071,35 @@ const isUpperCase = (string) => {
 // console.log(isUpperCase('ACSKLDFJSgSKLDFJSKLDFJ'))
 // console.log(isUpperCase('ACSKLDFJSGSKLDFJSKLDFJ'))
 
-
 const sortByLength = (array) => {
-  return array.sort((a, b) => a.length - b.length)
-}
+  return array.sort((a, b) => a.length - b.length);
+};
 
 // console.log(sortByLength(["Beg", "Life", "I", "To"]))
 // console.log(sortByLength(["", "Moderately", "Brains", "Pizza"]))
 // console.log(sortByLength(["Longer", "Longest", "Short"]))
 
 const between = (a, b) => {
-  let newArr = []
+  let newArr = [];
 
-  for(let i = a; i <= b; i++) {
-    newArr.push(i)
+  for (let i = a; i <= b; i++) {
+    newArr.push(i);
   }
-  return newArr
-}
+  return newArr;
+};
 
 // console.log(between(1, 4))
 // console.log(between(-2, 2))
 
-
 const between2 = (a, b) => {
   let newArr = [];
 
-  while(a <= b) {
+  while (a <= b) {
     newArr.push(a);
-    a++
+    a++;
   }
   return newArr;
-}
+};
 
 // console.log(between2(1, 4))
 // console.log(between2(-2, 2))
@@ -3112,10 +3107,96 @@ const between2 = (a, b) => {
 const between3 = (a) => {
   let newArr = [];
 
-  for(let i = 0; i < a; i++) {
-    newArr.push(i)
+  for (let i = 0; i < a; i++) {
+    newArr.push(i);
   }
   return newArr;
-}
+};
 
-console.log(between3(4))
+// console.log(between3(4))
+
+const getDivisorsCnt = (n) => {
+  let div = 0;
+  // let newArr = []
+  for (let i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      // newArr.push(i)
+      div++;
+    }
+  }
+
+  // return newArr
+  return div;
+};
+
+// console.log(getDivisorsCnt(1))
+// console.log(getDivisorsCnt(10))
+// console.log(getDivisorsCnt(11))
+// console.log(getDivisorsCnt(54))
+// console.log(getDivisorsCnt(30))
+
+const booleanToString = (b) => {
+  return b.toString();
+};
+
+// console.log(booleanToString(true))
+// console.log(booleanToString(false))
+
+const reverseSeq = (n) => {
+  let newArr = [];
+
+  for (let i = 1; i <= n; i++) {
+    newArr.push(i);
+  }
+  return newArr.reverse();
+};
+
+// console.log(reverseSeq(5))
+// console.log(reverseSeq(10))
+// console.log(reverseSeq(20))
+// console.log(reverseSeq(35))
+
+const reverseSeq2 = (n) => {
+  let newArr = [];
+  for (let i = n; i > 0; i--) {
+    newArr.push(i);
+  }
+  return newArr;
+};
+
+// console.log(reverseSeq2(5))
+// console.log(reverseSeq2(10))
+// console.log(reverseSeq2(20))
+// console.log(reverseSeq2(35))
+
+const warnTheSheep = (q) => {
+  let reverseArr = q.reverse().indexOf('wolf')
+  if(reverseArr === 0) {
+    return 'Pls go away and stop eating my sheep'
+  } else {
+    return `Oi! Sheep number ${reverseArr}! You are about to be eaten by a wolf!`
+  }
+};
+
+// console.log(
+//   warnTheSheep([
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "sheep",
+//     "wolf",
+//     "sheep",
+//     "sheep",
+//   ])
+// );
+// console.log(
+//   warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"])
+// );
+// console.log(
+//   warnTheSheep(["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"])
+// );
+// console.log(warnTheSheep(["sheep", "wolf", "sheep"]));
+// console.log(warnTheSheep(["wolf"]));
+// console.log(warnTheSheep(["sheep", "sheep", "wolf"]));
+
