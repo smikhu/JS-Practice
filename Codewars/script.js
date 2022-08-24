@@ -3377,3 +3377,30 @@ const strCount3 = (str, letter) => {
 // console.log(strCount3('Hello', 'o'))
 // console.log(strCount3('Hello', 'l'))
 // console.log(strCount3('', 'z'))
+
+
+const noBoringZeros = (n) => {
+  return +`${n}`.replace(/0*$/, '')
+}
+
+// console.log(noBoringZeros(1450))
+// console.log(noBoringZeros(960000))
+// console.log(noBoringZeros(1050))
+// console.log(noBoringZeros(-1050))
+// console.log(noBoringZeros(-105))
+// console.log(noBoringZeros(0))
+
+
+const findSum = (n) => {
+  let sum = 0;
+
+  for(let i = 0; i <= n; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum = sum + i
+    }
+  }
+  return sum
+}
+
+console.log(findSum(5))
+console.log(findSum(10))
