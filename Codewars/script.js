@@ -3035,8 +3035,8 @@ const numberedItems = (array) => {
   return array.map((ele, i) => `${i + 1}: ${ele}`);
 };
 
-console.log(numberedItems([]));
-console.log(numberedItems(["a", "b", "c"]));
+// console.log(numberedItems([]));
+// console.log(numberedItems(["a", "b", "c"]));
 
 
 const numberedItems2 = (array) => {
@@ -3049,5 +3049,73 @@ const numberedItems2 = (array) => {
   return newArr;
 }
 
-console.log(numberedItems2([]));
-console.log(numberedItems2(["a", "b", "c"]));
+// console.log(numberedItems2([]));
+// console.log(numberedItems2(["a", "b", "c"]));
+
+
+const sayHello = (name) => {
+  return `Hello, ${name}`
+}
+
+// console.log(sayHello('Mr. Spock'))
+// console.log(sayHello('Captain Kirk'))
+// console.log(sayHello('Liutenant Uhura'))
+// console.log(sayHello('Dr. McCoy'))
+
+
+const isUpperCase = (string) => {
+  return string === string.toUpperCase()
+}
+
+// console.log(isUpperCase('c'))
+// console.log(isUpperCase('C'))
+// console.log(isUpperCase('hello I AM DONALD'))
+// console.log(isUpperCase('HELLO I AM DONALD'))
+// console.log(isUpperCase('ACSKLDFJSgSKLDFJSKLDFJ'))
+// console.log(isUpperCase('ACSKLDFJSGSKLDFJSKLDFJ'))
+
+
+const sortByLength = (array) => {
+  return array.sort((a, b) => a.length - b.length)
+}
+
+// console.log(sortByLength(["Beg", "Life", "I", "To"]))
+// console.log(sortByLength(["", "Moderately", "Brains", "Pizza"]))
+// console.log(sortByLength(["Longer", "Longest", "Short"]))
+
+const between = (a, b) => {
+  let newArr = []
+
+  for(let i = a; i <= b; i++) {
+    newArr.push(i)
+  }
+  return newArr
+}
+
+// console.log(between(1, 4))
+// console.log(between(-2, 2))
+
+
+const between2 = (a, b) => {
+  let newArr = [];
+
+  while(a <= b) {
+    newArr.push(a);
+    a++
+  }
+  return newArr;
+}
+
+// console.log(between2(1, 4))
+// console.log(between2(-2, 2))
+
+const between3 = (a) => {
+  let newArr = [];
+
+  for(let i = 0; i < a; i++) {
+    newArr.push(i)
+  }
+  return newArr;
+}
+
+console.log(between3(4))
