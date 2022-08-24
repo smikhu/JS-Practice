@@ -3215,71 +3215,69 @@ const sortedPassedArr = (nums) => {
 // console.log(sortedPassedArr([20, 2, 10]))
 // console.log(sortedPassedArr([2, 20, 10]))
 
-
 const getRealFloor = (n) => {
-  if(n <= 0) {
-    return n
+  if (n <= 0) {
+    return n;
   } else if (n >= 13) {
-    return n - 2
-  } else return n - 1
-}
+    return n - 2;
+  } else return n - 1;
+};
 
 // console.log(getRealFloor(1))
 // console.log(getRealFloor(5))
 // console.log(getRealFloor(15))
 
-
 const towerBuilder = (floors) => {
-  let tower = []
+  let tower = [];
 
   for (let i = 0; i < floors; i++) {
-    tower.push(' '.repeat(floors - i - 1)
-    + '*'.repeat((i * 2) + 1) 
-    + ' '.repeat(floors - i - 1));
+    tower.push(
+      " ".repeat(floors - i - 1) +
+        "*".repeat(i * 2 + 1) +
+        " ".repeat(floors - i - 1)
+    );
   }
-  return tower
-}
+  return tower;
+};
 
 // console.log(towerBuilder(1))
 // console.log(towerBuilder(2))
 // console.log(towerBuilder(3))
 
-
 const towerBuilder2 = (floors) => {
-  let bricks = '*'
-  let spaces = ''
-  let tower = []
+  let bricks = "*";
+  let spaces = "";
+  let tower = [];
 
-  for(let i = 1; i < floors; i++) {
-    spaces = spaces + ' '
+  for (let i = 1; i < floors; i++) {
+    spaces = spaces + " ";
   }
 
-  for(let i = 0; i < floors; i++) {
+  for (let i = 0; i < floors; i++) {
     let space = spaces.substring(0, floors - i - 1);
     tower.push(space + bricks + space);
-    bricks = bricks + '**'
+    bricks = bricks + "**";
   }
 
-  return tower
-} 
+  return tower;
+};
 
 // console.log(towerBuilder2(1))
 // console.log(towerBuilder2(2))
 // console.log(towerBuilder2(3))
-
 
 const highestAndLowest = (arr) => {
   if (arr === null || arr.length <= 2) {
     return 0;
   }
 
-  let max = Math.max(...arr)
-  let min = Math.min(...arr)
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
 
   let sum = arr.reduce((a, b) => a + b, 0);
 
-  return sum - max - min
-}
+  return sum - max - min;
+};
 
 // console.log(highestAndLowest(null))
 // console.log(highestAndLowest([ ]))
@@ -3290,10 +3288,14 @@ const highestAndLowest = (arr) => {
 // console.log(highestAndLowest([ -6, -20, -1, -10, -12 ]))
 // console.log(highestAndLowest([ -6, 20, -1, 10, -12 ]))
 
-
 const highestAndLowest2 = (arr) => {
-  return arr ? arr.sort((x, y) => x - y).slice(1, -1).reduce((a, b) => a + b, 0) : 0
-}
+  return arr
+    ? arr
+        .sort((x, y) => x - y)
+        .slice(1, -1)
+        .reduce((a, b) => a + b, 0)
+    : 0;
+};
 
 // console.log(highestAndLowest2(null))
 // console.log(highestAndLowest2([ ]))
@@ -3304,7 +3306,6 @@ const highestAndLowest2 = (arr) => {
 // console.log(highestAndLowest2([ -6, -20, -1, -10, -12 ]))
 // console.log(highestAndLowest2([ -6, 20, -1, 10, -12 ]))
 
-
 const highestAndLowest3 = (arr) => {
   arr = arr || [];
 
@@ -3312,7 +3313,7 @@ const highestAndLowest3 = (arr) => {
     .sort((a, b) => a - b)
     .slice(1, -1)
     .reduce((a, b) => a + b, 0);
-}
+};
 
 // console.log(highestAndLowest3(null))
 // console.log(highestAndLowest3([ ]))
@@ -3323,3 +3324,56 @@ const highestAndLowest3 = (arr) => {
 // console.log(highestAndLowest3([ -6, -20, -1, -10, -12 ]))
 // console.log(highestAndLowest3([ -6, 20, -1, 10, -12 ]))
 
+const helloName = (name) => {
+  if (name) {
+    return "Hello, " + name[0].toUpperCase() + name.slice(1).toLowerCase() + "!";
+  } else {
+    return "Hello, World!";
+  }
+};
+
+// console.log(helloName("johN"));
+// console.log(helloName("alice"));
+// console.log(helloName());
+// console.log(helloName(""));
+
+
+const strCount = (str, letter) => {
+  let sum = 0;
+
+  str.split('').map(ele => {
+    if(ele.includes(letter)) {
+      sum++
+    }
+  })
+  return sum;
+}
+
+// console.log(strCount('Hello', 'o'))
+// console.log(strCount('Hello', 'l'))
+// console.log(strCount('', 'z'))
+
+
+const strCount2 = (str, letter) => {
+  return str.split(letter).length - 1
+}
+
+// console.log(strCount2('Hello', 'o'))
+// console.log(strCount2('Hello', 'l'))
+// console.log(strCount2('', 'z'))
+
+
+const strCount3 = (str, letter) => {
+  let sum = 0;
+
+  for(let i = 0; i < str.length; i++) {
+    if(letter === str[i]) {
+      sum++
+    }
+  }
+  return sum
+}
+
+// console.log(strCount3('Hello', 'o'))
+// console.log(strCount3('Hello', 'l'))
+// console.log(strCount3('', 'z'))
