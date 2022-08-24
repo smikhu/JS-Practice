@@ -3240,9 +3240,9 @@ const towerBuilder = (floors) => {
   return tower
 }
 
-console.log(towerBuilder(1))
-console.log(towerBuilder(2))
-console.log(towerBuilder(3))
+// console.log(towerBuilder(1))
+// console.log(towerBuilder(2))
+// console.log(towerBuilder(3))
 
 
 const towerBuilder2 = (floors) => {
@@ -3266,3 +3266,60 @@ const towerBuilder2 = (floors) => {
 // console.log(towerBuilder2(1))
 // console.log(towerBuilder2(2))
 // console.log(towerBuilder2(3))
+
+
+const highestAndLowest = (arr) => {
+  if (arr === null || arr.length <= 2) {
+    return 0;
+  }
+
+  let max = Math.max(...arr)
+  let min = Math.min(...arr)
+
+  let sum = arr.reduce((a, b) => a + b, 0);
+
+  return sum - max - min
+}
+
+// console.log(highestAndLowest(null))
+// console.log(highestAndLowest([ ]))
+// console.log(highestAndLowest([ 3 ]))
+// console.log(highestAndLowest([ 3, 5 ]))
+// console.log(highestAndLowest([ 6, 2, 1, 8, 10 ]))
+// console.log(highestAndLowest([ 0, 1, 6, 10, 10 ]))
+// console.log(highestAndLowest([ -6, -20, -1, -10, -12 ]))
+// console.log(highestAndLowest([ -6, 20, -1, 10, -12 ]))
+
+
+const highestAndLowest2 = (arr) => {
+  return arr ? arr.sort((x, y) => x - y).slice(1, -1).reduce((a, b) => a + b, 0) : 0
+}
+
+// console.log(highestAndLowest2(null))
+// console.log(highestAndLowest2([ ]))
+// console.log(highestAndLowest2([ 3 ]))
+// console.log(highestAndLowest2([ 3, 5 ]))
+// console.log(highestAndLowest2([ 6, 2, 1, 8, 10 ]))
+// console.log(highestAndLowest2([ 0, 1, 6, 10, 10 ]))
+// console.log(highestAndLowest2([ -6, -20, -1, -10, -12 ]))
+// console.log(highestAndLowest2([ -6, 20, -1, 10, -12 ]))
+
+
+const highestAndLowest3 = (arr) => {
+  arr = arr || [];
+
+  return arr
+    .sort((a, b) => a - b)
+    .slice(1, -1)
+    .reduce((a, b) => a + b, 0);
+}
+
+// console.log(highestAndLowest3(null))
+// console.log(highestAndLowest3([ ]))
+// console.log(highestAndLowest3([ 3 ]))
+// console.log(highestAndLowest3([ 3, 5 ]))
+// console.log(highestAndLowest3([ 6, 2, 1, 8, 10 ]))
+// console.log(highestAndLowest3([ 0, 1, 6, 10, 10 ]))
+// console.log(highestAndLowest3([ -6, -20, -1, -10, -12 ]))
+// console.log(highestAndLowest3([ -6, 20, -1, 10, -12 ]))
+
