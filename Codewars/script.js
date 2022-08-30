@@ -3417,20 +3417,18 @@ const findMultiples = (integer, limit) => {
 // console.log(findMultiples(4, 27));
 // console.log(findMultiples(11, 54));
 
-
 const finalGrade = (exam, projects) => {
-  if( exam > 90 && projects > 10) {
-    return 100
-  } else if(exam > 75 && projects >= 5) {
-    return 90
-  } else if(exam > 50 && projects >= 2) {
-    return 75
-  } else return 0
-}
+  if (exam > 90 && projects > 10) {
+    return 100;
+  } else if (exam > 75 && projects >= 5) {
+    return 90;
+  } else if (exam > 50 && projects >= 2) {
+    return 75;
+  } else return 0;
+};
 
 // console.log(finalGrade(100, 12))
 // console.log(finalGrade(85, 5))
-
 
 const expressionMatters = (a, b, c) => {
   return Math.max(
@@ -3440,8 +3438,8 @@ const expressionMatters = (a, b, c) => {
     (a + b) * c,
     a + b * c,
     a * b + c
-  )
-}
+  );
+};
 
 // console.log(expressionMatters(2, 1, 2))
 // console.log(expressionMatters(2, 1, 1))
@@ -3453,45 +3451,44 @@ const expressionMatters = (a, b, c) => {
 const capitals = (word) => {
   let newArr = [];
 
-  for(let i = 0; i < word.length; i++) {
-    if(word[i] === word[i].toUpperCase()) {
-      newArr.push(i)
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === word[i].toUpperCase()) {
+      newArr.push(i);
     }
   }
   return newArr;
-}
+};
 
 // console.log(capitals('CodEWaRs'))
 
-
 const isPangram = (string) => {
-  return 'abcdefghijklmnopqrstuvwxyz'.split('').every((x) => string.toLowerCase().includes(x))
-}
+  return "abcdefghijklmnopqrstuvwxyz"
+    .split("")
+    .every((x) => string.toLowerCase().includes(x));
+};
 
 // console.log(isPangram('The quick brown fox jumps over the lazy dog.'))
 // console.log(isPangram('This is not a pangram.'))
 
-
 const isPangram2 = (string) => {
-  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
   string = string.toLowerCase();
-  return alphabet.every(ele => string.includes(ele))
-}
+  return alphabet.every((ele) => string.includes(ele));
+};
 
 // console.log(isPangram2('The quick brown fox jumps over the lazy dog.'))
 // console.log(isPangram2('This is not a pangram.'))
 
-
 const gimme = (triplet) => {
-  let max = Math.max(...triplet)
-  let min = Math.min(...triplet)
-  for(let i = 0; i < triplet.length; i++) {
-    if(triplet[i] !== max && triplet[i] !== min) {
-      return i
+  let max = Math.max(...triplet);
+  let min = Math.min(...triplet);
+  for (let i = 0; i < triplet.length; i++) {
+    if (triplet[i] !== max && triplet[i] !== min) {
+      return i;
     }
   }
-}
+};
 
 // console.log(gimme([2, 3, 1]))
 // console.log(gimme([5, 10, 14]))
@@ -3502,10 +3499,9 @@ const gimme = (triplet) => {
 // console.log(gimme([-2, -3.2, 1]))
 // console.log(gimme([-5.2, -10.6, 14]))
 
-
 const gimme2 = (triplet) => {
-  return triplet.indexOf([...triplet].sort((a, b) => a - b)[1])
-}
+  return triplet.indexOf([...triplet].sort((a, b) => a - b)[1]);
+};
 
 // console.log(gimme2([2, 3, 1]))
 // console.log(gimme2([5, 10, 14]))
@@ -3516,10 +3512,9 @@ const gimme2 = (triplet) => {
 // console.log(gimme2([-2, -3.2, 1]))
 // console.log(gimme2([-5.2, -10.6, 14]))
 
-
 const getChar = (c) => {
-  return String.fromCharCode(c)
-}
+  return String.fromCharCode(c);
+};
 
 // console.log(getChar(55))
 // console.log(getChar(56))
@@ -3530,27 +3525,110 @@ const getChar = (c) => {
 // console.log(getChar(61))
 // console.log(getChar(62))
 
-
 const solve = (s) => {
   let uppercase = 0;
   let lowercase = 0;
 
-  for(let i = 0; i < s.length; i++) {
-    if(s[i] == s[i].toUpperCase()) {
-      uppercase++
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == s[i].toUpperCase()) {
+      uppercase++;
     } else {
-      lowercase++
+      lowercase++;
     }
   }
 
-  if(uppercase > lowercase) {
-    return s.toUpperCase()
+  if (uppercase > lowercase) {
+    return s.toUpperCase();
   } else {
-    return s.toLowerCase()
+    return s.toLowerCase();
   }
-}
+};
 
-console.log(solve('code'))
-console.log(solve('CODe'))
-console.log(solve('COde'))
-console.log(solve('Code'))
+// console.log(solve('code'))
+// console.log(solve('CODe'))
+// console.log(solve('COde'))
+// console.log(solve('Code'))
+
+const mxdiflg = (a1, a2) => {
+  if (a1.length === 0 || a2.length === 0) return -1;
+  let l1 = a1.map((str) => str.length);
+  let l2 = a2.map((str) => str.length);
+  return Math.max(
+    Math.max(...l1) - Math.min(...l2),
+    Math.max(...l2) - Math.min(...l1)
+  );
+};
+
+// console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
+
+const preFizz = (n) => {
+  let newArr = [];
+
+  for (let i = 1; i <= n; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+};
+
+// console.log(preFizz(1))
+// console.log(preFizz(2))
+// console.log(preFizz(3))
+// console.log(preFizz(4))
+// console.log(preFizz(5))
+
+const preFizz2 = (n) => {
+  return [...Array(n)].map((ele, index) => index + 1);
+};
+
+// console.log(preFizz2(1))
+// console.log(preFizz2(2))
+// console.log(preFizz2(3))
+// console.log(preFizz2(4))
+// console.log(preFizz2(5))
+
+const hexToDex = (hexString) => {
+  return parseInt(hexString, 16);
+};
+
+// console.log(hexToDex('1'))
+// console.log(hexToDex('a'))
+// console.log(hexToDex('10'))
+// console.log(hexToDex('FF'))
+// console.log(hexToDex('-C'))
+
+const mouthSize = (animal) => {
+  return animal.toLowerCase() == "alligator" ? "small" : "wide";
+};
+
+// console.log(mouthSize('toucan'))
+// console.log(mouthSize('ant bear'))
+// console.log(mouthSize('alligator'))
+
+const stringClean = (s) => {
+  let result = '';
+
+  for(let i = 0; i < s.length; i++) {
+    if(isNaN(s[i]) || s[i] == ' ') {
+      result += s[i]
+    }
+  }
+  return result
+};
+
+console.log(stringClean(""));
+console.log(stringClean("! !"));
+console.log(stringClean("123456789"));
+console.log(stringClean("E3at m2e2!!"));
+console.log(stringClean("Dsa32 cdsc34232 csa!!! 1I 4Am cool!"));
+console.log(stringClean("A1 A1! AAA   3J4K5L@!!!"));
+console.log(stringClean("Adgre2321 A1sad! A2A3A4 fv3fdv3J544K5L@"));
+console.log(stringClean("Ad2dsad3ds21 A  1$$s122ad! A2A3Ae24 f44K5L@222222 "));
+console.log(
+  stringClean("33333Ad2dsad3ds21 A3333  1$$s122a!d! A2!A!3Ae$24 f2##222 ")
+);
+console.log(
+  stringClean('My "me3ssy" d8ata issues2! Will1 th4ey ever, e3ver be3 so0lved?')
+);
+console.log(
+  stringClean("Wh7y can't we3 bu1y the goo0d software3? #cheapskates3")
+);
