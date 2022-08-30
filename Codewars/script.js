@@ -3481,3 +3481,76 @@ const isPangram2 = (string) => {
 
 // console.log(isPangram2('The quick brown fox jumps over the lazy dog.'))
 // console.log(isPangram2('This is not a pangram.'))
+
+
+const gimme = (triplet) => {
+  let max = Math.max(...triplet)
+  let min = Math.min(...triplet)
+  for(let i = 0; i < triplet.length; i++) {
+    if(triplet[i] !== max && triplet[i] !== min) {
+      return i
+    }
+  }
+}
+
+// console.log(gimme([2, 3, 1]))
+// console.log(gimme([5, 10, 14]))
+// console.log(gimme([2.1, 3.2, 1.4]))
+// console.log(gimme([5.9, 10.4, 14.2]))
+// console.log(gimme([-2, -3, -1]))
+// console.log(gimme([-5, -10, -14]))
+// console.log(gimme([-2, -3.2, 1]))
+// console.log(gimme([-5.2, -10.6, 14]))
+
+
+const gimme2 = (triplet) => {
+  return triplet.indexOf([...triplet].sort((a, b) => a - b)[1])
+}
+
+// console.log(gimme2([2, 3, 1]))
+// console.log(gimme2([5, 10, 14]))
+// console.log(gimme2([2.1, 3.2, 1.4]))
+// console.log(gimme2([5.9, 10.4, 14.2]))
+// console.log(gimme2([-2, -3, -1]))
+// console.log(gimme2([-5, -10, -14]))
+// console.log(gimme2([-2, -3.2, 1]))
+// console.log(gimme2([-5.2, -10.6, 14]))
+
+
+const getChar = (c) => {
+  return String.fromCharCode(c)
+}
+
+// console.log(getChar(55))
+// console.log(getChar(56))
+// console.log(getChar(57))
+// console.log(getChar(58))
+// console.log(getChar(59))
+// console.log(getChar(60))
+// console.log(getChar(61))
+// console.log(getChar(62))
+
+
+const solve = (s) => {
+  let uppercase = 0;
+  let lowercase = 0;
+
+  for(let i = 0; i < s.length; i++) {
+    if(s[i] == s[i].toUpperCase()) {
+      uppercase++
+    } else {
+      lowercase++
+    }
+  }
+
+  if(uppercase > lowercase) {
+    return s.toUpperCase()
+  } else {
+    return s.toLowerCase()
+  }
+}
+
+console.log(solve('code'))
+console.log(solve('CODe'))
+console.log(solve('COde'))
+console.log(solve('Code'))
