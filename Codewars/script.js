@@ -3615,20 +3615,78 @@ const stringClean = (s) => {
   return result
 };
 
-console.log(stringClean(""));
-console.log(stringClean("! !"));
-console.log(stringClean("123456789"));
-console.log(stringClean("E3at m2e2!!"));
-console.log(stringClean("Dsa32 cdsc34232 csa!!! 1I 4Am cool!"));
-console.log(stringClean("A1 A1! AAA   3J4K5L@!!!"));
-console.log(stringClean("Adgre2321 A1sad! A2A3A4 fv3fdv3J544K5L@"));
-console.log(stringClean("Ad2dsad3ds21 A  1$$s122ad! A2A3Ae24 f44K5L@222222 "));
-console.log(
-  stringClean("33333Ad2dsad3ds21 A3333  1$$s122a!d! A2!A!3Ae$24 f2##222 ")
-);
-console.log(
-  stringClean('My "me3ssy" d8ata issues2! Will1 th4ey ever, e3ver be3 so0lved?')
-);
-console.log(
-  stringClean("Wh7y can't we3 bu1y the goo0d software3? #cheapskates3")
-);
+// console.log(stringClean(""));
+// console.log(stringClean("! !"));
+// console.log(stringClean("123456789"));
+// console.log(stringClean("E3at m2e2!!"));
+// console.log(stringClean("Dsa32 cdsc34232 csa!!! 1I 4Am cool!"));
+// console.log(stringClean("A1 A1! AAA   3J4K5L@!!!"));
+// console.log(stringClean("Adgre2321 A1sad! A2A3A4 fv3fdv3J544K5L@"));
+// console.log(stringClean("Ad2dsad3ds21 A  1$$s122ad! A2A3Ae24 f44K5L@222222 "));
+// console.log(
+//   stringClean("33333Ad2dsad3ds21 A3333  1$$s122a!d! A2!A!3Ae$24 f2##222 ")
+// );
+// console.log(
+//   stringClean('My "me3ssy" d8ata issues2! Will1 th4ey ever, e3ver be3 so0lved?')
+// );
+// console.log(
+//   stringClean("Wh7y can't we3 bu1y the goo0d software3? #cheapskates3")
+// );
+
+
+const updateLight = (current) => {
+  return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green'
+}
+
+// console.log(updateLight('green'))
+// console.log(updateLight('yellow'))
+// console.log(updateLight('red'))
+
+
+const capitalize = (s) => {
+  let s1 = s.split('').map((ele, index) => index % 2 === 0 ? ele.toUpperCase() : ele.toLowerCase()).join('')
+  let s2 = s.split('').map((ele, index) => index % 2 === 1 ? ele.toUpperCase() : ele.toLowerCase()).join('')
+  return [s1, s2]
+}
+
+// console.log(capitalize('abcdef'))
+// console.log(capitalize('codewars'))
+// console.log(capitalize('abracadabra'))
+// console.log(capitalize('codewarriors'))
+
+
+const minValue = (values) => {
+  let newArr = [];
+
+  for(let i = 0; i < values.length; i++) {
+    if(newArr.indexOf(values[i]) === -1) {
+      newArr.push(values[i])
+    }
+  }
+  return parseInt(newArr.sort().join(''))
+}
+
+// console.log(minValue([1, 3, 1]))
+// console.log(minValue([4, 7, 5, 7]))
+// console.log(minValue([4, 8, 1, 4]))
+// console.log(minValue([5, 7, 9, 5, 7]))
+// console.log(minValue([6, 7, 8, 7, 6, 6]))
+// console.log(minValue([5, 6, 9, 9, 7, 6, 4]))
+// console.log(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]))
+// console.log(minValue([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]))
+// console.log(minValue([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+
+
+const minValue2 = (values) => {
+  return parseInt(values.filter((ele, index, array) => values.indexOf(ele) === index).sort().join(''))
+}
+
+// console.log(minValue2([1, 3, 1]))
+// console.log(minValue2([4, 7, 5, 7]))
+// console.log(minValue2([4, 8, 1, 4]))
+// console.log(minValue2([5, 7, 9, 5, 7]))
+// console.log(minValue2([6, 7, 8, 7, 6, 6]))
+// console.log(minValue2([5, 6, 9, 9, 7, 6, 4]))
+// console.log(minValue2([1, 9, 1, 3, 7, 4, 6, 6, 7]))
+// console.log(minValue2([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]))
+// console.log(minValue2([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
