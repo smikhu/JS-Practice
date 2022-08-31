@@ -3605,14 +3605,14 @@ const mouthSize = (animal) => {
 // console.log(mouthSize('alligator'))
 
 const stringClean = (s) => {
-  let result = '';
+  let result = "";
 
-  for(let i = 0; i < s.length; i++) {
-    if(isNaN(s[i]) || s[i] == ' ') {
-      result += s[i]
+  for (let i = 0; i < s.length; i++) {
+    if (isNaN(s[i]) || s[i] == " ") {
+      result += s[i];
     }
   }
-  return result
+  return result;
 };
 
 // console.log(stringClean(""));
@@ -3633,38 +3633,49 @@ const stringClean = (s) => {
 //   stringClean("Wh7y can't we3 bu1y the goo0d software3? #cheapskates3")
 // );
 
-
 const updateLight = (current) => {
-  return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green'
-}
+  return current === "yellow"
+    ? "red"
+    : current === "green"
+    ? "yellow"
+    : "green";
+};
 
 // console.log(updateLight('green'))
 // console.log(updateLight('yellow'))
 // console.log(updateLight('red'))
 
-
 const capitalize = (s) => {
-  let s1 = s.split('').map((ele, index) => index % 2 === 0 ? ele.toUpperCase() : ele.toLowerCase()).join('')
-  let s2 = s.split('').map((ele, index) => index % 2 === 1 ? ele.toUpperCase() : ele.toLowerCase()).join('')
-  return [s1, s2]
-}
+  let s1 = s
+    .split("")
+    .map((ele, index) =>
+      index % 2 === 0 ? ele.toUpperCase() : ele.toLowerCase()
+    )
+    .join("");
+  let s2 = s
+    .split("")
+    .map((ele, index) =>
+      index % 2 === 1 ? ele.toUpperCase() : ele.toLowerCase()
+    )
+    .join("");
+  return [s1, s2];
+};
 
 // console.log(capitalize('abcdef'))
 // console.log(capitalize('codewars'))
 // console.log(capitalize('abracadabra'))
 // console.log(capitalize('codewarriors'))
 
-
 const minValue = (values) => {
   let newArr = [];
 
-  for(let i = 0; i < values.length; i++) {
-    if(newArr.indexOf(values[i]) === -1) {
-      newArr.push(values[i])
+  for (let i = 0; i < values.length; i++) {
+    if (newArr.indexOf(values[i]) === -1) {
+      newArr.push(values[i]);
     }
   }
-  return parseInt(newArr.sort().join(''))
-}
+  return parseInt(newArr.sort().join(""));
+};
 
 // console.log(minValue([1, 3, 1]))
 // console.log(minValue([4, 7, 5, 7]))
@@ -3676,10 +3687,14 @@ const minValue = (values) => {
 // console.log(minValue([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]))
 // console.log(minValue([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
-
 const minValue2 = (values) => {
-  return parseInt(values.filter((ele, index, array) => values.indexOf(ele) === index).sort().join(''))
-}
+  return parseInt(
+    values
+      .filter((ele, index, array) => values.indexOf(ele) === index)
+      .sort()
+      .join("")
+  );
+};
 
 // console.log(minValue2([1, 3, 1]))
 // console.log(minValue2([4, 7, 5, 7]))
@@ -3690,3 +3705,10 @@ const minValue2 = (values) => {
 // console.log(minValue2([1, 9, 1, 3, 7, 4, 6, 6, 7]))
 // console.log(minValue2([3, 6, 5, 5, 9, 8, 7, 6, 3, 5, 9]))
 // console.log(minValue2([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+
+const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
+  return enteredCode === correctCode && new Date(currentDate) <= new Date(expirationDate)
+};
+
+console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
+console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
