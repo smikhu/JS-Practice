@@ -3710,5 +3710,24 @@ const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
   return enteredCode === correctCode && new Date(currentDate) <= new Date(expirationDate)
 };
 
-console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
-console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
+// console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
+// console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
+
+
+const order = (words) => {
+  let newArr = words.split(' ');
+  let sortedArray = [];
+
+  for(let i = 0; i <= newArr.length; i++) {
+    for(let j = 0; j < newArr.length; j++) {
+      if(newArr[j].indexOf(i) >= 0) {
+        sortedArray.push(newArr[j])
+      }
+    }
+  }
+  return sortedArray.join(' ')
+}
+
+console.log(order("is2 Thi1s T4est 3a"))
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"))
+console.log(order(""))
