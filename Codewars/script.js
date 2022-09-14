@@ -3728,6 +3728,72 @@ const order = (words) => {
   return sortedArray.join(' ')
 }
 
-console.log(order("is2 Thi1s T4est 3a"))
-console.log(order("4of Fo1r pe6ople g3ood th5e the2"))
-console.log(order(""))
+// console.log(order("is2 Thi1s T4est 3a"))
+// console.log(order("4of Fo1r pe6ople g3ood th5e the2"))
+// console.log(order(""))
+
+
+const pipeFix = (numbers) => {
+  let first = numbers[0]
+  let last = numbers[numbers.length - 1]
+  let newArr = []
+
+  for(let i = first; i <= last; i++) {
+    newArr.push(i)
+  }
+  return newArr;
+}
+
+// console.log(pipeFix([1, 2, 3, 4, 5, 6, 8, 9]))
+// console.log(pipeFix([1, 2, 3, 12]))
+// console.log(pipeFix([6, 9]))
+// console.log(pipeFix([-1, 4]))
+// console.log(pipeFix([1, 2, 3]))
+
+
+const pipeFix2 = (numbers) => {
+  return Array(numbers.pop() - numbers[0] + 1).fill(0).map((ele, index) => index + numbers[0])
+ 
+}
+
+// console.log(pipeFix2([1, 2, 3, 4, 5, 6, 8, 9]))
+// console.log(pipeFix2([1, 2, 3, 12]))
+// console.log(pipeFix2([6, 9]))
+// console.log(pipeFix2([-1, 4]))
+// console.log(pipeFix2([1, 2, 3]))
+
+
+const flattenAndSort = (array) => {
+  return array.flat().sort((a, b) => a - b)
+}
+
+// console.log(flattenAndSort([]))
+// console.log(flattenAndSort([[], []]))
+// console.log(flattenAndSort([[], [1]]))
+// console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
+// console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]))
+
+
+const flattenAndSort2 = (array) => {
+  return [].concat(...array).sort((a, b) => a - b)
+}
+
+// console.log(flattenAndSort2([]))
+// console.log(flattenAndSort2([[], []]))
+// console.log(flattenAndSort2([[], [1]]))
+// console.log(flattenAndSort2([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
+// console.log(flattenAndSort2([[1, 3, 5], [100], [2, 4, 6]]))
+
+
+const sumOfMinimums = (arr) => {
+  let total = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    total = total + Math.min(...arr[i])
+  }
+
+  return total;
+}
+
+console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
+console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]))
