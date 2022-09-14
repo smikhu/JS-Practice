@@ -3795,5 +3795,33 @@ const sumOfMinimums = (arr) => {
   return total;
 }
 
-console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
-console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]))
+// console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
+// console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]))
+
+
+const setAlarm = (employed, vacation) => {
+  return employed > vacation
+}
+
+// console.log(setAlarm(true, true))
+// console.log(setAlarm(false, true))
+// console.log(setAlarm(true, false))
+
+
+const xor = (a, b) => {
+  return a != b
+}
+
+// console.log(xor(false, false))
+// console.log(xor(true, false))
+// console.log(xor(false, true))
+// console.log(xor(true, true))
+
+
+const rainAmount = (mm) => {
+  let amount = 40 - mm
+  return mm >= 40 ? 'Your plant has had more than enough water for today!' : `You need to give your plant ${amount}mm of water`
+}
+
+console.log(rainAmount(100))
+console.log(rainAmount(39))
