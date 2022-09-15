@@ -1,6 +1,6 @@
-const monthsElement = document.querySelector('.date h1')
-const fullDateElement = document.querySelector('.date p')
-const daysElement = document.querySelector('.days')
+const monthsElement = document.querySelector(".date h1");
+const fullDateElement = document.querySelector(".date p");
+const daysElement = document.querySelector(".days");
 
 const monthIndex = new Date().getMonth();
 const lastDay = new Date(new Date().getFullYear(), monthIndex + 1, 0).getDate();
@@ -21,18 +21,21 @@ const months = [
   "December",
 ];
 
-monthsElement.innerText = months[monthIndex]
-fullDateElement.innerText = new Date().toDateString()
-
+monthsElement.innerText = months[monthIndex];
+fullDateElement.innerText = new Date().toDateString();
 
 let days = "";
 
-for(let i = firstDay; i > 0; i--) {
-    days = days + `<div class="empty"></div>`
+for (let i = firstDay; i > 0; i--) {
+  days = days + `<div class="empty"></div>`;
 }
 
-for(let i = 1; i <= lastDay; i++) {
-    days = days + `<div>${i}</div>`
+for (let i = 1; i <= lastDay; i++) {
+  if (i === new Date().getDate()) {
+    days = days + `<div class="today">${i}</div>`;
+  } else {
+    days = days + `<div>${i}</div>`;
+  }
 }
 
-daysElement.innerHTML = days
+daysElement.innerHTML = days;
