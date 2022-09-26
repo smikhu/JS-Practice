@@ -3707,42 +3707,43 @@ const minValue2 = (values) => {
 // console.log(minValue2([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 const checkCoupon = (enteredCode, correctCode, currentDate, expirationDate) => {
-  return enteredCode === correctCode && new Date(currentDate) <= new Date(expirationDate)
+  return (
+    enteredCode === correctCode &&
+    new Date(currentDate) <= new Date(expirationDate)
+  );
 };
 
 // console.log(checkCoupon("123", "123", "September 5, 2014", "October 1, 2014"));
 // console.log(checkCoupon("123a", "123", "September 5, 2014", "October 1, 2014"));
 
-
 const order = (words) => {
-  let newArr = words.split(' ');
+  let newArr = words.split(" ");
   let sortedArray = [];
 
-  for(let i = 0; i <= newArr.length; i++) {
-    for(let j = 0; j < newArr.length; j++) {
-      if(newArr[j].indexOf(i) >= 0) {
-        sortedArray.push(newArr[j])
+  for (let i = 0; i <= newArr.length; i++) {
+    for (let j = 0; j < newArr.length; j++) {
+      if (newArr[j].indexOf(i) >= 0) {
+        sortedArray.push(newArr[j]);
       }
     }
   }
-  return sortedArray.join(' ')
-}
+  return sortedArray.join(" ");
+};
 
 // console.log(order("is2 Thi1s T4est 3a"))
 // console.log(order("4of Fo1r pe6ople g3ood th5e the2"))
 // console.log(order(""))
 
-
 const pipeFix = (numbers) => {
-  let first = numbers[0]
-  let last = numbers[numbers.length - 1]
-  let newArr = []
+  let first = numbers[0];
+  let last = numbers[numbers.length - 1];
+  let newArr = [];
 
-  for(let i = first; i <= last; i++) {
-    newArr.push(i)
+  for (let i = first; i <= last; i++) {
+    newArr.push(i);
   }
   return newArr;
-}
+};
 
 // console.log(pipeFix([1, 2, 3, 4, 5, 6, 8, 9]))
 // console.log(pipeFix([1, 2, 3, 12]))
@@ -3750,11 +3751,11 @@ const pipeFix = (numbers) => {
 // console.log(pipeFix([-1, 4]))
 // console.log(pipeFix([1, 2, 3]))
 
-
 const pipeFix2 = (numbers) => {
-  return Array(numbers.pop() - numbers[0] + 1).fill(0).map((ele, index) => index + numbers[0])
- 
-}
+  return Array(numbers.pop() - numbers[0] + 1)
+    .fill(0)
+    .map((ele, index) => index + numbers[0]);
+};
 
 // console.log(pipeFix2([1, 2, 3, 4, 5, 6, 8, 9]))
 // console.log(pipeFix2([1, 2, 3, 12]))
@@ -3762,10 +3763,9 @@ const pipeFix2 = (numbers) => {
 // console.log(pipeFix2([-1, 4]))
 // console.log(pipeFix2([1, 2, 3]))
 
-
 const flattenAndSort = (array) => {
-  return array.flat().sort((a, b) => a - b)
-}
+  return array.flat().sort((a, b) => a - b);
+};
 
 // console.log(flattenAndSort([]))
 // console.log(flattenAndSort([[], []]))
@@ -3773,10 +3773,9 @@ const flattenAndSort = (array) => {
 // console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
 // console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]))
 
-
 const flattenAndSort2 = (array) => {
-  return [].concat(...array).sort((a, b) => a - b)
-}
+  return [].concat(...array).sort((a, b) => a - b);
+};
 
 // console.log(flattenAndSort2([]))
 // console.log(flattenAndSort2([[], []]))
@@ -3784,44 +3783,93 @@ const flattenAndSort2 = (array) => {
 // console.log(flattenAndSort2([[3, 2, 1], [7, 9, 8], [6, 4, 5]]))
 // console.log(flattenAndSort2([[1, 3, 5], [100], [2, 4, 6]]))
 
-
 const sumOfMinimums = (arr) => {
   let total = 0;
 
-  for(let i = 0; i < arr.length; i++) {
-    total = total + Math.min(...arr[i])
+  for (let i = 0; i < arr.length; i++) {
+    total = total + Math.min(...arr[i]);
   }
 
   return total;
-}
+};
 
 // console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
 // console.log(sumOfMinimums([[11, 12, 14, 54], [67, 89, 90, 56], [7, 9, 4, 3], [9, 8, 6, 7]]))
 
-
 const setAlarm = (employed, vacation) => {
-  return employed > vacation
-}
+  return employed > vacation;
+};
 
 // console.log(setAlarm(true, true))
 // console.log(setAlarm(false, true))
 // console.log(setAlarm(true, false))
 
-
 const xor = (a, b) => {
-  return a != b
-}
+  return a != b;
+};
 
 // console.log(xor(false, false))
 // console.log(xor(true, false))
 // console.log(xor(false, true))
 // console.log(xor(true, true))
 
-
 const rainAmount = (mm) => {
-  let amount = 40 - mm
-  return mm >= 40 ? 'Your plant has had more than enough water for today!' : `You need to give your plant ${amount}mm of water`
+  let amount = 40 - mm;
+  return mm >= 40
+    ? "Your plant has had more than enough water for today!"
+    : `You need to give your plant ${amount}mm of water`;
+};
+
+// console.log(rainAmount(100))
+// console.log(rainAmount(39))
+
+const take = (arr, n) => {
+  return arr.slice(0, n);
+};
+
+// console.log(take([0, 1, 2, 3, 4, 5, 8, 13], 3))
+
+const howManyLightsabersDoYouOwn = (name) => {
+  return name === "Zach" ? 18 : 0;
+};
+
+// console.log(howManyLightsabersDoYouOwn('Adam'))
+// console.log(howManyLightsabersDoYouOwn('Zach'))
+
+const include = (arr, item) => {
+  return arr.includes(item);
+};
+
+// console.log(include([1, 2, 3, 4], 3))
+// console.log(include([1, 2, 4, 5], 3))
+
+const largestPairSum = (numbers) => {
+  let secondNum = numbers.sort((a, b) => b - a)[1]
+  return secondNum + Math.max(...numbers)
+};
+
+// console.log(largestPairSum([10, 14, 2, 23, 19]));
+// console.log(largestPairSum([-100, -29, -24, -19, 19]));
+// console.log(largestPairSum([1, 2, 3, 4, 6, -1, 2]));
+// console.log(largestPairSum([-10, -8, -16, -18, -19]));
+
+
+const largestPairSum2 = (numbers) => {
+  return numbers.sort((a, b) => b - a).slice(0, 2).reduce((a, b) => a + b, 0)
 }
 
-console.log(rainAmount(100))
-console.log(rainAmount(39))
+// console.log(largestPairSum2([10, 14, 2, 23, 19]));
+// console.log(largestPairSum2([-100, -29, -24, -19, 19]));
+// console.log(largestPairSum2([1, 2, 3, 4, 6, -1, 2]));
+// console.log(largestPairSum2([-10, -8, -16, -18, -19]));
+
+
+const largestPairSum3 = (numbers) => {
+  let [a, b] = numbers.sort((a, b) => b - a)
+  return a + b
+}
+
+// console.log(largestPairSum3([10, 14, 2, 23, 19]));
+// console.log(largestPairSum3([-100, -29, -24, -19, 19]));
+// console.log(largestPairSum3([1, 2, 3, 4, 6, -1, 2]));
+// console.log(largestPairSum3([-10, -8, -16, -18, -19]));
