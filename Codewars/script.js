@@ -3873,3 +3873,49 @@ const largestPairSum3 = (numbers) => {
 // console.log(largestPairSum3([-100, -29, -24, -19, 19]));
 // console.log(largestPairSum3([1, 2, 3, 4, 6, -1, 2]));
 // console.log(largestPairSum3([-10, -8, -16, -18, -19]));
+
+
+const problem = (x) => {
+  return typeof x === 'string' ? 'Error' : (x * 50) + 6
+}
+
+// console.log(problem(1))
+// console.log(problem(5))
+// console.log(problem(0))
+// console.log(problem(1.2))
+// console.log(problem(3))
+// console.log(problem('RyanIsCool'))
+// console.log(problem(-3))
+// console.log(problem(""))
+// console.log(problem(0.03))
+
+
+const combat = (health, damage) => {
+  if (health - damage < 0) {
+    return 0
+  }
+
+  return health - damage
+}
+
+// console.log(combat(100, 5))
+// console.log(combat(92, 8))
+// console.log(combat(20, 30))
+
+
+const combat2 = (health, damage) => {
+  return health - damage < 0 ? 0 : health - damage
+}
+
+// console.log(combat2(100, 5))
+// console.log(combat2(92, 8))
+// console.log(combat2(20, 30))
+
+
+const feast = (beast, dish) => {
+  return beast[0] === dish[0] && beast.slice(-1) === dish.slice(-1)
+}
+
+// console.log(feast('great blue heron', 'garlic naan'))
+// console.log(feast('chickadee', 'chocolate cake'))
+// console.log(feast('brown bear', 'bear claw'))
