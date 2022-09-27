@@ -3844,8 +3844,8 @@ const include = (arr, item) => {
 // console.log(include([1, 2, 4, 5], 3))
 
 const largestPairSum = (numbers) => {
-  let secondNum = numbers.sort((a, b) => b - a)[1]
-  return secondNum + Math.max(...numbers)
+  let secondNum = numbers.sort((a, b) => b - a)[1];
+  return secondNum + Math.max(...numbers);
 };
 
 // console.log(largestPairSum([10, 14, 2, 23, 19]));
@@ -3853,31 +3853,31 @@ const largestPairSum = (numbers) => {
 // console.log(largestPairSum([1, 2, 3, 4, 6, -1, 2]));
 // console.log(largestPairSum([-10, -8, -16, -18, -19]));
 
-
 const largestPairSum2 = (numbers) => {
-  return numbers.sort((a, b) => b - a).slice(0, 2).reduce((a, b) => a + b, 0)
-}
+  return numbers
+    .sort((a, b) => b - a)
+    .slice(0, 2)
+    .reduce((a, b) => a + b, 0);
+};
 
 // console.log(largestPairSum2([10, 14, 2, 23, 19]));
 // console.log(largestPairSum2([-100, -29, -24, -19, 19]));
 // console.log(largestPairSum2([1, 2, 3, 4, 6, -1, 2]));
 // console.log(largestPairSum2([-10, -8, -16, -18, -19]));
 
-
 const largestPairSum3 = (numbers) => {
-  let [a, b] = numbers.sort((a, b) => b - a)
-  return a + b
-}
+  let [a, b] = numbers.sort((a, b) => b - a);
+  return a + b;
+};
 
 // console.log(largestPairSum3([10, 14, 2, 23, 19]));
 // console.log(largestPairSum3([-100, -29, -24, -19, 19]));
 // console.log(largestPairSum3([1, 2, 3, 4, 6, -1, 2]));
 // console.log(largestPairSum3([-10, -8, -16, -18, -19]));
 
-
 const problem = (x) => {
-  return typeof x === 'string' ? 'Error' : (x * 50) + 6
-}
+  return typeof x === "string" ? "Error" : x * 50 + 6;
+};
 
 // console.log(problem(1))
 // console.log(problem(5))
@@ -3889,41 +3889,37 @@ const problem = (x) => {
 // console.log(problem(""))
 // console.log(problem(0.03))
 
-
 const combat = (health, damage) => {
   if (health - damage < 0) {
-    return 0
+    return 0;
   }
 
-  return health - damage
-}
+  return health - damage;
+};
 
 // console.log(combat(100, 5))
 // console.log(combat(92, 8))
 // console.log(combat(20, 30))
 
-
 const combat2 = (health, damage) => {
-  return health - damage < 0 ? 0 : health - damage
-}
+  return health - damage < 0 ? 0 : health - damage;
+};
 
 // console.log(combat2(100, 5))
 // console.log(combat2(92, 8))
 // console.log(combat2(20, 30))
 
-
 const feast = (beast, dish) => {
-  return beast[0] === dish[0] && beast.slice(-1) === dish.slice(-1)
-}
+  return beast[0] === dish[0] && beast.slice(-1) === dish.slice(-1);
+};
 
 // console.log(feast('great blue heron', 'garlic naan'))
 // console.log(feast('chickadee', 'chocolate cake'))
 // console.log(feast('brown bear', 'bear claw'))
 
-
 const arrayDiff = (a, b) => {
-  return a.filter(e => !b.includes(e))
-}
+  return a.filter((e) => !b.includes(e));
+};
 
 // console.log(arrayDiff([1, 2], [1]))
 // console.log(arrayDiff([1, 2, 2], [1]))
@@ -3932,17 +3928,16 @@ const arrayDiff = (a, b) => {
 // console.log(arrayDiff([], [1, 2]))
 // console.log(arrayDiff([1, 2, 3], [1, 2]))
 
-
 const arrayDiff2 = (a, b) => {
   let newArr = [];
 
-  for(let i = 0; i < a.length; i++) {
-    if(b.indexOf(a[i]) < 0) {
-      newArr.push(a[i])
+  for (let i = 0; i < a.length; i++) {
+    if (b.indexOf(a[i]) < 0) {
+      newArr.push(a[i]);
     }
   }
   return newArr;
-}
+};
 
 // console.log(arrayDiff2([1, 2], [1]))
 // console.log(arrayDiff2([1, 2, 2], [1]))
@@ -3951,15 +3946,69 @@ const arrayDiff2 = (a, b) => {
 // console.log(arrayDiff2([], [1, 2]))
 // console.log(arrayDiff2([1, 2, 3], [1, 2]))
 
-
 const deleteNth = (arr, x) => {
   let map = {};
 
-  return arr.filter(n => {
-    map[n] = (map[n]||0) + 1;
-    return map[n] <= x
-  })
+  return arr.filter((n) => {
+    map[n] = (map[n] || 0) + 1;
+    return map[n] <= x;
+  });
+};
+
+// console.log(deleteNth([20,37,20,21], 1))
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+
+const addLength = (str) => {
+  return str.split(" ").map((e) => `${e} ${e.length}`);
+};
+
+// console.log(addLength('apple ban'))
+// console.log(addLength('you will win'))
+
+const smallEnough = (a, limit) => {
+  return a.every((e) => e <= limit);
+};
+
+// console.log(smallEnough([66, 101], 200))
+// console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100))
+// console.log(smallEnough([101, 45, 75, 105, 99, 107], 107))
+// console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120))
+
+const switchItUp = (number) => {
+  switch (number) {
+    case 1:
+      return "One";
+    case 2:
+      return "Two";
+    case 3:
+      return "Three";
+    case 4:
+      return "Four";
+    case 5:
+      return "Five";
+    case 6:
+      return "Six";
+    case 7:
+      return "Seven";
+    case 8:
+      return "Eight";
+    case 9:
+      return "Nine";
+    case 0:
+      return "Zero";
+  }
+};
+
+// console.log(switchItUp(1));
+// console.log(switchItUp(2));
+// console.log(switchItUp(3));
+// console.log(switchItUp(4));
+// console.log(switchItUp(5));
+
+
+const apple = (x) => {
+  return Math.pow(x, 2) > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
 }
 
-console.log(deleteNth([20,37,20,21], 1))
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+// console.log(apple('50'))
+// console.log(apple(4))
