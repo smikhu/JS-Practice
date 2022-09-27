@@ -3919,3 +3919,47 @@ const feast = (beast, dish) => {
 // console.log(feast('great blue heron', 'garlic naan'))
 // console.log(feast('chickadee', 'chocolate cake'))
 // console.log(feast('brown bear', 'bear claw'))
+
+
+const arrayDiff = (a, b) => {
+  return a.filter(e => !b.includes(e))
+}
+
+// console.log(arrayDiff([1, 2], [1]))
+// console.log(arrayDiff([1, 2, 2], [1]))
+// console.log(arrayDiff([1, 2, 2], [2]))
+// console.log(arrayDiff([1, 2, 2], []))
+// console.log(arrayDiff([], [1, 2]))
+// console.log(arrayDiff([1, 2, 3], [1, 2]))
+
+
+const arrayDiff2 = (a, b) => {
+  let newArr = [];
+
+  for(let i = 0; i < a.length; i++) {
+    if(b.indexOf(a[i]) < 0) {
+      newArr.push(a[i])
+    }
+  }
+  return newArr;
+}
+
+// console.log(arrayDiff2([1, 2], [1]))
+// console.log(arrayDiff2([1, 2, 2], [1]))
+// console.log(arrayDiff2([1, 2, 2], [2]))
+// console.log(arrayDiff2([1, 2, 2], []))
+// console.log(arrayDiff2([], [1, 2]))
+// console.log(arrayDiff2([1, 2, 3], [1, 2]))
+
+
+const deleteNth = (arr, x) => {
+  let map = {};
+
+  return arr.filter(n => {
+    map[n] = (map[n]||0) + 1;
+    return map[n] <= x
+  })
+}
+
+console.log(deleteNth([20,37,20,21], 1))
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
