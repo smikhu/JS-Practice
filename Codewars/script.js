@@ -4012,3 +4012,36 @@ const apple = (x) => {
 
 // console.log(apple('50'))
 // console.log(apple(4))
+
+
+
+const remove = (string) => {
+  return string.charAt(string.length - 1) === '!' ? string.slice(0, -1) : string
+}
+
+// console.log(remove('Hi!'))
+// console.log(remove('Hi!!!'))
+// console.log(remove('!Hi'))
+// console.log(remove('!Hi!'))
+// console.log(remove('Hi! Hi!'))
+// console.log(remove('Hi'))
+
+
+const remove2 = (string, number) => {
+  for(let i = 0; i < number; i++) {
+    string = string.replace("!", "")
+  }
+  return string
+}
+
+console.log(remove2('Hi!', 1))
+console.log(remove2('Hi!', 100))
+console.log(remove2('Hi!!!', 1))
+console.log(remove2('Hi!!!', 100))
+console.log(remove2('!Hi', 1))
+console.log(remove2('!Hi!', 1))
+console.log(remove2('!Hi!', 100))
+console.log(remove2('!!!Hi !!hi!!! !hi', 1))
+console.log(remove2('!!!Hi !!hi!!! !hi', 3))
+console.log(remove2('!!!Hi !!hi!!! !hi', 5))
+console.log(remove2('!!!Hi !!hi!!! !hi', 100))
