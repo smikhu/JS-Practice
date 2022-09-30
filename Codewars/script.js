@@ -4062,8 +4062,73 @@ const getEvenNumbers = (numbersArray) => {
   return numbersArray.filter(n => n % 2 === 0)
 }
 
-console.log(getEvenNumbers([1,2,3,6,8,10]))
-console.log(getEvenNumbers([1,2]))
-console.log(getEvenNumbers([12,14,15]))
-console.log(getEvenNumbers([13,15]))
-console.log(getEvenNumbers([1,3,9]))
+// console.log(getEvenNumbers([1,2,3,6,8,10]))
+// console.log(getEvenNumbers([1,2]))
+// console.log(getEvenNumbers([12,14,15]))
+// console.log(getEvenNumbers([13,15]))
+// console.log(getEvenNumbers([1,3,9]))
+
+
+const check2 = (a, x) => {
+  return a.includes(x)
+}
+
+// console.log(check2([66, 101], 66))
+// console.log(check2([80, 117, 115, 104, 45, 85, 112, 115], 45))
+// console.log(check2(['t', 'e', 's', 't'], 'e'))
+// console.log(check2(['what', 'a', 'great', 'kata'], 'kat'))
+
+
+const usdcny = (usd) => {
+  return `${(usd * 6.75).toFixed(2)} Chinese Yuan`
+}
+
+// console.log(usdcny(15))
+// console.log(usdcny(465))
+// console.log(usdcny(4))
+
+
+const rowWeights = (array) => {
+  let team1 = [];
+  let team2 = [];
+
+  for(let i = 0; i < array.length; i++) {
+    if(i % 2 === 0) {
+      team2.push(array[i])
+    } else {
+      team1.push(array[i])
+    }
+  }
+  let newTeam1 = team1.reduce((a, b) => a + b, 0)
+  let newTeam2 = team2.reduce((a, b) => a + b, 0)
+  return [newTeam2, newTeam1]
+}
+
+// console.log(rowWeights([80]))
+// console.log(rowWeights([100,50]))
+// console.log(rowWeights([50,60,70,80]))
+// console.log(rowWeights([13,27,49]))
+// console.log(rowWeights([70,58,75,34,91]))
+// console.log(rowWeights([29,83,67,53,19,28,96]))
+// console.log(rowWeights([0]))
+// console.log(rowWeights([100,51,50,100]))
+// console.log(rowWeights([39,84,74,18,59,72,35,61]))
+// console.log(rowWeights([0,1,0]))
+
+
+const rowWeights2 = (array) => {
+  let team1 = array.filter((ele, ind) => ind % 2 == 0).reduce((acc, curr) => acc + curr, 0)
+  let team2 = array.filter((ele, ind) => ind % 2 != 0).reduce((acc, curr) => acc + curr, 0)
+  return [team1, team2]
+}
+
+console.log(rowWeights2([80]))
+console.log(rowWeights2([100,50]))
+console.log(rowWeights2([50,60,70,80]))
+console.log(rowWeights2([13,27,49]))
+console.log(rowWeights2([70,58,75,34,91]))
+console.log(rowWeights2([29,83,67,53,19,28,96]))
+console.log(rowWeights2([0]))
+console.log(rowWeights2([100,51,50,100]))
+console.log(rowWeights2([39,84,74,18,59,72,35,61]))
+console.log(rowWeights2([0,1,0]))
