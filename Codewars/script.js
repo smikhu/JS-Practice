@@ -4034,14 +4034,36 @@ const remove2 = (string, number) => {
   return string
 }
 
-console.log(remove2('Hi!', 1))
-console.log(remove2('Hi!', 100))
-console.log(remove2('Hi!!!', 1))
-console.log(remove2('Hi!!!', 100))
-console.log(remove2('!Hi', 1))
-console.log(remove2('!Hi!', 1))
-console.log(remove2('!Hi!', 100))
-console.log(remove2('!!!Hi !!hi!!! !hi', 1))
-console.log(remove2('!!!Hi !!hi!!! !hi', 3))
-console.log(remove2('!!!Hi !!hi!!! !hi', 5))
-console.log(remove2('!!!Hi !!hi!!! !hi', 100))
+// console.log(remove2('Hi!', 1))
+// console.log(remove2('Hi!', 100))
+// console.log(remove2('Hi!!!', 1))
+// console.log(remove2('Hi!!!', 100))
+// console.log(remove2('!Hi', 1))
+// console.log(remove2('!Hi!', 1))
+// console.log(remove2('!Hi!', 100))
+// console.log(remove2('!!!Hi !!hi!!! !hi', 1))
+// console.log(remove2('!!!Hi !!hi!!! !hi', 3))
+// console.log(remove2('!!!Hi !!hi!!! !hi', 5))
+// console.log(remove2('!!!Hi !!hi!!! !hi', 100))
+
+
+
+const reverseLetter = (str) => {
+  return str.replace(/[^a-z]/gi,'').split('').reverse().join('')
+}
+
+// console.log(reverseLetter('krishan'))
+// console.log(reverseLetter('ultr530?n'))
+// console.log(reverseLetter('ab23c'))
+// console.log(reverseLetter('krish21an'))
+
+
+const getEvenNumbers = (numbersArray) => {
+  return numbersArray.filter(n => n % 2 === 0)
+}
+
+console.log(getEvenNumbers([1,2,3,6,8,10]))
+console.log(getEvenNumbers([1,2]))
+console.log(getEvenNumbers([12,14,15]))
+console.log(getEvenNumbers([13,15]))
+console.log(getEvenNumbers([1,3,9]))
