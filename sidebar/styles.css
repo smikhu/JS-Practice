@@ -32,6 +32,40 @@ body {
     transition: all .3s linear;
 }
 
+.fa-bars {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    color: #e94949;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.fa-bars:hover {
+    color: black;
+}
+
+.fa-times {
+    font-size: 1.5rem;
+    color: #e94949;
+    cursor: pointer;
+}
+
+.fa-times:hover {
+    color: black;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    margin-left: -15px;
+}
+
 @media (min-width:670px) {
     .sidebar {
         width: 500px;
