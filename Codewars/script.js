@@ -4005,19 +4005,20 @@ const switchItUp = (number) => {
 // console.log(switchItUp(4));
 // console.log(switchItUp(5));
 
-
 const apple = (x) => {
-  return Math.pow(x, 2) > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
-}
+  return Math.pow(x, 2) > 1000
+    ? "It's hotter than the sun!!"
+    : "Help yourself to a honeycomb Yorkie for the glovebox.";
+};
 
 // console.log(apple('50'))
 // console.log(apple(4))
 
-
-
 const remove = (string) => {
-  return string.charAt(string.length - 1) === '!' ? string.slice(0, -1) : string
-}
+  return string.charAt(string.length - 1) === "!"
+    ? string.slice(0, -1)
+    : string;
+};
 
 // console.log(remove('Hi!'))
 // console.log(remove('Hi!!!'))
@@ -4026,13 +4027,12 @@ const remove = (string) => {
 // console.log(remove('Hi! Hi!'))
 // console.log(remove('Hi'))
 
-
 const remove2 = (string, number) => {
-  for(let i = 0; i < number; i++) {
-    string = string.replace("!", "")
+  for (let i = 0; i < number; i++) {
+    string = string.replace("!", "");
   }
-  return string
-}
+  return string;
+};
 
 // console.log(remove2('Hi!', 1))
 // console.log(remove2('Hi!', 100))
@@ -4046,21 +4046,22 @@ const remove2 = (string, number) => {
 // console.log(remove2('!!!Hi !!hi!!! !hi', 5))
 // console.log(remove2('!!!Hi !!hi!!! !hi', 100))
 
-
-
 const reverseLetter = (str) => {
-  return str.replace(/[^a-z]/gi,'').split('').reverse().join('')
-}
+  return str
+    .replace(/[^a-z]/gi, "")
+    .split("")
+    .reverse()
+    .join("");
+};
 
 // console.log(reverseLetter('krishan'))
 // console.log(reverseLetter('ultr530?n'))
 // console.log(reverseLetter('ab23c'))
 // console.log(reverseLetter('krish21an'))
 
-
 const getEvenNumbers = (numbersArray) => {
-  return numbersArray.filter(n => n % 2 === 0)
-}
+  return numbersArray.filter((n) => n % 2 === 0);
+};
 
 // console.log(getEvenNumbers([1,2,3,6,8,10]))
 // console.log(getEvenNumbers([1,2]))
@@ -4068,41 +4069,38 @@ const getEvenNumbers = (numbersArray) => {
 // console.log(getEvenNumbers([13,15]))
 // console.log(getEvenNumbers([1,3,9]))
 
-
 const check2 = (a, x) => {
-  return a.includes(x)
-}
+  return a.includes(x);
+};
 
 // console.log(check2([66, 101], 66))
 // console.log(check2([80, 117, 115, 104, 45, 85, 112, 115], 45))
 // console.log(check2(['t', 'e', 's', 't'], 'e'))
 // console.log(check2(['what', 'a', 'great', 'kata'], 'kat'))
 
-
 const usdcny = (usd) => {
-  return `${(usd * 6.75).toFixed(2)} Chinese Yuan`
-}
+  return `${(usd * 6.75).toFixed(2)} Chinese Yuan`;
+};
 
 // console.log(usdcny(15))
 // console.log(usdcny(465))
 // console.log(usdcny(4))
 
-
 const rowWeights = (array) => {
   let team1 = [];
   let team2 = [];
 
-  for(let i = 0; i < array.length; i++) {
-    if(i % 2 === 0) {
-      team2.push(array[i])
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      team2.push(array[i]);
     } else {
-      team1.push(array[i])
+      team1.push(array[i]);
     }
   }
-  let newTeam1 = team1.reduce((a, b) => a + b, 0)
-  let newTeam2 = team2.reduce((a, b) => a + b, 0)
-  return [newTeam2, newTeam1]
-}
+  let newTeam1 = team1.reduce((a, b) => a + b, 0);
+  let newTeam2 = team2.reduce((a, b) => a + b, 0);
+  return [newTeam2, newTeam1];
+};
 
 // console.log(rowWeights([80]))
 // console.log(rowWeights([100,50]))
@@ -4115,20 +4113,65 @@ const rowWeights = (array) => {
 // console.log(rowWeights([39,84,74,18,59,72,35,61]))
 // console.log(rowWeights([0,1,0]))
 
-
 const rowWeights2 = (array) => {
-  let team1 = array.filter((ele, ind) => ind % 2 == 0).reduce((acc, curr) => acc + curr, 0)
-  let team2 = array.filter((ele, ind) => ind % 2 != 0).reduce((acc, curr) => acc + curr, 0)
-  return [team1, team2]
-}
+  let team1 = array
+    .filter((ele, ind) => ind % 2 == 0)
+    .reduce((acc, curr) => acc + curr, 0);
+  let team2 = array
+    .filter((ele, ind) => ind % 2 != 0)
+    .reduce((acc, curr) => acc + curr, 0);
+  return [team1, team2];
+};
 
-console.log(rowWeights2([80]))
-console.log(rowWeights2([100,50]))
-console.log(rowWeights2([50,60,70,80]))
-console.log(rowWeights2([13,27,49]))
-console.log(rowWeights2([70,58,75,34,91]))
-console.log(rowWeights2([29,83,67,53,19,28,96]))
-console.log(rowWeights2([0]))
-console.log(rowWeights2([100,51,50,100]))
-console.log(rowWeights2([39,84,74,18,59,72,35,61]))
-console.log(rowWeights2([0,1,0]))
+// console.log(rowWeights2([80]))
+// console.log(rowWeights2([100,50]))
+// console.log(rowWeights2([50,60,70,80]))
+// console.log(rowWeights2([13,27,49]))
+// console.log(rowWeights2([70,58,75,34,91]))
+// console.log(rowWeights2([29,83,67,53,19,28,96]))
+// console.log(rowWeights2([0]))
+// console.log(rowWeights2([100,51,50,100]))
+// console.log(rowWeights2([39,84,74,18,59,72,35,61]))
+// console.log(rowWeights2([0,1,0]))
+
+const findUnique = (arr) => {
+  arr.sort((a, b) => a - b);
+  if (arr[0] == arr[1]) {
+    return arr[arr.length - 1];
+  } else {
+    return arr[0];
+  }
+};
+
+// console.log(findUnique([1, 0, 0]));
+// console.log(findUnique([0, 1, 0]));
+// console.log(findUnique([0, 0, 1]));
+// console.log(findUnique([1, 1, 1, 2, 1, 1]));
+// console.log(findUnique([1, 1, 2, 1, 1]));
+// console.log(findUnique([3, 10, 3, 3, 3]));
+
+const findUnique2 = (arr) => {
+  arr.sort((a, b) => a - b);
+  return arr[0] == arr[1] ? arr.pop() : arr[0];
+};
+
+// console.log(findUnique2([1, 0, 0]));
+// console.log(findUnique2([0, 1, 0]));
+// console.log(findUnique2([0, 0, 1]));
+// console.log(findUnique2([1, 1, 1, 2, 1, 1]));
+// console.log(findUnique2([1, 1, 2, 1, 1]));
+// console.log(findUnique2([3, 10, 3, 3, 3]));
+
+const findUnique3 = (arr) => {
+  if (arr[0] === arr[1]) {
+    return arr.find((v) => v !== arr[0]);
+  }
+  return arr[1] === arr[2] ? arr[0] : arr[1];
+};
+
+console.log(findUnique3([1, 0, 0]));
+console.log(findUnique3([0, 1, 0]));
+console.log(findUnique3([0, 0, 1]));
+console.log(findUnique3([1, 1, 1, 2, 1, 1]));
+console.log(findUnique3([1, 1, 2, 1, 1]));
+console.log(findUnique3([3, 10, 3, 3, 3]));
