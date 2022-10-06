@@ -4169,9 +4169,20 @@ const findUnique3 = (arr) => {
   return arr[1] === arr[2] ? arr[0] : arr[1];
 };
 
-console.log(findUnique3([1, 0, 0]));
-console.log(findUnique3([0, 1, 0]));
-console.log(findUnique3([0, 0, 1]));
-console.log(findUnique3([1, 1, 1, 2, 1, 1]));
-console.log(findUnique3([1, 1, 2, 1, 1]));
-console.log(findUnique3([3, 10, 3, 3, 3]));
+// console.log(findUnique3([1, 0, 0]));
+// console.log(findUnique3([0, 1, 0]));
+// console.log(findUnique3([0, 0, 1]));
+// console.log(findUnique3([1, 1, 1, 2, 1, 1]));
+// console.log(findUnique3([1, 1, 2, 1, 1]));
+// console.log(findUnique3([3, 10, 3, 3, 3]));
+
+const mergeArrays = (arr1, arr2) => {
+  return arr1
+    .concat(arr2)
+    .sort((a, b) => a - b)
+    .filter((ele, ind, arr) => arr.indexOf(ele) === ind);
+};
+
+console.log(mergeArrays([1, 2, 3, 4], [5, 6, 7, 8]));
+console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
+console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
