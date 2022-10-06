@@ -4183,6 +4183,55 @@ const mergeArrays = (arr1, arr2) => {
     .filter((ele, ind, arr) => arr.indexOf(ele) === ind);
 };
 
-console.log(mergeArrays([1, 2, 3, 4], [5, 6, 7, 8]));
-console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
-console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
+// console.log(mergeArrays([1, 2, 3, 4], [5, 6, 7, 8]));
+// console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]));
+// console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]));
+
+const removeFirstAndLast = (arr) => {
+  arr = arr.split(",");
+  if (arr.length < 3) {
+    return null;
+  }
+  return arr.slice(1, arr.length - 1).join(" ");
+};
+
+// console.log(removeFirstAndLast("1,2,3"));
+// console.log(removeFirstAndLast("1,2,3,4"));
+// console.log(removeFirstAndLast("1,2,3,4,5"));
+
+
+const alphabetWar = (fight) => {
+  let right = {
+    m : 4,
+    q : 3,
+    d : 2,
+    z : 1
+  }
+
+  let left = {
+    w : 4,
+    p : 3,
+    b : 2,
+    s : 1
+  }
+
+  let leftSide = 0;
+  let rightSide = 0;
+
+  for(let char of fight) {
+    if(char in left) {
+      leftSide = leftSide + left[char]
+    }
+
+    if(char in right) {
+      rightSide = rightSide + right[char] 
+    }
+  }
+
+  return leftSide > rightSide ? 'Left side wins!' : leftSide < rightSide ? 'Right side wins!' : "Let's fight again!"
+}
+
+console.log(alphabetWar('z'))
+console.log(alphabetWar('zdqmwpbs'))
+console.log(alphabetWar('zzzzs'))
+console.log(alphabetWar('wwwwww'))
