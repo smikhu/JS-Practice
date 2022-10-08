@@ -4288,8 +4288,28 @@ const bump2 = (x) => {
     : "Woohoo!";
 };
 
-console.log(bump2("n"));
-console.log(bump2("__nn_nnnn__n_n___n____nn__nnn"));
-console.log(bump2("nnn_n__n_n___nnnnn___n__nnn__"));
-console.log(bump2("_nnnnnnn_n__n______nn__nn_nnn"));
-console.log(bump2("______n___n_"));
+// console.log(bump2("n"));
+// console.log(bump2("__nn_nnnn__n_n___n____nn__nnn"));
+// console.log(bump2("nnn_n__n_n___nnnnn___n__nnn__"));
+// console.log(bump2("_nnnnnnn_n__n______nn__nn_nnn"));
+// console.log(bump2("______n___n_"));
+
+const adjacentElementsProduct = (array) => {
+  let newArr = [];
+
+  for (let i = 0; i < array.length - 1; i++) {
+    newArr.push(array[i] * array[i + 1])
+  }
+  return Math.max(...newArr);
+};
+
+console.log(adjacentElementsProduct([5, 8]));
+console.log(adjacentElementsProduct([1, 2, 3]));
+console.log(adjacentElementsProduct([1, 5, 10, 9]));
+console.log(adjacentElementsProduct([4, 12, 3, 1, 5]));
+console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4]));
+console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
+console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48]));
+console.log(adjacentElementsProduct([5, 6, -4, 2, 3, 2, -23]));
+console.log(adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921]));
+console.log(adjacentElementsProduct([5, 1, 2, 3, 1, 4]));
