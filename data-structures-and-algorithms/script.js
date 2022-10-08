@@ -133,5 +133,26 @@ class LinkedList {
   }
 }
 
-let myLinkedList = new LinkedList(7);
-myLinkedList.push(4);
+
+
+
+
+class Node2 {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
+}
+
+class DoublyLinkedList {
+  constructor(value) {
+    const newNode = new Node2(value);
+    this.head = newNode;
+    this.tail = newNode;
+    this.length = 1;
+  }
+}
+
+let myDoublyLinkedList = new DoublyLinkedList(7);
+myDoublyLinkedList;
