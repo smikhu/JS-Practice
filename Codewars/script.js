@@ -4199,39 +4199,97 @@ const removeFirstAndLast = (arr) => {
 // console.log(removeFirstAndLast("1,2,3,4"));
 // console.log(removeFirstAndLast("1,2,3,4,5"));
 
-
 const alphabetWar = (fight) => {
   let right = {
-    m : 4,
-    q : 3,
-    d : 2,
-    z : 1
-  }
+    m: 4,
+    q: 3,
+    d: 2,
+    z: 1,
+  };
 
   let left = {
-    w : 4,
-    p : 3,
-    b : 2,
-    s : 1
-  }
+    w: 4,
+    p: 3,
+    b: 2,
+    s: 1,
+  };
 
   let leftSide = 0;
   let rightSide = 0;
 
-  for(let char of fight) {
-    if(char in left) {
-      leftSide = leftSide + left[char]
+  for (let char of fight) {
+    if (char in left) {
+      leftSide = leftSide + left[char];
     }
 
-    if(char in right) {
-      rightSide = rightSide + right[char] 
+    if (char in right) {
+      rightSide = rightSide + right[char];
     }
   }
 
-  return leftSide > rightSide ? 'Left side wins!' : leftSide < rightSide ? 'Right side wins!' : "Let's fight again!"
-}
+  return leftSide > rightSide
+    ? "Left side wins!"
+    : leftSide < rightSide
+    ? "Right side wins!"
+    : "Let's fight again!";
+};
 
-console.log(alphabetWar('z'))
-console.log(alphabetWar('zdqmwpbs'))
-console.log(alphabetWar('zzzzs'))
-console.log(alphabetWar('wwwwww'))
+// console.log(alphabetWar('z'))
+// console.log(alphabetWar('zdqmwpbs'))
+// console.log(alphabetWar('zzzzs'))
+// console.log(alphabetWar('wwwwww'))
+
+const calculateAge = (birthYear, relationYear) => {
+  if (relationYear - birthYear === 1) {
+    return `You are ${relationYear - birthYear} year old.`;
+  } else if (birthYear < relationYear) {
+    return `You are ${relationYear - birthYear} years old`;
+  } else if (relationYear - birthYear === -1) {
+    return `You will be born in ${birthYear - relationYear} year.`;
+  } else if (birthYear > relationYear) {
+    return `You will be born in ${birthYear - relationYear} years`;
+  } else if (birthYear === relationYear) {
+    return "You were born this very year!";
+  }
+};
+
+// console.log(calculateAge(2012, 2016));
+// console.log(calculateAge(1989, 2016));
+// console.log(calculateAge(2000, 2090));
+// console.log(calculateAge(2000, 1990));
+// console.log(calculateAge(3400, 3400));
+// console.log(calculateAge(900, 2900));
+// console.log(calculateAge(2010, 1990));
+// console.log(calculateAge(2010, 1500));
+// console.log(calculateAge(2011, 2012));
+// console.log(calculateAge(2000, 1999));
+
+const bump = (x) => {
+  let res = 0;
+  let splitting = x.split("");
+
+  for (let i = 0; i < splitting.length; i++) {
+    if (splitting[i] === "n") {
+      res++;
+    }
+  }
+  return res > 15 ? "Car Dead" : "Woohoo!";
+};
+
+// console.log(bump("n"))
+// console.log(bump("__nn_nnnn__n_n___n____nn__nnn"))
+// console.log(bump("nnn_n__n_n___nnnnn___n__nnn__"))
+// console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
+// console.log(bump("______n___n_"))
+
+const bump2 = (x) => {
+  return x.split("").filter((e) => e === "n").length > 15
+    ? "Car Dead"
+    : "Woohoo!";
+};
+
+console.log(bump2("n"));
+console.log(bump2("__nn_nnnn__n_n___n____nn__nnn"));
+console.log(bump2("nnn_n__n_n___nnnnn___n__nnn__"));
+console.log(bump2("_nnnnnnn_n__n______nn__nn_nnn"));
+console.log(bump2("______n___n_"));
