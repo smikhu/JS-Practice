@@ -306,36 +306,50 @@
 // let myStack = new Stack(0);
 // myStack;
 
-// class Node4 {
-//   constructor(value) {
-//     this.value = value;
-//     this.next = null;
-//   }
-// }
+class Node4 {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
-// class Queue {
-//   constructor(value) {
-//     const newNode = new Node4(value);
-//     this.first = newNode;
-//     this.last = newNode;
-//     this.length = 1;
-//   }
+class Queue {
+  constructor(value) {
+    const newNode = new Node4(value);
+    this.first = newNode;
+    this.last = newNode;
+    this.length = 1;
+  }
 
-//   enqueue(value) {
-//     const newNode = new Node4(value);
-//     if (this.length === 0) {
-//       this.first = newNode;
-//       this.last = newNode;
-//     } else {
-//       this.last.next = newNode;
-//       this.last = newNode;
-//     }
-//     this.length++;
-//     return this;
-//   }
-// }
+  enqueue(value) {
+    const newNode = new Node4(value);
+    if (this.length === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    this.length++;
+    return this;
+  }
 
-// let myQueue = new Queue(4);
-// myQueue.enqueue(5);
-// myQueue.enqueue(6);
-// myQueue;
+  dequeue() {
+    if (this.length === 0) return undefined;
+    let temp = this.first;
+    if (this.length === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+      temp.next = null;
+    }
+    this.length--;
+    return temp;
+  }
+}
+
+let myQueue = new Queue(4);
+myQueue.enqueue(5);
+myQueue.enqueue(6);
+myQueue;
