@@ -406,6 +406,13 @@ class BST {
     }
     return false;
   }
+
+  minValueNode(currentNode) {
+    while (currentNode.left != null) {
+      currentNode = currentNode.left;
+    }
+    return currentNode;
+  }
 }
 
 let myTree = new BST();
@@ -416,3 +423,4 @@ myTree.insert(18);
 myTree.insert(27);
 myTree.insert(52);
 myTree.insert(82);
+myTree.minValueNode(myTree.root.right);
