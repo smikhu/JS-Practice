@@ -115,7 +115,7 @@ const palindrome = (str) => {
 // console.log(palindrome("toot"));
 // console.log(palindrome("hey now"));
 
-const palindrom2 = (str) => {
+const palindrome2 = (str) => {
   var re = /[^A-Za-z0-9]/g;
   str = str.toLowerCase().replace(re, "");
   var len = str.length;
@@ -127,9 +127,9 @@ const palindrom2 = (str) => {
   return true;
 };
 
-// console.log(palindrome("A man, a plan, a canal. Panama"));
-// console.log(palindrome("toot"));
-// console.log(palindrome("hey now"));
+// console.log(palindrome2("A man, a plan, a canal. Panama"));
+// console.log(palindrome2("toot"));
+// console.log(palindrome2("hey now"));
 
 const romanToInt = (s) => {
   const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
@@ -154,16 +154,16 @@ const romanToInt2 = (s) => {
   const key = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
   let ans = [];
 
-  for(let i = 0; i < s.length; i++) {
-    if(key[s[i]] < key[s[i + 1]]) {
-      ans.push(key[s[i + 1]] - key[s[i]])
+  for (let i = 0; i < s.length; i++) {
+    if (key[s[i]] < key[s[i + 1]]) {
+      ans.push(key[s[i + 1]] - key[s[i]]);
       i++;
       continue;
     } else {
-      ans.push(key[s[i]])
+      ans.push(key[s[i]]);
     }
   }
-  return ans.reduce((total, curr) => total + curr, 0)
+  return ans.reduce((total, curr) => total + curr, 0);
 };
 
 // console.log(romanToInt2("I"));
@@ -173,22 +173,68 @@ const romanToInt2 = (s) => {
 // console.log(romanToInt2("LVIII"));
 // console.log(romanToInt2("MCMXCIV"));
 
-
-
 const longestCommonPrefix = (arr) => {
-  let prefix = '';
-  if (arr.length === 0) return prefix
+  let prefix = "";
+  if (arr.length === 0) return prefix;
 
   for (let i = 0; i < arr[0].length; i++) {
-    console.log(arr[0][i])
-    const character = arr[0][i]
+    const character = arr[0][i];
     for (let j = 0; j < arr.length; j++) {
-      if (arr[j][i] !== character) return prefix
+      if (arr[j][i] !== character) return prefix;
     }
-    prefix = prefix + character
+    prefix = prefix + character;
   }
-  return prefix
+  return prefix;
+};
+
+// console.log(longestCommonPrefix(['flower', 'flow', 'flight']))
+// console.log(longestCommonPrefix(['dog', 'racecar', 'car']))
+// console.log(longestCommonPrefix(['play', 'place', 'plane']))
+
+const validParentheses = (s) => {
+  const hashMap = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+  const stack = [];
+
+  for (let ch of s) {
+    if (hashMap[ch]) {
+      stack.push(hashMap[ch]);
+    } else if (stack.length > 0 && stack[stack.length - 1] === ch) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+  return stack.length === 0;
+};
+
+// console.log(validParentheses("[][]([])"))
+// console.log(validParentheses("[({})]"))
+// console.log(validParentheses("[](){[}]"))
+
+const removeDuplicates = (nums) => {
+  let counter = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1]) {
+      nums[counter] = nums[i];
+      counter++;
+    }
+  }
+  let result2 = nums.splice(0, counter);
+  return result2.length;
+};
+
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+
+const removeDuplicates2 = (nums) => {
+    return [...new Set(nums)].length
 }
 
-console.log(longestCommonPrefix(['flower', 'flow', 'flight']))
-console.log(longestCommonPrefix(['dog', 'racecar', 'car']))
+console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 3, 4, 5, 6, 6, 21, 6, 7, 2, 1]))
+console.log(removeDuplicates2([0, 0, 1, 2, 3, 3, 4, 4, 4, 4, 4, 5, 6, 7, 7, 7, 102, 112, 1345]))
