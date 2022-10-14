@@ -228,13 +228,35 @@ const removeDuplicates = (nums) => {
   return result2.length;
 };
 
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
-
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
 
 const removeDuplicates2 = (nums) => {
-    return [...new Set(nums)].length
-}
+  return [...new Set(nums)].length;
+};
 
-console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
-console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 3, 4, 5, 6, 6, 21, 6, 7, 2, 1]))
-console.log(removeDuplicates2([0, 0, 1, 2, 3, 3, 4, 4, 4, 4, 4, 5, 6, 7, 7, 7, 102, 112, 1345]))
+// console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+// console.log(removeDuplicates2([0, 0, 1, 1, 1, 2, 3, 4, 5, 6, 6, 21, 6, 7, 2, 1]))
+// console.log(removeDuplicates2([0, 0, 1, 2, 3, 3, 4, 4, 4, 4, 4, 5, 6, 7, 7, 7, 102, 112, 1345]))
+
+const findDuplicates = (nums) => {
+  let result = [];
+  for (let i = 0; i < nums.length; i++) {
+    let value = Math.abs(nums[i]);
+    let index = value - 1;
+    // console.log(nums[index]);
+    if (nums[index] < 0) {
+      result.push(value);
+    } else {
+      nums[index] *= -1;
+    }
+  }
+  return result;
+};
+
+// console.log(findDuplicates([4, 3, 2, 2, 3, 1]));
+
+const findDuplicates2 = (nums) => {
+  return nums.filter((item, index) => nums.indexOf(item) !== index );
+};
+
+console.log(findDuplicates2([4, 3, 2, 2, 3, 1]));
