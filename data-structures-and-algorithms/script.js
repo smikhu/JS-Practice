@@ -509,8 +509,26 @@ class Graph {
     }
     return false;
   }
+
+  removeVertex(vertex) {
+    if (!this.adjacencyList[vertex]) return undefined;
+    while (this.adjacencyList[vertex].length) {
+      let temp = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, temp);
+    }
+    delete this.adjacencyList[vertex];
+    return this;
+  }
 }
 
 let myGraph = new Graph();
 myGraph.addVertex("A");
+myGraph.addVertex("B");
+myGraph.addVertex("C");
+myGraph.addVertex("D");
+myGraph.addEdge("A", "B");
+myGraph.addEdge("A", "C");
+myGraph.addEdge("A", "D");
+myGraph.addEdge("B", "D");
+myGraph.addEdge("C", "D");
 myGraph;
