@@ -566,16 +566,42 @@
 
 // selectionSort([4, 2, 6, 5, 1, 3, 8, 7, 10, 9]);
 
-function insertionSort(array) {
-  let temp;
-  for (let i = 1; i < array.length; i++) {
-    temp = array[i];
-    for (var j = i - 1; array[j] > temp && j > -1; j--) {
-      array[j + 1] = array[j];
+// function insertionSort(array) {
+//   let temp;
+//   for (let i = 1; i < array.length; i++) {
+//     temp = array[i];
+//     for (var j = i - 1; array[j] > temp && j > -1; j--) {
+//       array[j + 1] = array[j];
+//     }
+//     array[j + 1] = temp;
+//   }
+//   return array;
+// }
+
+// insertionSort([4, 2, 6, 5, 1, 3]);
+
+function merge(array1, array2) {
+  let combined = [];
+  let i = 0;
+  let j = 0;
+  while (i < array1.length && j < array2.length) {
+    if (array1[i] < array2[j]) {
+      combined.push(array1[i]);
+      i++;
+    } else {
+      combined.push(array2[j]);
+      j++;
     }
-    array[j + 1] = temp;
   }
-  return array;
+  while (i < array1.length) {
+    combined.push(array1[i]);
+    i++;
+  }
+  while (j < array2.length) {
+    combined.push(array2[j]);
+    j++;
+  }
+  return combined;
 }
 
-insertionSort([4, 2, 6, 5, 1, 3]);
+merge([1, 3, 7, 8], [2, 4, 5, 6]);
