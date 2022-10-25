@@ -475,60 +475,75 @@
 // let myHashTable = new HashTable();
 // myHashTable;
 
-class Graph {
-  constructor() {
-    this.adjacencyList = {};
-  }
+// class Graph {
+//   constructor() {
+//     this.adjacencyList = {};
+//   }
 
-  addVertex(vertex) {
-    if (!this.adjacencyList[vertex]) {
-      this.adjacencyList[vertex] = [];
-      return true;
-    }
-    return false;
-  }
+//   addVertex(vertex) {
+//     if (!this.adjacencyList[vertex]) {
+//       this.adjacencyList[vertex] = [];
+//       return true;
+//     }
+//     return false;
+//   }
 
-  addEdge(vertex1, vertex2) {
-    if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
-      this.adjacencyList[vertex1].push(vertex2);
-      this.adjacencyList[vertex2].push(vertex1);
-      return true;
-    }
-    return false;
-  }
+//   addEdge(vertex1, vertex2) {
+//     if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
+//       this.adjacencyList[vertex1].push(vertex2);
+//       this.adjacencyList[vertex2].push(vertex1);
+//       return true;
+//     }
+//     return false;
+//   }
 
-  removeEdge(vertex1, vertex2) {
-    if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
-      this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
-        (v) => v !== vertex2
-      );
-      this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
-        (v) => v !== vertex1
-      );
-      return true;
-    }
-    return false;
-  }
+//   removeEdge(vertex1, vertex2) {
+//     if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
+//       this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+//         (v) => v !== vertex2
+//       );
+//       this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+//         (v) => v !== vertex1
+//       );
+//       return true;
+//     }
+//     return false;
+//   }
 
-  removeVertex(vertex) {
-    if (!this.adjacencyList[vertex]) return undefined;
-    while (this.adjacencyList[vertex].length) {
-      let temp = this.adjacencyList[vertex].pop();
-      this.removeEdge(vertex, temp);
+//   removeVertex(vertex) {
+//     if (!this.adjacencyList[vertex]) return undefined;
+//     while (this.adjacencyList[vertex].length) {
+//       let temp = this.adjacencyList[vertex].pop();
+//       this.removeEdge(vertex, temp);
+//     }
+//     delete this.adjacencyList[vertex];
+//     return this;
+//   }
+// }
+
+// let myGraph = new Graph();
+// myGraph.addVertex("A");
+// myGraph.addVertex("B");
+// myGraph.addVertex("C");
+// myGraph.addVertex("D");
+// myGraph.addEdge("A", "B");
+// myGraph.addEdge("A", "C");
+// myGraph.addEdge("A", "D");
+// myGraph.addEdge("B", "D");
+// myGraph.addEdge("C", "D");
+// myGraph;
+
+function bubbleSort(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (array[j] > array[j + 1]) {
+        let temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
     }
-    delete this.adjacencyList[vertex];
-    return this;
   }
+  return array;
 }
 
-let myGraph = new Graph();
-myGraph.addVertex("A");
-myGraph.addVertex("B");
-myGraph.addVertex("C");
-myGraph.addVertex("D");
-myGraph.addEdge("A", "B");
-myGraph.addEdge("A", "C");
-myGraph.addEdge("A", "D");
-myGraph.addEdge("B", "D");
-myGraph.addEdge("C", "D");
-myGraph;
+bubbleSort([4, 2, 6, 5, 1, 3]);
