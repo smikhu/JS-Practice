@@ -201,7 +201,7 @@ const intToRoman = (num) => {
   return roman;
 };
 
-console.log(intToRoman(30));
+// console.log(intToRoman(30));
 
 const longestCommonPrefix = (arr) => {
   let prefix = "";
@@ -217,9 +217,25 @@ const longestCommonPrefix = (arr) => {
   return prefix;
 };
 
-// console.log(longestCommonPrefix(['flower', 'flow', 'flight']))
-// console.log(longestCommonPrefix(['dog', 'racecar', 'car']))
-// console.log(longestCommonPrefix(['play', 'place', 'plane']))
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+// console.log(longestCommonPrefix(["dog", "racecar", "car"]));
+// console.log(longestCommonPrefix(["play", "place", "plane", "plr"]));
+
+const longestCommonPrefix2 = (arr) => {
+  arr = arr.sort((a, b) => b.length - a.length);
+  console.log(arr)
+  let minStr = arr[0] || "";
+  for (let i = 1; i < arr.length; i++) {
+    while (arr[i].indexOf(minStr) !== 0) {
+      minStr = minStr.substring(0, minStr.length - 1);
+    }
+    return minStr;
+  }
+};
+
+console.log(longestCommonPrefix2(["play", "place", "plane"]));
+console.log(longestCommonPrefix2(["flower", "flow", "flight"]));
+console.log(longestCommonPrefix2(["dog", "racecar", "car"]));
 
 const validParentheses = (s) => {
   const hashMap = {
